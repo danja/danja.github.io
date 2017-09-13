@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Thrums Serif';
+	font-family: 'ThrumsSerif';
 	src: url('fonts/ThrumsSerif.eot');
 	src: url('fonts/ThrumsSerif.eot?#iefix') format('embedded-opentype'),
 		url('fonts/ThrumsSerif.woff') format('woff'),
@@ -9,5 +9,5 @@
 }
 
 p {
-    font-family: Thrums Serif, sans-serif;
+    font-family: ThrumsSerif, sans-serif;
 }
