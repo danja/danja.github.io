@@ -1,0 +1,124 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>FooWiki</title>
+
+    <link rel="stylesheet" href="css/columns.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!-- link rel="stylesheet" type="text/css" href="css/jquery-ui.css" -->
+    <!-- from https://github.com/aehlke/tag-it -->
+    <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/tagit.ui-zendesk.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+
+    <script src="js/lib/marked.js"></script>
+
+    <!-- mustache template compiler -->
+    <script src="js/lib/hogan-3.0.2.js"></script>
+
+    <script src="js/lib/jquery-1.10.2.js"></script>
+    <script src="js/lib/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- from https://github.com/aehlke/tag-it -->
+    <script src="js/lib/tag-it.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- date formatting -->
+    <script src="js/lib/moment.js"></script>
+
+    <!-- FooWiki scripts -->
+    <script src="js/foowiki/config.js"></script>
+    <script src="js/foowiki/sparql-templates.js"></script>
+    <script src="js/foowiki/html-templates-static.js"></script>
+    <script src="js/foowiki/utils-static.js"></script>
+    <script src="js/foowiki/core-static.js"></script>
+    <script src="js/foowiki/view-static.js"></script>
+    <script src="js/foowiki/sparql-connector.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        $(function () {
+
+            setupErrorHandling();
+            var uri = queryString["uri"];
+            // console.log("URI="+uri);
+            uri = encodeURI(uri);
+            getResource(uri, buildPage);
+
+            makeRecentChangesList();
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="errorbox" style="display: none;"></div>
+
+    <div id="header">FooWiki</div>
+
+    <div id="middle" class="column">
+        <div class="entry">             <h1 class="center" id="pagetitle"><a href="page-static.html?uri=undefined.html">Foo To Do</a></h1>             <div class="content"><p><a href="FFoo.html">Foo</a></p>
+<h3 id="minimal-bootstrap-prog">Minimal bootstrap prog</h3>
+<ul>
+<li><p>load HTML+CSS+JS</p>
+</li>
+<li><p>check <a href="http://perfectionkills.com/global-eval-what-are-the-options/#eval_context_in_webkit">http://perfectionkills.com/global-eval-what-are-the-options/#eval_context_in_webkit</a></p>
+<h2 id="foo"><a href="/foowiki/Foo.html">Foo</a></h2>
+</li>
+<li>handle parameters</li>
+<li>use WebWorkers? <a href="http://www.html5rocks.com/en/tutorials/workers/basics">http://www.html5rocks.com/en/tutorials/workers/basics</a></li>
+<li>globalEval <ul>
+<li>see <a href="http://www.2ality.com/2014/01/eval.html">http://www.2ality.com/2014/01/eval.html</a></li>
+<li><a href="http://perfectionkills.com/global-eval-what-are-the-options/">http://perfectionkills.com/global-eval-what-are-the-options/</a></li>
+</ul>
+</li>
+<li>generic sparqlXMLToJSON</li>
+<li>dropdown list for Apply Script to this page</li>
+<li>foo = &amp;#39;stored procedures&amp;#39; - resources with SPARQL/JS literal templates, pass parameters, return graphs, json... use jsonp?</li>
+<li>support JS source extensions</li>
+<li>support SPARQL source extensions</li>
+<li>messaging via URLs</li>
+<li>graph view <a href="http://visjs.org/docs/index.html">vis.js</a><ul>
+<li><a href="http://jsplumb.org/demo/flowchart/dom.html">http://jsplumb.org/demo/flowchart/dom.html</a></li>
+</ul>
+</li>
+<li>install from URL</li>
+<li>reduce whole app to a single bootstrap HTML file + RDF?</li>
+<li>handle parameters</li>
+<li>generic sparqlXMLToJSON</li>
+<li>dropdown list for Apply Script to this page</li>
+<li>foo = 'stored procedures' - resources with SPARQL/JS literal templates, pass parameters, return graphs, json... use jsonp?</li>
+<li>support JS source extensions</li>
+<li>support SPARQL source extensions</li>
+<li>messaging via URLs</li>
+<li>graph view <a href="http://visjs.org/docs/index.html">vis.js</a><ul>
+<li><a href="http://jsplumb.org/demo/flowchart/dom.html">http://jsplumb.org/demo/flowchart/dom.html</a></li>
+</ul>
+</li>
+<li>install from URL</li>
+<li>reduce whole app to a single bootstrap HTML file + RDF?</li>
+</ul>
+</div>             <ul id="maintagscontainer" class="tagit ui-widget ui-widget-content ui-corner-all">             <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-read-only"><span class="tagit-label">foowiki</span><input value="foowiki" name="http://hyperdata.it/tags/foowiki" class="tagit-hidden-field" type="hidden"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-read-only"><span class="tagit-label">todo</span><input value="todo" name="http://hyperdata.it/tags/todo" class="tagit-hidden-field" type="hidden"></li><li class="tagit-new"><input class="ui-widget-content ui-autocomplete-input" disabled="disabled" autocomplete="off" type="text"></li></ul>             <div class="byline center">latest edit by danja on Sunday, September 17th 2017, 1:37:22 pm</div>             </div>
+        <p id="buttons" class="center"></p>
+    </div>
+
+    <div id="left" class="column">
+        <div class="tab"><a href="index.html">Page Index</a>
+        </div>
+        <div class="tab"><a href="Home.html">Home Page</a>
+        </div>
+        <div>
+            <div id="recentChangesContainer">
+                <label for="recentChanges">Recent Changes</label>
+                <ul id="recentChanges"><li><a href="Foo.htmlWiki%20Bookmarklet">FooWiki Bookmarklet</a></li><li><a href="Home.html">Home</a></li><li><a href="Foo.htmlWiki%20Docs">FooWiki Docs</a></li><li><a href="Image-Testing.html">Image Test</a></li><li><a href="Home.htmlHelloWorld2">Script Test 2</a></li><li><a href="Home.htmlHello%20World%201">Script Test 1</a></li><li><a href="FooWiki-Bugs.html">FooWiki Bugs</a></li><li><a href="Foo.htmlWiki%20Links">FooWiki Links</a></li><li><a href="FooWiki-Manual.html">FooWiki Manual</a></li><li><a href="Home.htmlBasic%20Features">Basic Features</a></li><li><a href="FooWiki-To-Do.html">FooWiki To Do</a></li><li><a href="Home.htmlMarkdown%20Cheatsheet">Markdown Cheatsheet</a></li><li><a href="Foo.html">Foo</a></li><li><a href="Foo.html%20To%20Do">Foo To Do</a></li><li><a href="Foo.htmlWiki%20Files">FooWiki Files</a></li></ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer"><em>hyperdata.it</em>
+    </div>
+
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content tagit-autocomplete" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span></body></html>

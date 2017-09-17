@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://applymagicsauce.com/prediction.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Apply Magic Sauce - Prediction API - Demo</title>
+
+
+<meta name="author" content="Bartosz Kielczewski">
+<meta name="copyright" content="Bartosz Kielczewski, Michal Kosinski, David Stillwell">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Apply Magic Sauce translates individuals&#39; digital footprints into psychological profiles. It generates a Big Five Personality Profile, prediction of age, gender, sexual, religion and politics preferences.">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="msapplication-TileImage" content="/assets/layout/apple-touch-icon-144x144-precomposed.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta property="fb:app_id" content="141955439306064">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Apply Magic Sauce - Prediction API - Demo">
+<meta property="og:description" content="Apply Magic Sauce translates individuals&#39; digital footprints into psychological profiles. It generates a Big Five Personality Profile, prediction of age, gender, sexual, religion and politics preferences.">
+<meta property="og:url" content="https://applymagicsauce.com">
+<meta property="og:site_name" content="Apply Magic Sauce">
+<meta property="og:image" content="/assets/layout/apple-touch-icon-144x144-precomposed.png">
+<meta property="og:image:type" content="image/png">
+
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://applymagicsauce.com/assets/layout/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://applymagicsauce.com/assets/layout/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://applymagicsauce.com/assets/layout/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://applymagicsauce.com/assets/layout/apple-touch-icon-144x144-precomposed.png">
+    <link rel="shortcut icon" href="https://applymagicsauce.com/assets/layout/apple-touch-icon-72x72-precomposed.png" type="image/png">
+    <link href="./magic-sauce_files/styles.bundle-7e14c237cb8a49305a22d710e03130c1.css" rel="stylesheet">
+
+    <script async="" src="./magic-sauce_files/analytics.js"></script><script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-58026407-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<style>.nav[_ngcontent-c0]{color:#181a27}@media (max-width:767px){.nav[_ngcontent-c0]   a[_ngcontent-c0]   i[_ngcontent-c0]{display:none}}.tab[_ngcontent-c0]{padding-top:2em}.loading[_ngcontent-c0]{padding-top:30px;padding-bottom:30px;text-align:center}.loading[_ngcontent-c0]   .spinner[_ngcontent-c0]{border:16px solid #f5f5f5;border-top:16px solid #4e6470;border-radius:50%;margin:30px auto 30px auto;width:120px;height:120px;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.loading[_ngcontent-c0]   p[_ngcontent-c0]{font-size:smaller}</style><link rel="stylesheet" type="text/css" href="./magic-sauce_files/dark-bottom.css"><style>h2[_ngcontent-c2]{display:block;text-align:center;margin-bottom:30px}h2[_ngcontent-c2], h3[_ngcontent-c2]{font-size:24px;font-weight:400}h3[_ngcontent-c2]{padding-bottom:14px;border-bottom:1px dotted rgba(0,0,0,.5);text-align:left;margin-bottom:60px}h3[_ngcontent-c2]   a[_ngcontent-c2]{float:right}@media (max-width:449px){h3[_ngcontent-c2]   a[_ngcontent-c2]{display:block;float:none;margin-top:10px}}.age[_ngcontent-c2]{text-align:center}.age[_ngcontent-c2]   .value[_ngcontent-c2]{color:#181a27;font-size:5em;font-weight:400}.sexual-preference[_ngcontent-c2]{text-align:center}.sexual-preference[_ngcontent-c2]   .btn-group[_ngcontent-c2]{margin-bottom:20px;padding-bottom:20px}.interpretations[_ngcontent-c2]{margin-bottom:20px;background-color:#f5f5f5;text-align:left;padding:20px;margin-top:20px!important;font-size:13px}.interpretations[_ngcontent-c2]   p[_ngcontent-c2]{padding:0}.interpretations[_ngcontent-c2]   h4[_ngcontent-c2]{font-size:16px}</style><style>[_nghost-c5]   p[_ngcontent-c5]{margin-top:1em;font-size:13px}[_nghost-c5]   p[_ngcontent-c5]   em[_ngcontent-c5]{font-weight:700}</style><style>[_nghost-c4]{display:block;width:100%;margin-top:48px;margin-bottom:10px;position:relative}[_nghost-c4]:after{content:"";clear:both;display:table}[_nghost-c4]   .average[_ngcontent-c4]{border-left:1px dashed rgba(0,0,0,.5);position:absolute;left:50%;z-index:1;width:1px;margin-left:-1px;height:110%;top:-6%}[_nghost-c4]   .average[_ngcontent-c4] > div[_ngcontent-c4]{margin:-23px;font-size:14px;color:rgba(0,0,0,.5);margin:-28px -45px;width:100px}[_nghost-c4]   ul[_ngcontent-c4]{width:48%;text-align:left;margin:0 auto;padding:0}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]{display:block;height:55px;margin-top:24px}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .row-label[_ngcontent-c4]{color:rgba(0,0,0,.5);font-size:14px;padding-bottom:2rem;display:none}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]:first-child{margin-top:0}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .bar[_ngcontent-c4]{height:100%}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .label[_ngcontent-c4]{padding-left:5px;position:absolute;top:-3px;line-height:18px}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4], [_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]{height:30px;width:50%;position:relative}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .bar[_ngcontent-c4], [_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .bar[_ngcontent-c4]{display:inline-block}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .bar[_ngcontent-c4]   .value[_ngcontent-c4], [_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .bar[_ngcontent-c4]   .value[_ngcontent-c4]{position:absolute;height:24px;top:-16px;font-size:14px;margin-top:-3px}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .label[_ngcontent-c4], [_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .label[_ngcontent-c4]{position:absolute;top:0;color:rgba(0,0,0,.5)}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]{float:left;text-align:right;background:#f5f5f5}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .bar[_ngcontent-c4]{background:#4e6470}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .bar[_ngcontent-c4]   .value[_ngcontent-c4]{border-right:1px solid;margin-right:-1px;right:0;padding-right:4px;border-color:#4e6470;color:#4e6470}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .label[_ngcontent-c4]{padding-right:5px;right:100%}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative.active[_ngcontent-c4]   .label[_ngcontent-c4]{color:#4e6470}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]{float:right;text-align:left;background:#f5f5f5}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .bar[_ngcontent-c4]{background:#61da7d}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .bar[_ngcontent-c4]   .value[_ngcontent-c4]{border-left:1px solid;margin-left:-1px;left:0;padding-left:4px;border-color:#61da7d;color:#61da7d}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .label[_ngcontent-c4]{left:100%;padding-left:5px}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive.active[_ngcontent-c4]   .label[_ngcontent-c4]{color:#61da7d}@media (max-width:767px){[_nghost-c4]   ul[_ngcontent-c4]{width:98%}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .row-label[_ngcontent-c4]{display:block}[_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .negative[_ngcontent-c4]   .label[_ngcontent-c4], [_nghost-c4]   ul[_ngcontent-c4]   li[_ngcontent-c4]   .positive[_ngcontent-c4]   .label[_ngcontent-c4]{display:none}}</style><style>[_nghost-c6]{display:block;margin-top:46px;margin-bottom:10px}[_nghost-c6] > div[_ngcontent-c6]{margin:auto;position:relative}[_nghost-c6]   .overlay[_ngcontent-c6]{position:absolute;top:0;left:0;height:100%;width:100%;z-index:2}[_nghost-c6]   .overlay[_ngcontent-c6]   .icon-negative[_ngcontent-c6], [_nghost-c6]   .overlay[_ngcontent-c6]   .icon-positive[_ngcontent-c6]{top:38%;position:absolute}[_nghost-c6]   .overlay[_ngcontent-c6]   .icon-positive[_ngcontent-c6]{left:25%;color:rgba(0,0,0,.5);font-size:50px}[_nghost-c6]   .overlay[_ngcontent-c6]   .icon-negative[_ngcontent-c6]{right:30%;color:rgba(0,0,0,.5);font-size:50px}[_nghost-c6]   .overlay[_ngcontent-c6]   .average[_ngcontent-c6]{border-left:1px dashed rgba(0,0,0,.5);height:110%;position:absolute;left:50%;top:-5%;width:1px}[_nghost-c6]   .overlay[_ngcontent-c6]   .average[_ngcontent-c6] > div[_ngcontent-c6]{margin:-23px;font-size:14px;color:rgba(0,0,0,.5)}[_nghost-c6]   .overlay[_ngcontent-c6]   .summary[_ngcontent-c6]{padding:10px;color:#181a27;margin:20% 0 0 0;text-align:center;font-size:24px;font-weight:700}[_nghost-c6]   svg[_ngcontent-c6]   path[_ngcontent-c6]{z-index:4;stroke:#f5f5f5}[_nghost-c6]   svg[_ngcontent-c6]   path.base[_ngcontent-c6]{fill:#f5f5f5}[_nghost-c6]   .legend[_ngcontent-c6]{padding:30px 0;width:100%;margin:0 auto}[_nghost-c6]   .legend[_ngcontent-c6]   ul[_ngcontent-c6]{list-style-type:none;padding:0;margin:0;text-align:center}[_nghost-c6]   .legend[_ngcontent-c6]   ul[_ngcontent-c6]   li[_ngcontent-c6]{display:inline-block;padding:8px;color:rgba(0,0,0,.5);font-size:14px}[_nghost-c6]   .legend[_ngcontent-c6]   ul[_ngcontent-c6]   li[_ngcontent-c6] > span[_ngcontent-c6]{white-space:nowrap}[_nghost-c6]   .legend[_ngcontent-c6]   ul[_ngcontent-c6]   li[_ngcontent-c6]   .box[_ngcontent-c6]{display:inline-block;width:10px;height:10px;margin:4px 8px 0 0}[_nghost-c6]   .value-0[_ngcontent-c6]{color:#4e6470;fill:#4e6470;background:#4e6470}[_nghost-c6]   .value-1[_ngcontent-c6]{color:#b4cdd7;fill:#b4cdd7;background:#b4cdd7}[_nghost-c6]   .value-2[_ngcontent-c6]{color:#61da7d;fill:#61da7d;background:#61da7d}[_nghost-c6]   .value-3[_ngcontent-c6]{color:#beffcd;fill:#beffcd;background:#beffcd}[_nghost-c6]   .value-4[_ngcontent-c6]{color:#1a95c7;fill:#1a95c7;background:#1a95c7}[_nghost-c6]   .value-5[_ngcontent-c6]{color:#999;fill:#999;background:#999}</style><style>[_nghost-c8]{display:block;width:100%;margin-top:48px;margin-bottom:10px;position:relative}[_nghost-c8]   ul[_ngcontent-c8]{text-align:left;margin:0 auto;padding:0}[_nghost-c8]   ul[_ngcontent-c8]   li[_ngcontent-c8]{display:block;height:35px}[_nghost-c8]   ul[_ngcontent-c8]   li[_ngcontent-c8]:first-child{margin-top:0}[_nghost-c8]   ul[_ngcontent-c8]   li[_ngcontent-c8] > div[_ngcontent-c8]{height:30px;width:50%;position:relative;float:right;text-align:left}[_nghost-c8]   ul[_ngcontent-c8]   li[_ngcontent-c8] > div[_ngcontent-c8]   .bar[_ngcontent-c8]{background:#4e6470;display:inline-block;height:30px}[_nghost-c8]   ul[_ngcontent-c8]   li[_ngcontent-c8] > div[_ngcontent-c8]   .bar[_ngcontent-c8]   .value[_ngcontent-c8]{position:absolute;height:24px;top:5px;left:0;padding-left:5px;border-color:#4e6470;color:rgba(0,0,0,.5)}[_nghost-c8]   ul[_ngcontent-c8]   li[_ngcontent-c8] > div[_ngcontent-c8]   .label[_ngcontent-c8]{position:absolute;top:5px;color:rgba(0,0,0,.5);padding-right:10px;line-height:18px;width:55%;right:100%;text-align:right}</style><style>[_nghost-c9]{display:inline-block;font-size:13px}[_nghost-c9]   img[_ngcontent-c9]{margin:0 16px 0 16px}</style><style>h2[_ngcontent-c3]{display:block;text-align:center;margin-bottom:30px}h2[_ngcontent-c3], h3[_ngcontent-c3]{font-size:24px;font-weight:400}h3[_ngcontent-c3]{padding-bottom:14px;border-bottom:1px dotted rgba(0,0,0,.5);text-align:left;margin-bottom:60px}h3[_ngcontent-c3]   a[_ngcontent-c3]{float:right}@media (max-width:449px){h3[_ngcontent-c3]   a[_ngcontent-c3]{display:block;float:none;margin-top:10px}}.age[_ngcontent-c3]{text-align:center}.age[_ngcontent-c3]   .value[_ngcontent-c3]{color:#181a27;font-size:5em;font-weight:400}.sexual-preference[_ngcontent-c3]{text-align:center}.sexual-preference[_ngcontent-c3]   .btn-group[_ngcontent-c3]{margin-bottom:20px;padding-bottom:20px}.interpretations[_ngcontent-c3]{margin-bottom:20px;background-color:#f5f5f5;text-align:left;padding:20px;margin-top:20px!important;font-size:13px}.interpretations[_ngcontent-c3]   p[_ngcontent-c3]{padding:0}.interpretations[_ngcontent-c3]   h4[_ngcontent-c3]{font-size:16px}</style><style>h2[_ngcontent-c1]{display:block;text-align:center;margin-bottom:30px}h2[_ngcontent-c1], h3[_ngcontent-c1]{font-size:24px;font-weight:400}h3[_ngcontent-c1]{padding-bottom:14px;border-bottom:1px dotted rgba(0,0,0,.5);text-align:left;margin-bottom:60px}h3[_ngcontent-c1]   a[_ngcontent-c1]{float:right}@media (max-width:449px){h3[_ngcontent-c1]   a[_ngcontent-c1]{display:block;float:none;margin-top:10px}}.age[_ngcontent-c1]{text-align:center}.age[_ngcontent-c1]   .value[_ngcontent-c1]{color:#181a27;font-size:5em;font-weight:400}.sexual-preference[_ngcontent-c1]{text-align:center}.sexual-preference[_ngcontent-c1]   .btn-group[_ngcontent-c1]{margin-bottom:20px;padding-bottom:20px}.interpretations[_ngcontent-c1]{margin-bottom:20px;background-color:#f5f5f5;text-align:left;padding:20px;margin-top:20px!important;font-size:13px}.interpretations[_ngcontent-c1]   p[_ngcontent-c1]{padding:0}.interpretations[_ngcontent-c1]   h4[_ngcontent-c1]{font-size:16px}</style><style>[_nghost-c7]{display:block;font-size:1.5em;color:#f5f5f5}[_nghost-c7]   .icon[_ngcontent-c7]{width:20px}[_nghost-c7]   .value[_ngcontent-c7]{color:#4e6470}</style></head>
+<body class="white">
+
+<header>
+    <a class="logo" href="https://applymagicsauce.com/">
+        <img src="./magic-sauce_files/tpc_logo.svg" class="pull-left" alt="The Psychometrics Centre - Apply Magic Souce">
+    </a>
+    <nav class="navbar main-menu pull-right">
+        <button class="visible-xs" onclick="document.getElementById(&#39;menu&#39;).classList.toggle(&#39;hidden-xs&#39;);">Menu
+        </button>
+        <div id="menu" class="hidden-xs">
+<!--suppress HtmlUnknownTarget -->
+<ul class="nav navbar-nav" role="navigation">
+    <li class="active">
+        <a href="https://applymagicsauce.com/">You</a>
+    </li>
+    <li>
+        <a href="https://applymagicsauce.com/about_us.html">About Us</a>
+    </li>
+    <li>
+        <a href="https://applymagicsauce.com/research.html">Research</a>
+    </li>
+    <li>
+        <a href="https://applymagicsauce.com/business.html">Business</a>
+    </li>
+    <li>
+        <a href="https://applymagicsauce.com/documentation.html">Documentation</a>
+    </li>
+    <li>
+        <a href="https://applymagicsauce.com/contact_us.html">Contact Us</a>
+    </li>
+</ul>
+        </div>
+    </nav>
+</header>
+
+<div class="content-background solid">
+    <div class="content" role="main">
+        <div id="ie" class="alert alert-danger" style="display: none">
+            <h2>You are using Microsoft Internet Explorer</h2>
+            <p>It is currently not supported because it lacks some capabilities modern browsers have.
+                If you continue browsing with it this website may behave in unpredictable manner.
+                Please use any modern browser, i.e. Chrome, Edge (bundled with Windows), Firefox and likes. We are sorry
+                for any inconvenience.</p>
+        </div>
+        <script>
+            if (window.navigator.userAgent.indexOf("MSIE") > 0) {
+                document.getElementById('ie').style.display = 'block';
+            }
+        </script>
+        <noscript>
+            &lt;div class="alert alert-danger"&gt;
+                &lt;h2&gt;No JavaScript support enabled :(&lt;/h2&gt;
+                &lt;p&gt;This page requires JavaScript, please make sure you have it turned on in your browser settings.&lt;/p&gt;
+            &lt;/div&gt;
+        </noscript>
+<app-demo ng-version="4.2.2"><prediction _nghost-c0=""><!---->
+
+<ul _ngcontent-c0="" class="nav nav-tabs">
+  <li _ngcontent-c0="" class="active"><a _ngcontent-c0="" href="https://applymagicsauce.com/prediction.html#">All sources</a></li>
+  <li _ngcontent-c0="" class=""><a _ngcontent-c0="" href="https://applymagicsauce.com/prediction.html#"><i _ngcontent-c0="" class="fa fa-facebook-square"></i> Likes</a>
+  </li>
+  <li _ngcontent-c0=""><a _ngcontent-c0="" href="https://applymagicsauce.com/prediction.html#"><i _ngcontent-c0="" class="fa fa-facebook-square"></i> Posts</a>
+  </li>
+  <li _ngcontent-c0=""><a _ngcontent-c0="" href="https://applymagicsauce.com/prediction.html#"><i _ngcontent-c0="" class="fa fa-twitter-square"></i>
+    Tweets</a></li>
+</ul>
+
+<div _ngcontent-c0="" class="tab">
+  <!---->
+
+  <div _ngcontent-c0="" class="loading" hidden="">
+    <div _ngcontent-c0="" class="spinner"></div>
+    <p _ngcontent-c0="">Getting Facebook likes... 689 <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Getting tweets... 749 <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Getting Facebook posts... 9460 <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Processing received likes... <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Processing received posts... <span _ngcontent-c0="" hidden="">OK</span></p>
+    <p _ngcontent-c0="">Processing received tweets... <span _ngcontent-c0="">OK</span></p>
+  </div>
+
+  <!----><div _ngcontent-c0="">
+    <report _ngcontent-c0="" _nghost-c1=""><!----><div _ngcontent-c1="" class="container-fluid">
+  <h2 _ngcontent-c1="">The following prediction is based on
+    <strong>689</strong> Facebook likes, <strong>9460</strong> Facebook posts
+    and <strong>749</strong> tweets</h2>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-6 age">
+      <h3 _ngcontent-c1="">Age</h3>
+      <span _ngcontent-c1="" class="value">30</span>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that your online behaviour resembles that of a 30-39 years old</div>
+    </div>
+
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Psychological Gender</h3>
+      <bipolar-chart _ngcontent-c1="" _nghost-c4=""><div _ngcontent-c4="" class="average">
+  <div _ngcontent-c4="">Average (50%)</div>
+</div>
+<ul _ngcontent-c4="">
+  <!----><li _ngcontent-c4="">
+    <!---->
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 19.5783%;">
+        <div _ngcontent-c4="" class="value" style="right: 19.5783%;">
+          40%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Masculine</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Feminine</div>
+    </div>
+  </li>
+</ul>
+</bipolar-chart>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint is fairly androgynous; it suggests you’re probably Male but you don’t repress your feminine side</div>
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-12">
+      <h3 _ngcontent-c1="">
+        Big 5 Personality
+        <small _ngcontent-c1="" class="hidden-xs">(Predictions are expressed as percentiles)</small>
+        <a _ngcontent-c1="" class="btn btn-primary" href="https://discovermyprofile.com/personality.html?utm_source=ams" target="_blank">Take personality test</a>
+      </h3>
+      <bipolar-chart _ngcontent-c1="" _nghost-c4=""><div _ngcontent-c4="" class="average">
+  <div _ngcontent-c4="">Average (50%)</div>
+</div>
+<ul _ngcontent-c4="">
+  <!----><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Openness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative">
+      <!---->
+      <div _ngcontent-c4="" class="label">Conservative and Traditional</div>
+    </div>
+    <div _ngcontent-c4="" class="positive active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 59.6925%;">
+        <div _ngcontent-c4="" class="value" style="left: 59.6925%;">
+          80%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Liberal and Artistic</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Conscientiousness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 44.1751%;">
+        <div _ngcontent-c4="" class="value" style="right: 44.1751%;">
+          28%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Impulsive and Spontaneous</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Organized and Hard Working</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Extraversion</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 57.4154%;">
+        <div _ngcontent-c4="" class="value" style="right: 57.4154%;">
+          21%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Contemplative</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Engaged with outside world</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Agreeableness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 27.4845%;">
+        <div _ngcontent-c4="" class="value" style="right: 27.4845%;">
+          36%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Competitive</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Team working and Trusting</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Neuroticism</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 9.31919%;">
+        <div _ngcontent-c4="" class="value" style="right: 9.31919%;">
+          45%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Laid back and Relaxed</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Easily Stressed and Emotional</div>
+    </div>
+  </li>
+</ul>
+</bipolar-chart>
+      <div _ngcontent-c1="" class="interpretations">
+        <h4 _ngcontent-c1="">Openness to experience describes a dimension of personality that distinguishes imaginative,
+          creative people from down-to-earth, conventional people.</h4>
+        <div _ngcontent-c1="">Your digital footprint suggests that you are far more intellectually curious and sensitive to beauty than most. You might say that your beliefs are individualistic and frequently drift towards the unconventional, and that you enjoy your imagination and the exciting places it takes you!</div>
+        <h4 _ngcontent-c1="">Conscientiousness concerns the way in which we control, regulate, and direct our
+          impulses.</h4>
+        <div _ngcontent-c1="">Your digital footprint suggests that you are spontaneous and fun. You like to do unexpected things that make life that bit more interesting. You might say that you aren’t completely unreliable, but you’ve been known to slip up on occasion.</div>
+        <h4 _ngcontent-c1="">Extraversion is marked by pronounced engagement with the external world, versus being
+          comfortable with your own company.</h4>
+        <div _ngcontent-c1="">Your digital footprint suggests that you are similar to people who prefer low-key social occasions, with a few close friends. You might say that it’s not that you are afraid of large parties; they’re just not that fun for you.</div>
+        <h4 _ngcontent-c1="">Agreeableness reflects individual differences in concern with cooperation and social
+          harmony.</h4>
+        <div _ngcontent-c1="">Your digital footprint suggests that you can find it difficult to get along with others when you first meet them. You might be suspicious of others’ motives in this situation. It also looks like people warm to you over time, and you to them, although that doesn’t stop you telling them "how it is".</div>
+        <h4 _ngcontent-c1="">Neuroticism refers to the tendency to experience negative emotions.</h4>
+        <div _ngcontent-c1="">Your digital footprint suggests that you are generally calm. You come across as someone who can feel emotional or stressed out by some experiences, but your feelings tend to be warranted by the situation.</div>
+      </div>
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Intelligence <a _ngcontent-c1="" class="btn btn-primary" href="https://discovermyprofile.com/myIQ.html?utm_source=ams" target="_blank">Take IQ test</a></h3>
+      <doughnut-chart _ngcontent-c1="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-graduation-cap"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-user"></div>
+    <div _ngcontent-c6="" class="summary">
+      90%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 1 1 64.25927860653832 26.92064066250272 L 85.9802613595486 58.100745028002024 A 112 112 0 1 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <div _ngcontent-c1="" class="interpretations">People with a similar digital footprint to you tend to be highly intelligent.</div>
+    </div>
+
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Life Satisfaction <a _ngcontent-c1="" class="btn btn-primary" href="https://discovermyprofile.com/dienerswl.html?utm_source=ams" target="_blank">Take satisfaction test</a></h3>
+      <doughnut-chart _ngcontent-c1="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-smile-o"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-frown-o"></div>
+    <div _ngcontent-c6="" class="summary">
+      67%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 1 1 20.02738014616392 224.88069236011518 L 52.9537771758024 205.91091696221935 A 112 112 0 1 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that you are very aware of the areas in your life that need improvement. You find growth and challenge is not always easy but is still important to your overall feelings of satisfaction and accomplishment. Life is enjoyable but not without its struggles.</div>
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">
+        Leadership Potential
+        <i _ngcontent-c1="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <doughnut-chart _ngcontent-c1="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-users"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-user"></div>
+    <div _ngcontent-c6="" class="summary">
+      47%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 178.7844963603639 297.21227112330075 L 171.4924239490717 259.91849577206455 A 112 112 0 0 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <!---->
+    </div>
+
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">
+        Jungian Personality Type
+        <i _ngcontent-c1="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <div _ngcontent-c1="" class="interpretations"><h4>Introverted iNtuitive Thinking Perceiving</h4><p>INTPs are quiet, thoughtful, analytical individuals who don’t mind spending long periods of time on their own, working through problems and forming solutions. INTPs tend to be less at ease in social situations and the "caring professions" although they enjoy the company of those who share their interests. They also tend to be impatient with the bureaucracy, rigid hierarchies, and politics prevalent in many professions, preferring to work informally with others as equals.</p><p>INTPs’ extraverted intuition often gives them a quick wit, especially with language, and they can defuse the tension in gatherings by comical observations and references. They can be charming, even in their quiet reserve, and are sometimes surprised by the high esteem in which their friends and colleagues hold them.</p></div>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-12 sexual-preference">
+      <h3 _ngcontent-c1="">Sexual Preference</h3>
+      <div _ngcontent-c1="" class="btn-group">
+        <button _ngcontent-c1="" class="btn btn-default" type="button">
+          <span _ngcontent-c1="" aria-hidden="true" class="fa fa-male"></span> Male
+        </button>
+        <button _ngcontent-c1="" class="btn btn-default" type="button">
+          <span _ngcontent-c1="" aria-hidden="true" class="fa fa-female"></span> Female
+        </button>
+      </div>
+      <!---->
+      <!----><div _ngcontent-c1="">
+        <population-chart _ngcontent-c1="" _nghost-c7=""><!----><span _ngcontent-c7="" class="icon fa fa-male value" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!----><span _ngcontent-c7="" class="icon fa fa-male" container="body"></span><!---->
+<!---->
+</population-chart>
+        <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that you are very unlikely to be gay.</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Political Orientation</h3>
+      <doughnut-chart _ngcontent-c1="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150 150 A 0 0 0 1 0 150 150 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 260.6265166123927 251.3004137316724 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 260.6265166123927 251.3004137316724 A 150 150 0 0 1 5.120371698905615 188.857345551861 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-1" order="1">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 5.120371698905615 188.857345551861 A 150 150 0 0 1 84.45280930691035 15.079409309610043 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-2" order="2">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 84.45280930691035 15.079409309610043 A 150 150 0 0 1 149.99999999999997 0 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-3" order="3">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!----><div _ngcontent-c6="" class="legend">
+    <ul _ngcontent-c6="">
+      <!----><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-0"></span>Liberal (37%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-1"></span>Libertarian (34%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-2"></span>Uninvolved (22%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-3"></span>Conservative (7%)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</doughnut-chart>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that you have Libertarian political views, these are based on the principle of individual freedom and autonomy. Contemporary Libertarians tend to support free-market capitalism with low regulation, low taxes, and a smaller state in general which provides less in the way of social welfare programs.</div>
+    </div>
+
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Religious Orientation</h3>
+      <doughnut-chart _ngcontent-c1="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150 150 A 0 0 0 1 0 150 150 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 1 1 13.78342348010699 87.19041250573176 L 150 150 A 0 0 0 1 0 150 150 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 13.78342348010699 87.19041250573176 A 150 150 0 0 1 58.047864861253444 31.48922056021364 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-1" order="1">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 58.047864861253444 31.48922056021364 A 150 150 0 0 1 113.52507482412025 4.5023029961849375 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-2" order="2">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 113.52507482412025 4.5023029961849375 A 150 150 0 0 1 137.7308518764705 0.5026153930347448 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-3" order="3">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 137.7308518764705 0.5026153930347448 A 150 150 0 0 1 145.91444682630043 0.055649471996190414 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-4" order="4">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 145.91444682630043 0.055649471996190414 A 150 150 0 0 1 149.99999999999983 0 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-5" order="5">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!----><div _ngcontent-c6="" class="legend">
+    <ul _ngcontent-c6="">
+      <!----><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-0"></span>None (82%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-1"></span>Other Christian (8%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-2"></span>Catholic (7%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-3"></span>Jewish (3%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-4"></span>Lutheran (1%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-5"></span>Mormon (0%)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</doughnut-chart>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that you do not hold any of the religious views for which specific predictions are made. You fall into the “Other” category, which includes Atheists, Agnostics, Buddhists, Muslims, Jedis and Pastafarians.</div>
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Education</h3>
+      <bar-chart _ngcontent-c1="" _nghost-c8=""><ul _ngcontent-c8="">
+  <!----><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 42.0409%;">
+        <div _ngcontent-c8="" class="value" style="left: 42.0409%;">42%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Art</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 23.8794%;">
+        <div _ngcontent-c8="" class="value" style="left: 23.8794%;">24%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Psychology</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 9.05219%;">
+        <div _ngcontent-c8="" class="value" style="left: 9.05219%;">9%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Journalism</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 6.39112%;">
+        <div _ngcontent-c8="" class="value" style="left: 6.39112%;">6%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">IT</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 3.00482%;">
+        <div _ngcontent-c8="" class="value" style="left: 3.00482%;">3%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">History</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.76101%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.76101%;">2%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Education</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.61835%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.61835%;">2%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Finance</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 3.27391%;">
+        <div _ngcontent-c8="" class="value" style="left: 3.27391%;">3%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Biology</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 3.56819%;">
+        <div _ngcontent-c8="" class="value" style="left: 3.56819%;">4%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Engineering</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.33812%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.33812%;">1%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Nursing</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.14784%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.14784%;">1%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Law</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 2.9242%;">
+        <div _ngcontent-c8="" class="value" style="left: 2.9242%;">3%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Business</div>
+    </div>
+  </li>
+</ul>
+</bar-chart>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that you have a strong interest in Art. We would predict that you either paint, draw or sculpt yourself or are likely to enjoy and appreciate the creativity of others. More so than most, you can see the beauty in things and actively seek out artistic stimulation.</div>
+    </div>
+
+    <!----><div _ngcontent-c1="" class="col-md-6">
+      <h3 _ngcontent-c1="">Relationship Status</h3>
+      <doughnut-chart _ngcontent-c1="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150 150 A 0 0 0 1 0 150 150 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 243.7567099552628 267.0883398907198 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 243.7567099552628 267.0883398907198 A 150 150 0 0 1 0.2314153550734659 158.3289287099529 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-1" order="1">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 0.2314153550734659 158.3289287099529 A 150 150 0 0 1 149.99999999999997 0 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-2" order="2">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!----><div _ngcontent-c6="" class="legend">
+    <ul _ngcontent-c6="">
+      <!----><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-0"></span>Single (39%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-1"></span>Married (35%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-2"></span>In a relationship (26%)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</doughnut-chart>
+      <div _ngcontent-c1="" class="interpretations">Your digital footprint suggests that you are married.</div>
+    </div>
+  </div>
+
+  <div _ngcontent-c1="" class="row">
+    <div _ngcontent-c1="" class="col-md-6 col-md-offset-3">
+      <a _ngcontent-c1="" class="btn btn-conversion" href="https://discovermyprofile.com/?utm_source=ams" target="_blank">Take more
+        psychometrics
+        tests</a>
+    </div>
+  </div>
+</div>
+</report>
+  </div>
+</div>
+
+<div _ngcontent-c0="" class="tab" hidden="">
+  <!---->
+
+  <!---->
+
+  <!---->
+
+  <!---->
+
+  <div _ngcontent-c0="" class="loading" hidden="">
+    <div _ngcontent-c0="" class="spinner"></div>
+    <p _ngcontent-c0="">Getting Facebook likes... 689 <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Processing received likes... <span _ngcontent-c0="">OK</span></p>
+  </div>
+
+  <!----><div _ngcontent-c0="">
+    <likes-report _ngcontent-c0="" _nghost-c2=""><!----><div _ngcontent-c2="" class="container-fluid">
+  <h2 _ngcontent-c2="">The following prediction is based on
+    <strong>689</strong> Facebook likes, from which <strong>168</strong>
+    were used</h2>
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-12">
+      <h3 _ngcontent-c2="">
+        Psychological Gender
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <bipolar-chart _ngcontent-c2="" _nghost-c4=""><div _ngcontent-c4="" class="average">
+  <div _ngcontent-c4="">Average (50%)</div>
+</div>
+<ul _ngcontent-c4="">
+  <!----><li _ngcontent-c4="">
+    <!---->
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative">
+      <!---->
+      <div _ngcontent-c4="" class="label">Masculine</div>
+    </div>
+    <div _ngcontent-c4="" class="positive active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 31.1933%;">
+        <div _ngcontent-c4="" class="value" style="left: 31.1933%;">
+          66%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Feminine</div>
+    </div>
+  </li>
+</ul>
+</bipolar-chart>
+      <div _ngcontent-c2="" class="interpretations">Your digital footprint suggests that you are Female</div>
+    </div>
+    <!---->
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <div _ngcontent-c2="" class="col-md-6">
+      <div _ngcontent-c2="" class="contributors">
+        <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!---->
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more masculine:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image.php" alt="Singing"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/11949395_1027234130654216_4434753143712839386_n.jpg" alt="College GameDay"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(1).php" alt="Guitar"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      </div>
+    </div>
+    <div _ngcontent-c2="" class="col-md-6">
+      <div _ngcontent-c2="" class="contributors">
+        <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more feminine:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/19225723_10155114877110845_1656584509652358278_n.jpg" alt="Janis Joplin"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(2).php" alt="Animals"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(3).php" alt="Drawing"></like-contributor>
+    </div>
+
+    <!---->
+
+  </div>
+</div>
+</like-contributors>
+      </div>
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-12">
+      <h3 _ngcontent-c2="">
+        Big 5 Personality
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+        <small _ngcontent-c2="" class="hidden-xs">(Predictions are expressed as percentiles)</small>
+        <a _ngcontent-c2="" class="btn btn-primary" href="https://discovermyprofile.com/personality.html?utm_source=ams" target="_blank">Take personality test</a>
+      </h3>
+      <bipolar-chart _ngcontent-c2="" _nghost-c4=""><div _ngcontent-c4="" class="average">
+  <div _ngcontent-c4="">Average (50%)</div>
+</div>
+<ul _ngcontent-c4="">
+  <!----><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Openness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative">
+      <!---->
+      <div _ngcontent-c4="" class="label">Conservative and Traditional</div>
+    </div>
+    <div _ngcontent-c4="" class="positive active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 91.8251%;">
+        <div _ngcontent-c4="" class="value" style="left: 91.8251%;">
+          96%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Liberal and Artistic</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Conscientiousness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 77.1502%;">
+        <div _ngcontent-c4="" class="value" style="right: 77.1502%;">
+          11%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Impulsive and Spontaneous</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Organized and Hard Working</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Extraversion</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 87.7507%;">
+        <div _ngcontent-c4="" class="value" style="right: 87.7507%;">
+          6%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Contemplative</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Engaged with outside world</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Agreeableness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 42.729%;">
+        <div _ngcontent-c4="" class="value" style="right: 42.729%;">
+          29%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Competitive</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Team working and Trusting</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Neuroticism</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 8.01837%;">
+        <div _ngcontent-c4="" class="value" style="right: 8.01837%;">
+          46%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Laid back and Relaxed</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Easily Stressed and Emotional</div>
+    </div>
+  </li>
+</ul>
+</bipolar-chart>
+
+      <div _ngcontent-c2="" class="interpretations">
+        <h4 _ngcontent-c2="">Openness to experience describes a dimension of personality that distinguishes imaginative,
+          creative people from down-to-earth, conventional people.</h4>
+        <div _ngcontent-c2="">Your digital footprint suggests that you are far more intellectually curious and sensitive to beauty than most. You might say that your beliefs are individualistic and frequently drift towards the unconventional, and that you enjoy your imagination and the exciting places it takes you!</div>
+        <h4 _ngcontent-c2="">Conscientiousness concerns the way in which we control, regulate, and direct our
+          impulses.</h4>
+        <div _ngcontent-c2="">Your digital footprint suggests that you are impulsive and whimsical, and are fine with it! It appears that you would say that sometimes decisions need to be made quickly, and that you make them quicker than most! You would say you are zany, colourful, and just generally great fun to be with... as long as someone isn’t relying on you to get some work done.</div>
+        <h4 _ngcontent-c2="">Extraversion is marked by pronounced engagement with the external world, versus being
+          comfortable with your own company.</h4>
+        <div _ngcontent-c2="">Your digital footprint suggests that you are quiet and somewhat withdrawn. It describes you as someone who doesn’t need lots of other people around to have fun, and can sometimes find that people are tiring.</div>
+        <h4 _ngcontent-c2="">Agreeableness reflects individual differences in concern with cooperation and social
+          harmony.</h4>
+        <div _ngcontent-c2="">Your digital footprint suggests that you can find it difficult to get along with others when you first meet them. You might be suspicious of others’ motives in this situation. It also looks like people warm to you over time, and you to them, although that doesn’t stop you telling them "how it is".</div>
+        <h4 _ngcontent-c2="">Neuroticism refers to the tendency to experience negative emotions.</h4>
+        <div _ngcontent-c2="">Your digital footprint suggests that you are generally calm. You come across as someone who can feel emotional or stressed out by some experiences, but your feelings tend to be warranted by the situation.</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row contributors">
+    <div _ngcontent-c2="" class="col-md-6">
+      <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!---->
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">conservative and traditional:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/602702_10151374068075874_1524610446_n.jpg" alt="The Soup"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(4).php" alt="Sleeping"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!---->
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">impulsive and spontaneous:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/12800215_10154100277234236_5191319147247850476_n.jpg" alt="Flight of the Conchords"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/66953_10150275009620527_8196105_n.jpg" alt="Nirvana"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/552764_10150780180844485_1390212089_n.jpg" alt="The Clash"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!---->
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">contemplative:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/66953_10150275009620527_8196105_n.jpg" alt="Nirvana"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(5).php" alt="Photography"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!---->
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">competitive:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!---->
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">laid back and relaxed:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(1).php" alt="Guitar"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/16864894_10154779491076620_6214796848961249309_n.jpg" alt="Futurama"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+    </div>
+    <div _ngcontent-c2="" class="col-md-6">
+      <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">liberal and artistic:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/66953_10150275009620527_8196105_n.jpg" alt="Nirvana"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/385324_10150539552499126_176061734_n.jpg" alt="Tom Waits"></like-contributor>
+    </div>
+
+    <!---->
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">organized and hard working:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/484332_10151603931453140_325125948_n.jpg" alt="Breast Cancer Awareness"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image.php" alt="Singing"></like-contributor>
+    </div>
+
+    <!---->
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">engaged with outside world:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image.php" alt="Singing"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(7).php" alt="Family"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(8).php" alt="Hugging"></like-contributor>
+    </div>
+
+    <!---->
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">team working and trusting:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(7).php" alt="Family"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(9).php" alt="Music"></like-contributor>
+    </div>
+
+    <!---->
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">easily stressed and emotional:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/19225723_10155114877110845_1656584509652358278_n.jpg" alt="Janis Joplin"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/602702_10151374068075874_1524610446_n.jpg" alt="The Soup"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/66953_10150275009620527_8196105_n.jpg" alt="Nirvana"></like-contributor>
+    </div>
+
+    <!---->
+
+  </div>
+</div>
+</like-contributors>
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Intelligence
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+        <a _ngcontent-c2="" class="btn btn-primary" href="https://discovermyprofile.com/myIQ.html?utm_source=ams" target="_blank">Take IQ test</a>
+      </h3>
+      <doughnut-chart _ngcontent-c2="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-graduation-cap"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-user"></div>
+    <div _ngcontent-c6="" class="summary">
+      90%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 1 1 64.25927860653832 26.92064066250272 L 85.9802613595486 58.100745028002024 A 112 112 0 1 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <div _ngcontent-c2="" class="interpretations">People with a similar digital footprint to you tend to be highly intelligent.</div>
+      <div _ngcontent-c2="" class="contributors">
+        <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more intelligent:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(4).php" alt="Sleeping"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(9).php" alt="Music"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less intelligent:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/18199543_10155296116464539_1699739266847169770_n.jpg" alt="The Beatles"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(5).php" alt="Photography"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(7).php" alt="Family"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      </div>
+      <!---->
+    </div>
+
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Life Satisfaction
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+        <a _ngcontent-c2="" class="btn btn-primary" href="https://discovermyprofile.com/dienerswl.html?utm_source=ams" target="_blank">Take satisfaction test</a>
+      </h3>
+      <doughnut-chart _ngcontent-c2="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-smile-o"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-frown-o"></div>
+    <div _ngcontent-c6="" class="summary">
+      67%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 1 1 20.02738014616392 224.88069236011518 L 52.9537771758024 205.91091696221935 A 112 112 0 1 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <div _ngcontent-c2="" class="interpretations">Your digital footprint suggests that you are very aware of the areas in your life that need improvement. You find growth and challenge is not always easy but is still important to your overall feelings of satisfaction and accomplishment. Life is enjoyable but not without its struggles.</div>
+      <div _ngcontent-c2="" class="contributors">
+        <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more satisfied with life:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(5).php" alt="Photography"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less satisfied with life:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/66953_10150275009620527_8196105_n.jpg" alt="Nirvana"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      </div>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Leadership Potential
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <doughnut-chart _ngcontent-c2="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-users"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-user"></div>
+    <div _ngcontent-c6="" class="summary">
+      44%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 203.87650891400864 289.99043462765144 L 190.2277933224598 254.5261911886464 A 112 112 0 0 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <!---->
+    </div>
+
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Jungian Personality Type
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <div _ngcontent-c2="" class="interpretations"><h4>Introverted iNtuitive Thinking Perceiving</h4><p>INTPs are quiet, thoughtful, analytical individuals who don’t mind spending long periods of time on their own, working through problems and forming solutions. INTPs tend to be less at ease in social situations and the "caring professions" although they enjoy the company of those who share their interests. They also tend to be impatient with the bureaucracy, rigid hierarchies, and politics prevalent in many professions, preferring to work informally with others as equals.</p><p>INTPs’ extraverted intuition often gives them a quick wit, especially with language, and they can defuse the tension in gatherings by comical observations and references. They can be charming, even in their quiet reserve, and are sometimes surprised by the high esteem in which their friends and colleagues hold them.</p></div>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-12 sexual-preference">
+      <h3 _ngcontent-c2="">
+        Sexual Preference
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <div _ngcontent-c2="" class="btn-group">
+        <button _ngcontent-c2="" class="btn btn-default" type="button">
+          <span _ngcontent-c2="" aria-hidden="true" class="fa fa-male"></span> Male
+        </button>
+        <button _ngcontent-c2="" class="btn btn-default" type="button">
+          <span _ngcontent-c2="" aria-hidden="true" class="fa fa-female"></span> Female
+        </button>
+      </div>
+      <!----><div _ngcontent-c2="">
+        <small _ngcontent-c2="">(Choose your gender)</small>
+      </div>
+      <!---->
+      <!---->
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Political Orientation
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <doughnut-chart _ngcontent-c2="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150 150 A 0 0 0 1 0 150 150 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 260.6265166123927 251.3004137316724 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 260.6265166123927 251.3004137316724 A 150 150 0 0 1 5.120371698905615 188.857345551861 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-1" order="1">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 5.120371698905615 188.857345551861 A 150 150 0 0 1 84.45280930691035 15.079409309610043 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-2" order="2">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 84.45280930691035 15.079409309610043 A 150 150 0 0 1 149.99999999999997 0 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-3" order="3">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!----><div _ngcontent-c6="" class="legend">
+    <ul _ngcontent-c6="">
+      <!----><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-0"></span>Liberal (37%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-1"></span>Libertarian (34%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-2"></span>Uninvolved (22%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-3"></span>Conservative (7%)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</doughnut-chart>
+      <div _ngcontent-c2="" class="interpretations">Your digital footprint suggests that you have Libertarian political views, these are based on the principle of individual freedom and autonomy. Contemporary Libertarians tend to support free-market capitalism with low regulation, low taxes, and a smaller state in general which provides less in the way of social welfare programs.</div>
+      <div _ngcontent-c2="" class="contributors">
+        <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more libertarian:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/552764_10150780180844485_1390212089_n.jpg" alt="The Clash"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less libertarian:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/484332_10151603931453140_325125948_n.jpg" alt="Breast Cancer Awareness"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/18199543_10155296116464539_1699739266847169770_n.jpg" alt="The Beatles"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less involved in politics:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(9).php" alt="Music"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(5).php" alt="Photography"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more involved in politics:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/18199543_10155296116464539_1699739266847169770_n.jpg" alt="The Beatles"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more liberal:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/552764_10150780180844485_1390212089_n.jpg" alt="The Clash"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/19225723_10155114877110845_1656584509652358278_n.jpg" alt="Janis Joplin"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/1238916_10151850343600379_1732337463_n.jpg" alt="Ramones"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less liberal:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/12803212_10153921946630030_5546119093305615810_n.jpg" alt="Johnny Cash"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(3).php" alt="Drawing"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      </div>
+      <!---->
+    </div>
+
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Religious Orientation
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <doughnut-chart _ngcontent-c2="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150 150 A 0 0 0 1 0 150 150 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 1 1 13.78342348010699 87.19041250573176 L 150 150 A 0 0 0 1 0 150 150 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 13.78342348010699 87.19041250573176 A 150 150 0 0 1 58.047864861253444 31.48922056021364 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-1" order="1">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 58.047864861253444 31.48922056021364 A 150 150 0 0 1 113.52507482412025 4.5023029961849375 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-2" order="2">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 113.52507482412025 4.5023029961849375 A 150 150 0 0 1 137.7308518764705 0.5026153930347448 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-3" order="3">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 137.7308518764705 0.5026153930347448 A 150 150 0 0 1 145.91444682630043 0.055649471996190414 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-4" order="4">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 145.91444682630043 0.055649471996190414 A 150 150 0 0 1 149.99999999999983 0 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-5" order="5">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!----><div _ngcontent-c6="" class="legend">
+    <ul _ngcontent-c6="">
+      <!----><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-0"></span>None (82%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-1"></span>Other Christian (8%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-2"></span>Catholic (7%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-3"></span>Jewish (3%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-4"></span>Lutheran (1%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-5"></span>Mormon (0%)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</doughnut-chart>
+      <div _ngcontent-c2="" class="interpretations">Your digital footprint suggests that you do not hold any of the religious views for which specific predictions are made. You fall into the “Other” category, which includes Atheists, Agnostics, Buddhists, Muslims, Jedis and Pastafarians.</div>
+      <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less religious:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more religious:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image.php" alt="Singing"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/602702_10151374068075874_1524610446_n.jpg" alt="The Soup"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more Jewish:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/521986_10150688717361659_799741146_n.jpg" alt="Grateful Dead"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less Jewish:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/12803212_10153921946630030_5546119093305615810_n.jpg" alt="Johnny Cash"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(3).php" alt="Drawing"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more Lutheran:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20664748_10155495608695030_1366406896125443965_n.png" alt="Happy Facts"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(3).php" alt="Drawing"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less Lutheran:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/1930872_30977602682_2215_n.jpg" alt="The Smiths"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/552764_10150780180844485_1390212089_n.jpg" alt="The Clash"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/1238916_10151850343600379_1732337463_n.jpg" alt="Ramones"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Education
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <bar-chart _ngcontent-c2="" _nghost-c8=""><ul _ngcontent-c8="">
+  <!----><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 42.0409%;">
+        <div _ngcontent-c8="" class="value" style="left: 42.0409%;">42%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Art</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 23.8794%;">
+        <div _ngcontent-c8="" class="value" style="left: 23.8794%;">24%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Psychology</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 9.05219%;">
+        <div _ngcontent-c8="" class="value" style="left: 9.05219%;">9%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Journalism</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 6.39112%;">
+        <div _ngcontent-c8="" class="value" style="left: 6.39112%;">6%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">IT</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 3.00482%;">
+        <div _ngcontent-c8="" class="value" style="left: 3.00482%;">3%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">History</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.76101%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.76101%;">2%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Education</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.61835%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.61835%;">2%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Finance</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 3.27391%;">
+        <div _ngcontent-c8="" class="value" style="left: 3.27391%;">3%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Biology</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 3.56819%;">
+        <div _ngcontent-c8="" class="value" style="left: 3.56819%;">4%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Engineering</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.33812%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.33812%;">1%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Nursing</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 1.14784%;">
+        <div _ngcontent-c8="" class="value" style="left: 1.14784%;">1%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Law</div>
+    </div>
+  </li><li _ngcontent-c8="">
+    <!---->
+    <div _ngcontent-c8="">
+      <div _ngcontent-c8="" class="bar" container="body" style="width: 2.9242%;">
+        <div _ngcontent-c8="" class="value" style="left: 2.9242%;">3%</div>
+      </div>
+      <div _ngcontent-c8="" class="label">Business</div>
+    </div>
+  </li>
+</ul>
+</bar-chart>
+      <div _ngcontent-c2="" class="interpretations">Your digital footprint suggests that you have a strong interest in Art. We would predict that you either paint, draw or sculpt yourself or are likely to enjoy and appreciate the creativity of others. More so than most, you can see the beauty in things and actively seek out artistic stimulation.</div>
+      <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more interested in art:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image.php" alt="Singing"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(9).php" alt="Music"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(3).php" alt="Drawing"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less interested in art:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(4).php" alt="Sleeping"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more interested in psychology:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(6).php" alt="Philosophy"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/16864894_10154779491076620_6214796848961249309_n.jpg" alt="Futurama"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/602702_10151374068075874_1524610446_n.jpg" alt="The Soup"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less interested in psychology:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/521986_10150688717361659_799741146_n.jpg" alt="Grateful Dead"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(7).php" alt="Family"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/19225723_10155114877110845_1656584509652358278_n.jpg" alt="Janis Joplin"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">more interested in IT:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/16864894_10154779491076620_6214796848961249309_n.jpg" alt="Futurama"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">less interested in IT:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(4).php" alt="Sleeping"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/19225723_10155114877110845_1656584509652358278_n.jpg" alt="Janis Joplin"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image.php" alt="Singing"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      <!---->
+    </div>
+
+    <!----><div _ngcontent-c2="" class="col-md-6">
+      <h3 _ngcontent-c2="">
+        Relationship Status
+        <i _ngcontent-c2="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <doughnut-chart _ngcontent-c2="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150 150 A 0 0 0 1 0 150 150 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 243.7567099552628 267.0883398907198 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 243.7567099552628 267.0883398907198 A 150 150 0 0 1 0.2314153550734659 158.3289287099529 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-1" order="1">
+        <!---->
+      </path><!----><path _ngcontent-c6="" container="body" d="M 0.2314153550734659 158.3289287099529 A 150 150 0 0 1 149.99999999999997 0 L 150 150 A 0 0 0 0 0 150 150 Z" stroke-width="0" class="value-2" order="2">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!----><div _ngcontent-c6="" class="legend">
+    <ul _ngcontent-c6="">
+      <!----><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-0"></span>Single (39%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-1"></span>Married (35%)</span>
+      </li><li _ngcontent-c6=""><span _ngcontent-c6=""><span _ngcontent-c6="" class="box value-2"></span>In a relationship (26%)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</doughnut-chart>
+      <div _ngcontent-c2="" class="interpretations">Your digital footprint suggests that you are married.</div>
+      <like-contributors _ngcontent-c2="" _nghost-c5=""><!----><div _ngcontent-c5="">
+  <!----><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">to be married:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/602702_10151374068075874_1524610446_n.jpg" alt="The Soup"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/16864894_10154779491076620_6214796848961249309_n.jpg" alt="Futurama"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">not to be married:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/18199543_10155296116464539_1699739266847169770_n.jpg" alt="The Beatles"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(9).php" alt="Music"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">to be in a relationship:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/20031714_10155354663766221_2733399191170160200_n.jpg" alt="Nine Inch Nails"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(2).php" alt="Animals"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">not to be in a relationship:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21371044_10155273813074678_3727149095414947805_n.png" alt="The Big Bang Theory"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/66953_10150275009620527_8196105_n.jpg" alt="Nirvana"></like-contributor>
+    </div>
+
+  </div><div _ngcontent-c5="" class="contributors">
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">to be single:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/21731098_10154981071477005_4283978764395692234_n.jpg" alt="South Park"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/552764_10150780180844485_1390212089_n.jpg" alt="The Clash"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/1238916_10151850343600379_1732337463_n.jpg" alt="Ramones"></like-contributor>
+    </div>
+
+    <!----><div _ngcontent-c5="">
+      <p _ngcontent-c5="">These Likes make you appear <em _ngcontent-c5="">not to be single:</em></p>
+      <!----><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/558435_10151051163374748_2026711172_n.jpg" alt="The Office"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/18199543_10155296116464539_1699739266847169770_n.jpg" alt="The Beatles"></like-contributor><like-contributor _ngcontent-c5="" _nghost-c9=""><img _ngcontent-c9="" src="./magic-sauce_files/safe_image(8).php" alt="Hugging"></like-contributor>
+    </div>
+
+  </div>
+</div>
+</like-contributors>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <div _ngcontent-c2="" class="col-md-6 col-md-offset-3">
+      <a _ngcontent-c2="" class="btn btn-conversion" href="https://discovermyprofile.com/?utm_source=ams" target="_blank">Take more
+        psychometrics
+        tests</a>
+    </div>
+  </div>
+
+  <div _ngcontent-c2="" class="row">
+    <div _ngcontent-c2="" class="col-md-12">
+      <h3 _ngcontent-c2=""><i _ngcontent-c2="" class="fa fa-arrow-circle-up" role="button"></i> JSON response from relevant Prediction API endpoint</h3>
+      <!---->
+    </div>
+  </div>
+</div>
+</likes-report>
+  </div>
+</div>
+
+<div _ngcontent-c0="" class="tab" hidden="">
+  <!---->
+
+  <!---->
+
+  <!----><alert _ngcontent-c0="" type="warning">
+<!---->
+  <div role="alert" class="alert alert-warning">
+    <!---->
+    
+    <h2 _ngcontent-c0="">We couldn't make this prediction</h2>
+    <p _ngcontent-c0="">This is most likely a problem on our side, i.e. we may be overloaded with incoming traffic or there's scheduled
+      maintenance work on our servers. Rarely, but this may also mean your connectivity to internet is disturbed.</p>
+    <p _ngcontent-c0="">Either way we're sorry and please do try again later. </p>
+  
+  </div>
+
+  </alert>
+
+  <div _ngcontent-c0="" class="loading" hidden="">
+    <div _ngcontent-c0="" class="spinner"></div>
+    <p _ngcontent-c0="">Getting Facebook posts... 9460 <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Processing received posts... <span _ngcontent-c0="" hidden="">OK</span></p>
+  </div>
+
+  <!---->
+</div>
+
+<div _ngcontent-c0="" class="tab" hidden="">
+  <!---->
+
+  <!---->
+
+  <!---->
+
+  <div _ngcontent-c0="" class="loading" hidden="">
+    <div _ngcontent-c0="" class="spinner"></div>
+    <p _ngcontent-c0="">Getting tweets... 749 <span _ngcontent-c0="">OK</span></p>
+    <p _ngcontent-c0="">Processing received tweets... <span _ngcontent-c0="">OK</span></p>
+  </div>
+
+  <!----><div _ngcontent-c0="">
+    <text-report _ngcontent-c0="" _nghost-c3=""><!----><div _ngcontent-c3="" class="container-fluid">
+  <h2 _ngcontent-c3="">The following prediction is based on
+    <strong>749</strong> tweets, from which <strong>70312</strong>
+    bytes of text were used</h2>
+
+  <div _ngcontent-c3="" class="row">
+    <!----><div _ngcontent-c3="" class="col-md-6 age">
+      <h3 _ngcontent-c3="">Age</h3>
+      <span _ngcontent-c3="" class="value">29</span>
+      <div _ngcontent-c3="" class="interpretations">Your digital footprint suggests that your online behaviour resembles that of a 30-39 years old</div>
+    </div>
+
+    <!----><div _ngcontent-c3="" class="col-md-6">
+      <h3 _ngcontent-c3="">Psychological Gender</h3>
+      <bipolar-chart _ngcontent-c3="" _nghost-c4=""><div _ngcontent-c4="" class="average">
+  <div _ngcontent-c4="">Average (50%)</div>
+</div>
+<ul _ngcontent-c4="">
+  <!----><li _ngcontent-c4="">
+    <!---->
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 70.3499%;">
+        <div _ngcontent-c4="" class="value" style="right: 70.3499%;">
+          15%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Masculine</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Feminine</div>
+    </div>
+  </li>
+</ul>
+</bipolar-chart>
+      <div _ngcontent-c3="" class="interpretations">Your digital footprint suggests that you are Male</div>
+    </div>
+  </div>
+
+  <div _ngcontent-c3="" class="row">
+    <!----><div _ngcontent-c3="" class="col-md-12">
+      <h3 _ngcontent-c3="">
+        Big 5 Personality
+        <small _ngcontent-c3="" class="hidden-xs">(Predictions are expressed as percentiles)</small>
+        <a _ngcontent-c3="" class="btn btn-primary" href="https://discovermyprofile.com/personality.html?utm_source=ams" target="_blank">Take personality test</a>
+      </h3>
+      <bipolar-chart _ngcontent-c3="" _nghost-c4=""><div _ngcontent-c4="" class="average">
+  <div _ngcontent-c4="">Average (50%)</div>
+</div>
+<ul _ngcontent-c4="">
+  <!----><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Openness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative">
+      <!---->
+      <div _ngcontent-c4="" class="label">Conservative and Traditional</div>
+    </div>
+    <div _ngcontent-c4="" class="positive active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 27.56%;">
+        <div _ngcontent-c4="" class="value" style="left: 27.56%;">
+          64%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Liberal and Artistic</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Conscientiousness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 11.2%;">
+        <div _ngcontent-c4="" class="value" style="right: 11.2%;">
+          44%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Impulsive and Spontaneous</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Organized and Hard Working</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Extraversion</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 27.08%;">
+        <div _ngcontent-c4="" class="value" style="right: 27.08%;">
+          36%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Contemplative</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Engaged with outside world</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Agreeableness</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 12.24%;">
+        <div _ngcontent-c4="" class="value" style="right: 12.24%;">
+          44%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Competitive</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Team working and Trusting</div>
+    </div>
+  </li><li _ngcontent-c4="">
+    <!----><div _ngcontent-c4="" class="row-label">Neuroticism</div>
+    <!---->
+    <!---->
+    <div _ngcontent-c4="" class="negative active">
+      <!----><div _ngcontent-c4="" class="bar" container="body" style="width: 10.62%;">
+        <div _ngcontent-c4="" class="value" style="right: 10.62%;">
+          45%
+        </div>
+      </div><!---->
+      <div _ngcontent-c4="" class="label">Laid back and Relaxed</div>
+    </div>
+    <div _ngcontent-c4="" class="positive">
+      <!---->
+      <div _ngcontent-c4="" class="label">Easily Stressed and Emotional</div>
+    </div>
+  </li>
+</ul>
+</bipolar-chart>
+      <div _ngcontent-c3="" class="interpretations">
+        <h4 _ngcontent-c3="">Openness to experience describes a dimension of personality that distinguishes imaginative,
+          creative people from down-to-earth, conventional people.</h4>
+        <div _ngcontent-c3="">Your digital footprint suggests that you are intellectually curious and appreciative of what you consider beautiful, no matter what others think. You might say that your imagination is vivid and makes you more creative than many others.</div>
+        <h4 _ngcontent-c3="">Conscientiousness concerns the way in which we control, regulate, and direct our
+          impulses.</h4>
+        <div _ngcontent-c3="">Your digital footprint suggests that you are random and fun to be around but can also plan and persist when life requires it. It appears that depending on the situation, you can make quick decisions or deliberate for longer if necessary.</div>
+        <h4 _ngcontent-c3="">Extraversion is marked by pronounced engagement with the external world, versus being
+          comfortable with your own company.</h4>
+        <div _ngcontent-c3="">Your digital footprint suggests that you are similar to people who prefer low-key social occasions, with a few close friends. You might say that it’s not that you are afraid of large parties; they’re just not that fun for you.</div>
+        <h4 _ngcontent-c3="">Agreeableness reflects individual differences in concern with cooperation and social
+          harmony.</h4>
+        <div _ngcontent-c3="">Your digital footprint suggests that you get along well with others, especially once they have proved themselves to be trustworthy. You seem to have a healthy scepticism about others’ motives, but that doesn’t stop you from considering others to be basically honest and decent.</div>
+        <h4 _ngcontent-c3="">Neuroticism refers to the tendency to experience negative emotions.</h4>
+        <div _ngcontent-c3="">Your digital footprint suggests that you are generally calm. You come across as someone who can feel emotional or stressed out by some experiences, but your feelings tend to be warranted by the situation.</div>
+      </div>
+    </div>
+  </div>
+
+  <div _ngcontent-c3="" class="row">
+    <!----><div _ngcontent-c3="" class="col-md-6">
+      <h3 _ngcontent-c3="">
+        Leadership Potential
+        <i _ngcontent-c3="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <doughnut-chart _ngcontent-c3="" _nghost-c6=""><div _ngcontent-c6="" style="width: 300px;">
+
+  <!---->
+
+  <!----><div _ngcontent-c6="" class="overlay" container="body" style="width: 300px;">
+    <!----><div _ngcontent-c6="" class="icon-positive fa fa-users"></div>
+    <div _ngcontent-c6="" class="average">
+      <div _ngcontent-c6="">Average</div>
+    </div>
+    <!----><div _ngcontent-c6="" class="icon-negative fa fa-user"></div>
+    <div _ngcontent-c6="" class="summary">
+      50%
+    </div>
+  </div><!---->
+
+  <svg _ngcontent-c6="" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <path _ngcontent-c6="" class="base" d="M 150.11944900660998 0.00004756022480023603 A 150 150 0 1 1 150.10665293331013 0.0000379161654109339 Z M 150.0796341902049 38.00002831073684 A 112 112 0 1 0 150.08918859160212 38.00003551163452 Z"></path>
+    <g _ngcontent-c6="" opacity="0.9999998780673678">
+      <!----><path _ngcontent-c6="" container="body" d="M 150 0 A 150 150 0 0 1 152.82029563571453 299.9734840981137 L 152.1058207413335 261.9802014599249 A 112 112 0 0 0 150 38 Z" stroke-width="0" class="value-0" order="0">
+        <!---->
+      </path><!---->
+    </g>
+  </svg>
+  <!---->
+</div>
+</doughnut-chart>
+      <!---->
+    </div>
+
+    <!----><div _ngcontent-c3="" class="col-md-6">
+      <h3 _ngcontent-c3="">
+        Jungian Personality Type
+        <i _ngcontent-c3="" class="fa fa-info-circle" role="button"></i>
+      </h3>
+      <div _ngcontent-c3="" class="interpretations"><h4>Introverted iNtuitive Thinking Perceiving</h4><p>INTPs are quiet, thoughtful, analytical individuals who don’t mind spending long periods of time on their own, working through problems and forming solutions. INTPs tend to be less at ease in social situations and the "caring professions" although they enjoy the company of those who share their interests. They also tend to be impatient with the bureaucracy, rigid hierarchies, and politics prevalent in many professions, preferring to work informally with others as equals.</p><p>INTPs’ extraverted intuition often gives them a quick wit, especially with language, and they can defuse the tension in gatherings by comical observations and references. They can be charming, even in their quiet reserve, and are sometimes surprised by the high esteem in which their friends and colleagues hold them.</p></div>
+      <!---->
+    </div>
+  </div>
+
+  <div _ngcontent-c3="" class="row">
+    <div _ngcontent-c3="" class="col-md-6 col-md-offset-3">
+      <a _ngcontent-c3="" class="btn btn-conversion" href="https://discovermyprofile.com/?utm_source=ams" target="_blank">Take more
+        psychometrics
+        tests</a>
+    </div>
+  </div>
+
+  <div _ngcontent-c3="" class="row">
+    <div _ngcontent-c3="" class="col-md-12">
+      <h3 _ngcontent-c3=""><i _ngcontent-c3="" class="fa fa-arrow-circle-up" role="button"></i> JSON response from relevant Prediction API endpoint</h3>
+      <!---->
+    </div>
+  </div>
+</div>
+</text-report>
+  </div>
+</div>
+</prediction>
+</app-demo>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-8">
+                <a class="logo" href="http://www.psychometrics.cam.ac.uk/" target="_blank" title="The Psychometrics Centre - Apply Magic Souce"></a>
+                <ul>
+                    <li>
+                        <strong>©<script type="text/javascript">document.write(new Date().getFullYear());</script>2017
+                            The Psychometrics Centre</strong>
+                    </li>
+                    <li>
+                        17 Mill Lane, Cambridge CB2 1RX
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-5 hidden-sm hidden-xs">
+                <h3>The Psychometrics Centre</h3>
+                <ul>
+                    <li>
+                        The Psychometrics Centre is a Strategic Research Network of
+                        the University of Cambridge and an international centre of
+                        excellence in psychological, occupational, clinical and educational
+                        assessment.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="contact">
+                    <h3>Contact us
+                        <a class="fa fa-twitter fa-2x" href="https://twitter.com/ApplyMagicSauce" target="_blank"></a>
+                        <a class="fa fa-facebook fa-2x padding_left" href="https://www.facebook.com/cambridge.psychometrics" target="_blank"></a>
+                    </h3>
+                </div>
+                <ul>
+                    <li>
+                        Information provided by: <br>
+                        <a href="https://applymagicsauce.com/contact_us.html">Contact Us Form</a>
+                    </li>
+                    <li><a href="https://applymagicsauce.com/research/terms_and_conditions.html">Terms and Conditions - Research</a></li>
+                    <li><a href="https://applymagicsauce.com/business/terms_and_conditions.html">Terms and Conditions - Business</a></li>
+                    <li><a href="https://applymagicsauce.com/privacy_and_cookies.html">Site Privacy &amp; Cookie Policies</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="./magic-sauce_files/inline.bundle-d8e924dcd338907cd2a234d604a46ae8.js"></script>
+<script type="text/javascript" src="./magic-sauce_files/polyfills.bundle-9a0ba8a0b61016cb0ca44f3b721c0646.js"></script>
+<script type="text/javascript" src="./magic-sauce_files/vendor.bundle-5bc5f5929ff35b976aa47477f5ceb6fe.js"></script>
+<script type="text/javascript" src="./magic-sauce_files/main.bundle-f64827a68d21351578c237a31cf2ed96.js"></script>
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/javascript">
+    window.cookieconsent_options = {
+        "message": "By continuing to browse you are agreeing to our use of cookies on this site. Read more",
+        "dismiss": "OK",
+        "learnMore": "here",
+        "link": "https://applymagicsauce.com/privacy_and_cookies.html",
+        "theme": "dark-bottom"
+    };
+</script>
+<script type="text/javascript" src="./magic-sauce_files/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
+
+<script type="text/javascript" src="https://youronline.life/sso/sso_client.js?v=201703041547"></script>
+
+
+
+<div id="screenleapDiv" style="position:fixed;right:1px;bottom:1px;visibility:hidden;width:1px;height:1px" installed="true" sharing="false"></div></body></html>

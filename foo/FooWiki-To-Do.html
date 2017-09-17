@@ -1,0 +1,149 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>FooWiki</title>
+
+    <link rel="stylesheet" href="css/columns.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!-- link rel="stylesheet" type="text/css" href="css/jquery-ui.css" -->
+    <!-- from https://github.com/aehlke/tag-it -->
+    <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/tagit.ui-zendesk.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+
+    <script src="js/lib/marked.js"></script>
+
+    <!-- mustache template compiler -->
+    <script src="js/lib/hogan-3.0.2.js"></script>
+
+    <script src="js/lib/jquery-1.10.2.js"></script>
+    <script src="js/lib/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- from https://github.com/aehlke/tag-it -->
+    <script src="js/lib/tag-it.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- date formatting -->
+    <script src="js/lib/moment.js"></script>
+
+    <!-- FooWiki scripts -->
+    <script src="js/foowiki/config.js"></script>
+    <script src="js/foowiki/sparql-templates.js"></script>
+    <script src="js/foowiki/html-templates-static.js"></script>
+    <script src="js/foowiki/utils-static.js"></script>
+    <script src="js/foowiki/core-static.js"></script>
+    <script src="js/foowiki/view-static.js"></script>
+    <script src="js/foowiki/sparql-connector.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        $(function () {
+
+            setupErrorHandling();
+            var uri = queryString["uri"];
+            // console.log("URI="+uri);
+            uri = encodeURI(uri);
+            getResource(uri, buildPage);
+
+            makeRecentChangesList();
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="errorbox" style="display: none;"></div>
+
+    <div id="header">FooWiki</div>
+
+    <div id="middle" class="column">
+        <div class="entry">             <h1 class="center" id="pagetitle"><a href="page-static.html?uri=undefined.html">FooWiki To Do</a></h1>             <div class="content"><p>See also <a href="/foowiki/Home.htmlTo%20Investigate">To Investigate</a></p>
+<p><a href="/foowiki/To-Do-2015-01-12.html">To Do 2015-01-12</a></p>
+<h3 id="home-page"><a href="/foowiki/Home-Page.html">Home Page</a></h3>
+<ul>
+<li><a href="Home.htmlFFooWiki Bugs">FooWiki Bugs</a></li>
+<li><a href="FooWiki-To-Do.html#core">Core</a></li>
+<li><a href="FooWiki-To-Do.html#admin">Admin</a></li>
+<li><a href="/foowiki/Foo.html">Foo</a></li>
+<li><a href="FooWiki-To-Do#foo-apps.html">Foo Apps</a></li>
+</ul>
+<h2 id="core">Core</h2>
+<ul>
+<li><strong>do some of these with <a href="/foowiki/Foo.html">Foo</a></strong></li>
+<li>pull out core methods into lib wrapping: get(URI, accept type) etc</li>
+<li>add markup for image after uploading <code>![alt text](imagename.jpg)</code></li>
+<li>add created date</li>
+<li>filter by tags (with Export)</li>
+<li>RDF media types, GET/POST</li>
+<li>versioning</li>
+<li>mobile, printable views CSS</li>
+<li>integrate <a href="http://codemirror.net/">http://codemirror.net/</a> </li>
+<li>precompile templates</li>
+<li>push everything to another store</li>
+<li>edit conflict handling</li>
+<li>ajaxian import <a href="http://www.nickdesteffen.com/blog/file-uploading-over-ajax-using-html5">http://www.nickdesteffen.com/blog/file-uploading-over-ajax-using-html5</a></li>
+<li>support images </li>
+<li>MD page import/export</li>
+<li>make Epub book<ul>
+<li><a href="https://github.com/ukyo/jsziptools">https://github.com/ukyo/jsziptools</a></li>
+<li><a href="https://github.com/ukyo/js-epub-builder">https://github.com/ukyo/js-epub-builder</a></li>
+<li><a href="https://github.com/ukyo/js-epub-editor">https://github.com/ukyo/js-epub-editor</a></li>
+<li><a href="http://stackoverflow.com/questions/12092532/how-to-convert-html-to-valid-xhtml">http://stackoverflow.com/questions/12092532/how-to-convert-html-to-valid-xhtml</a></li>
+<li><a href="https://github.com/ukyo/jsziptools#zip">https://github.com/ukyo/jsziptools#zip</a></li>
+</ul>
+</li>
+<li>view original MD</li>
+<li>combined pages
+** e.g. prioritized todo items</li>
+<li>include related links in RDF - inlinks/outlinks</li>
+<li>priority<ul>
+<li>pick a to do item</li>
+</ul>
+</li>
+<li>all literal fields???</li>
+<li><a href="/foowiki/WikiWhiteBoard.html">WikiWhiteBoard</a></li>
+<li>showing whether an intended target page exists or not.</li>
+<li>LaTex (for maths)</li>
+<li>shove in local storage <a href="http://www.w3.org/wiki/IntegrityIsJobOne">http://www.w3.org/wiki/IntegrityIsJobOne</a></li>
+<li>bubble rename through pages&amp;#39; content (fix deadening links)</li>
+<li>Atom feed</li>
+</ul>
+<h2 id="admin">Admin</h2>
+<ul>
+<li>docs in code</li>
+<li>start proper docs - /projects on github</li>
+<li>announce - Jena &amp;amp; semweb lists</li>
+</ul>
+<h2 id="foo-apps">Foo Apps</h2>
+<ul>
+<li><a href="/foowiki/Home.htmlSlide%20Show">Slide Show</a></li>
+<li>random page</li>
+<li><p>tabs <a href="http://htmldog.com/techniques/tabs/">http://htmldog.com/techniques/tabs/</a></p>
+</li>
+<li><p>no! // not worth it right now...change model to include versioning (hasVersion) <a href="/foowiki/ContentModel.html">Content Model</a></p>
+</li>
+</ul>
+</div>             <ul id="maintagscontainer" class="tagit ui-widget ui-widget-content ui-corner-all">             <li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-read-only"><span class="tagit-label">manual</span><input value="manual" name="http://hyperdata.it/tags/manual" class="tagit-hidden-field" type="hidden"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-read-only"><span class="tagit-label">foowiki</span><input value="foowiki" name="http://hyperdata.it/tags/foowiki" class="tagit-hidden-field" type="hidden"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-read-only"><span class="tagit-label">todo</span><input value="todo" name="http://hyperdata.it/tags/todo" class="tagit-hidden-field" type="hidden"></li><li class="tagit-new"><input class="ui-widget-content ui-autocomplete-input" disabled="disabled" autocomplete="off" type="text"></li></ul>             <div class="byline center">latest edit by danja on Sunday, September 17th 2017, 1:37:07 pm</div>             </div>
+        <p id="buttons" class="center"></p>
+    </div>
+
+    <div id="left" class="column">
+        <div class="tab"><a href="index.html">Page Index</a>
+        </div>
+        <div class="tab"><a href="Home.html">Home Page</a>
+        </div>
+        <div>
+            <div id="recentChangesContainer">
+                <label for="recentChanges">Recent Changes</label>
+                <ul id="recentChanges"><li><a href="Foo.htmlWiki%20Bookmarklet">FooWiki Bookmarklet</a></li><li><a href="Home.html">Home</a></li><li><a href="Foo.htmlWiki%20Docs">FooWiki Docs</a></li><li><a href="Image-Testing.html">Image Test</a></li><li><a href="HelloWorld2.html">Script Test 2</a></li><li><a href="Home.htmlHello%20World%201">Script Test 1</a></li><li><a href="FooWiki-Bugs.html">FooWiki Bugs</a></li><li><a href="Foo.htmlWiki%20Links">FooWiki Links</a></li><li><a href="FooWiki-Manual.html">FooWiki Manual</a></li><li><a href="Home.htmlBasic%20Features">Basic Features</a></li><li><a href="FooWiki-To-Do.html">FooWiki To Do</a></li><li><a href="Home.htmlMarkdown%20Cheatsheet">Markdown Cheatsheet</a></li><li><a href="Foo.html">Foo</a></li><li><a href="Foo.html%20To%20Do">Foo To Do</a></li><li><a href="FooWiki-Files.html">FooWiki Files</a></li></ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer"><em>hyperdata.it</em>
+    </div>
+
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content tagit-autocomplete" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span></body></html>
