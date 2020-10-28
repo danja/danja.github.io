@@ -1,3 +1,14 @@
+---
+fontfamily: dejavu
+---
+Teaching materials
+
+work only just started, aiming for a couple of lectures worth by mid-Nov 2020
+
+I'll link from homepage when there's something worth looking at
+
+
+\pagebreak
 # Overview
 
 ## Prerequisites
@@ -31,3 +42,8 @@ These will need installing:
 
 
 \pagebreak
+# Useful Resources
+
+## SPARQL
+
+  * https://www.slideshare.net/LeeFeigenbaum/sparql-cheat-sheet
