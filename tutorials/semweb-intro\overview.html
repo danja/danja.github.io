@@ -23,19 +23,40 @@
 </head>
 <body><div id="readme" class="container"><article class="markdown-body entry-content"><h2 id="overview">Overview</h2>
 <ul>
-<li>Introduction<ul>
-<li>Purpose</li>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#common-misconceptions">Common Misconceptions</a></li>
 </ul>
 </li>
-<li>Common Misconceptions</li>
+<li><a href="#core-technologies">Core Technologies</a><ul>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#all-formats">All Formats</a></li>
+<li><a href="#rdf">RDF</a></li>
+<li><a href="#rdf-schemas">RDF Schemas</a></li>
+<li><a href="#owl">OWL</a></li>
+<li><a href="#sparql">SPARQL</a></li>
 </ul>
+</li>
+</ul>
+<h3 id="introduction">Introduction</h3>
+<p>In 1989 <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim-Berners-Lee</a> submitted a <a href="http://info.cern.ch/Proposal.html">proposal</a> to his boss at CERN which would lead to his initial development of the World Wide Web. This proposal contained a diagram outlining Berners-Lee ideas of how the disparate information systems of CERN could be integrated.</p>
+<h4 id="purpose">Purpose</h4>
+<h4 id="common-misconceptions">Common Misconceptions</h4>
+<p>The biggest mistakes people often make about the Semantic Web is that it is <em>difficult</em> and <em>irrelevant</em> to their day-to-day work. But, as it is hoped will be demonstrated here, it is relatively straightforward both conceptually and in practice, and there will be something virtually every developer will find useful. More than this, a vast number of globally deployed systems use at least some aspects of Semantic Web technologies.</p>
+<p>These points can easily be demonstrated by opening Google&apos;s search page at <a href="https://www.google.com">https://www.google.com</a> and viewing the page source.</p>
+<p>Out of the 200,000+ characters visible, the vast majority is condensed Javascript. The functionality of this page may not be obvious from the simplicity of the view normally delivered to the browser. It is very sophisticated, and arguably rather <em>difficult</em>.</p>
+<p>But the code is wrapped in a HTML page, the outer tag of which is:</p>
+<pre><code>&lt;html itemscope=&quot;&quot; itemtype=&quot;http://schema.org/WebPage&quot; lang=&quot;en-IT&quot;&gt;</code></pre><p>The <code>lang</code> attribute uses a simple piece of text from a well-known <a href="https://tools.ietf.org/html/bcp47">specification</a> to say what human language the page is written in. The rest of the tag uses a more interesting approach.</p>
+<p>The way the other parts are intended to be interpreted is through the <a href="https://www.w3.org/TR/microdata/">Microdata</a> part of the HTML Specification. The <code>itemscope</code> attribute says the thing being referred to is the current URL, <a href="https://www.google.com">https://www.google.com</a>. The <code>itemtype</code> refers to the URL <code>http://schema.org/WebPage</code>, and the page there describes what a Web Page is.</p>
+<p>follow you nose
+schema.org vocabulary</p>
 <h3 id="core-technologies">Core Technologies</h3>
-<ul>
-<li>HTTP</li>
-<li>All formats</li>
-<li>RDF</li>
-<li>SPARQL</li>
-</ul>
+<h4 id="http">HTTP</h4>
+<h4 id="all-formats">All formats</h4>
+<h4 id="rdf">RDF</h4>
+<h4 id="rdf-schemas">RDF Schemas</h4>
+<h4 id="owl">OWL</h4>
+<h4 id="sparql">SPARQL</h4>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
