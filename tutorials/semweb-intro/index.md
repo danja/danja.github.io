@@ -17,6 +17,7 @@ This is a very brief introduction to the Semantic Web (also known by other names
   * Model
   * View
   * Control
+  * Developing a Schema
 
 4. Tools
   * Parsers

@@ -1,0 +1,47 @@
+<a href='javascript:!function(){var e="http://localhost:3030/bookmarks/update?update=INSERT DATA {<"+document.location.href+"> a <https://schema.org/WebPage>}";xhr=new XMLHttpRequest,xhr.open("POST",encodeURI(e)),xhr.send()}();' id="button">post link</a>
+
+
+
+<a href='javascript:!function(){
+var s="INSERT DATA {<http://foo.com/1> a <http://purl.org/stuff/bookmark>}";
+var e="http://localhost:3030/bookmarklet/update;
+xhr=new XMLHttpRequest,xhr.open("POST",encodeURI(e)),xhr.send()}();' id="button">post link</a>
+
+https://schema.org/
+
+<br/>
+javascript: (function($) {
+  var bookmarklet = document.getElementById('DELI_save_link_slidedown');
+  if (bookmarklet) {
+    $('#DELI_mist').show();
+    $('#DELI_save_link_slidedown').slideDown('normal');
+    return
+  };
+
+  if (!window.jQuery) {
+    node = document.createElement('SCRIPT');
+    node.type = 'text/javascript';
+    node.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+    document.body.appendChild(node)
+  }
+  node = document.createElement('SCRIPT');
+  node.type = 'text/javascript';
+  node.src = window.location.protocol + '//del.icio.us/save/get_bookmarklet_save?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(document.title) + '&notes=' + encodeURIComponent('' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text));
+  document.body.appendChild(node)
+})(window.jQuery);
+<br/>
+http://localhost:3030/bookmarks/update?
+
+INSERT DATA {
+
+<http://foo.com> a <http://purl.org/stuff/bookmark>
+
+}
+
+POST /rdf-graph-store?graph=..graph_uri.. HTTP/1.1
+   Host: example.com
+   Content-Type: text/turtle
+
+   ... RDF payload ...
+
+   INSERT DATA { GRAPH <graph_uri> { .. RDF payload .. } }
