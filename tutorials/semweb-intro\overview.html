@@ -40,16 +40,43 @@
 </ul>
 <h3 id="introduction">Introduction</h3>
 <p>In 1989 <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim-Berners-Lee</a> submitted a <a href="http://info.cern.ch/Proposal.html">proposal</a> to his boss at CERN which would lead to his initial development of the World Wide Web. This proposal contained a diagram outlining Berners-Lee ideas of how the disparate information systems of CERN could be integrated.</p>
+<p><img src="http://info.cern.ch/images/proposal.gif" alt="timbl proposal"></p>
+<p>While the bottom-left of the diagram still works as a summary of the WWW as we know it, it also contains certain features that are key to Semantic Web technologies.
+The nodes in the diagram, <em>things</em> - &quot;This document&quot;, &quot;Hypertext&quot; etc, have different shapes. This suggests that those things are of different <em>types</em> (what those types are isn&apos;t exactly clear...). The arcs in the diagrams, <em>relationships</em> - &quot;describes&quot;, &quot;includes&quot; etc, are directed from one <em>thing</em> to another, linking them.
+The Semantic Web is all about these notions of <em>things</em> and <em>relationships</em> put on the Web.   </p>
 <h4 id="purpose">Purpose</h4>
+<p>identification
+description
+follow your nose</p>
+<p>In principle the ability to say anything about anything.</p>
 <h4 id="common-misconceptions">Common Misconceptions</h4>
-<p>The biggest mistakes people often make about the Semantic Web is that it is <em>difficult</em> and <em>irrelevant</em> to their day-to-day work. But, as it is hoped will be demonstrated here, it is relatively straightforward both conceptually and in practice, and there will be something virtually every developer will find useful. More than this, a vast number of globally deployed systems use at least some aspects of Semantic Web technologies.</p>
+<ul>
+<li>The Semantic Web is not Semantic HTML, but...</li>
+</ul>
+<p>In recent years there has been a lot of promotion of <em>Semantic HTML</em>. This is generally about making Web documents more meaningful by choosing HTML tags that are most specific for the content. For example, <code>&lt;div&gt;Some Text&lt;/div&gt;</code> tells the browser that <em>Some Text</em> is in a division or section of the containing document. While this might be useful for styling, it doesn&apos;t tell you very much about <em>Some Text</em>. In contrast, <code>&lt;h1&gt;Some Text&lt;/h1&gt;</code> tells the browser that <em>Some Text</em> is the most important header in that section of the Web page.</p>
+<p>It&apos;s perfectly reasonable to interpret Semantic HTML as Semantic Web data, but the scope of this data is limited to the document properties, it tells you nothing of what the document is <strong>about</strong>.</p>
+<p>This isn&apos;t intended to downplay the importance of using Semantic HTML. It can enhance accessibility, searchability, internationalization, and interoperability. All things that are <em>good</em> for the Web.</p>
+<ul>
+<li>The Semantic Web is all about a legacy XML format</li>
+</ul>
+<p>For many years the only official specification for Semantic Web data was RDF/XML. This format is notoriously difficult to interpret without dedicated tools. It is still in use and does have the advantage that it can be used with standard XML tools, but fortunately there are now many friendlier alternatives.</p>
+<p>(As an aside, any XML document can be interpreted as RDF by means of <a href="https://www.w3.org/TR/grddl/">GRDDL</a>).</p>
+<ul>
+<li>The Semantic Web is all about metadata</li>
+</ul>
+<p>Metadata is data about data, and typically refers to document metadata, information like the author and publication date of the given document.
+While this is a hugely important aspect of the Semantic Web, it certainly isn&apos;t everything. As mentioned above, a core idea is the ability to say anything about anything.</p>
+<ul>
+<li>The Semantic Web is <em>difficult</em> and <em>irrelevant</em></li>
+</ul>
+<p>Finally, as hopefully will be demonstrated here, it is relatively straightforward both conceptually and in practice, and there will be something virtually every developer will find useful. More than this, a vast number of globally deployed systems use at least some aspects of Semantic Web technologies.</p>
 <p>These points can easily be demonstrated by opening Google&apos;s search page at <a href="https://www.google.com">https://www.google.com</a> and viewing the page source.</p>
 <p>Out of the 200,000+ characters visible, the vast majority is condensed Javascript. The functionality of this page may not be obvious from the simplicity of the view normally delivered to the browser. It is very sophisticated, and arguably rather <em>difficult</em>.</p>
 <p>But the code is wrapped in a HTML page, the outer tag of which is:</p>
-<pre><code>&lt;html itemscope=&quot;&quot; itemtype=&quot;http://schema.org/WebPage&quot; lang=&quot;en-IT&quot;&gt;</code></pre><p>The <code>lang</code> attribute uses a simple piece of text from a well-known <a href="https://tools.ietf.org/html/bcp47">specification</a> to say what human language the page is written in. The rest of the tag uses a more interesting approach.</p>
-<p>The way the other parts are intended to be interpreted is through the <a href="https://www.w3.org/TR/microdata/">Microdata</a> part of the HTML Specification. The <code>itemscope</code> attribute says the thing being referred to is the current URL, <a href="https://www.google.com">https://www.google.com</a>. The <code>itemtype</code> refers to the URL <code>http://schema.org/WebPage</code>, and the page there describes what a Web Page is.</p>
-<p>follow you nose
-schema.org vocabulary</p>
+<p><code>&lt;html itemscope=&quot;&quot; itemtype=&quot;http://schema.org/WebPage&quot; lang=&quot;en-IT&quot;&gt;</code></p>
+<p>The <code>lang</code> attribute uses a simple piece of text from a well-known <a href="https://tools.ietf.org/html/bcp47">specification</a> to say what human language the page is written in. The rest of the tag uses a more interesting approach.</p>
+<p>The other parts are intended to be interpreted through the <a href="https://www.w3.org/TR/microdata/">Microdata</a> part of the HTML Specification. The <code>itemscope</code> attribute says the thing being referred to is the current URL, <a href="https://www.google.com">https://www.google.com</a>. The <code>itemtype</code> refers to the URL <code>http://schema.org/WebPage</code>, and the page there describes what a WebPage is.</p>
+<p>schema.org vocabulary</p>
 <h3 id="core-technologies">Core Technologies</h3>
 <h4 id="http">HTTP</h4>
 <h4 id="all-formats">All formats</h4>
