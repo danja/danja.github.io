@@ -21,71 +21,10 @@
   }
 </style>
 </head>
-<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="browser-sparql-applications">Browser-SPARQL-Applications</h1>
-<h2 id="introduction">Introduction</h2>
-<ol>
-<li>Me</li>
-<li>Tutorial Aim</li>
-<li>Topics Covered</li>
-<li>Tools Used</li>
-</ol>
-<h2 id="technology-review">Technology Review</h2>
-<h3 id="http">HTTP</h3>
-<h4 id="key-concepts">Key Concepts</h4>
-<ol>
-<li>Client-Server</li>
-<li>REST</li>
-</ol>
-<p>HTTP 1.1&apos;s high-level semantics, such as methods, status codes, header fields, and URIs</p>
-<h4 id="request">Request</h4>
-<h4 id="response">Response</h4>
-<p>   Status Codes</p>
-<h4 id="rdf">RDF</h4>
-<ol>
-<li>Model</li>
-<li>Syntaxes
-1.</li>
-</ol>
-<h4 id="development-plan">Development Plan</h4>
-<ol>
-<li>POST a URL to store</li>
-<li>List URLs in store</li>
-<li>POST details to store</li>
-<li>List URLs + details</li>
-<li>add Person</li>
-<li>Bookmarklet
-1</li>
-</ol>
-<p><a href="http://tutorials.hyperdata.it:8888/">http://tutorials.hyperdata.it:8888/</a></p>
-<p>Setting up fuseki
-<a href="https://gist.github.com/nichtich/113ecc2831d01eb4ae91508b88c0217c">https://gist.github.com/nichtich/113ecc2831d01eb4ae91508b88c0217c</a></p>
-<p><a href="https://gist.github.com/nichtich/113ecc2831d01eb4ae91508b88c0217c">https://gist.github.com/nichtich/113ecc2831d01eb4ae91508b88c0217c</a></p>
-<p><a href="https://harshp.com/dev/semantic_web/setting-up-fuseki">https://harshp.com/dev/semantic_web/setting-up-fuseki</a></p>
-<p><a href="https://github.com/NatLibFi/Skosmos/wiki/InstallFusekiJenaText">https://github.com/NatLibFi/Skosmos/wiki/InstallFusekiJenaText</a></p>
-<p>admin:pw123</p>
-<p>  SELECT * WHERE { ?s a <a href="https://schema.org/WebPage">https://schema.org/WebPage</a> }</p>
-<p>in /etc/default/fuseki
-FUSEKI_HOME=/home/fuseki/fuseki
-FUSEKI_BASE=/etc/fuseki
-FUSEKI_ARGS=&quot;--port=8888&quot;
-had to add the port to fuseki.service</p>
+<body><div id="readme" class="container"><article class="markdown-body entry-content"><h3 id="google-meet">Google Meet</h3>
 <ul>
-<li>remote terminal</li>
+<li>changing mic : pavucontrol</li>
 </ul>
-<p><a href="https://github.com/butlerx/wetty">https://github.com/butlerx/wetty</a></p>
-<p><a href="https://github.com/yudai/gotty">https://github.com/yudai/gotty</a></p>
-<p>bookmark emoji</p>
-<p>running nginx is on 8080</p>
-<p>default fuseki:
-admin
-pw123</p>
-<p>POST /rdf-graph-store?graph=..graph_uri.. HTTP/1.1
-   Host: example.com
-   Content-Type: text/turtle</p>
-<p>   ... RDF payload ...    </p>
-<p>   INSERT DATA { GRAPH <graph_uri> { .. RDF payload .. } }</graph_uri></p>
-<p>   curl --data-urlencode &quot;<a href="mailto:query@kr.rq">query@kr.rq</a>&quot; -H &quot;Accept: text/tab-separated-values&quot;  </p>
-<h1 id="https-query-wikidata-org-bigdata-namespace-wdq-sparql"><a href="https://query.wikidata.org/bigdata/namespace/wdq/sparql">https://query.wikidata.org/bigdata/namespace/wdq/sparql</a></h1>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>

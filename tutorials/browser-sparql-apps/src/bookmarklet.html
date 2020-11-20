@@ -7,7 +7,24 @@ var s="INSERT DATA {<http://foo.com/1> a <http://purl.org/stuff/bookmark>}";
 var e="http://localhost:3030/bookmarklet/update;
 xhr=new XMLHttpRequest,xhr.open("POST",encodeURI(e)),xhr.send()}();' id="button">post link</a>
 
+<a href="javascript:!function () {
+    location.href = 'http://localhost:8080/danja/tutorials/browser-sparql-apps/src/form.html?url=' + encodeURIComponent(window.location.href);
+}()">post link3</a>
+
 https://schema.org/
+
+(function () {
+    f = 'http://delicious.com/save?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(document.title) + '&v=5&';
+    a = function () {
+        if (!window.open(f + 'noui=1&jump=doclose', 'deliciousuiv5', 'location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550'))
+            location.href = f + 'jump=yes'
+    };
+    if (/Firefox/.test(navigator.userAgent)) {
+        setTimeout(a, 0)
+    } else {
+        a()
+    }
+})()
 
 <br/>
 javascript: (function($) {
