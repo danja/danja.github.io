@@ -13,6 +13,7 @@
 #### Key Concepts
 1. Client-Server
 1. REST
+curl -v http://hyperdata.it/text.txt
 
 HTTP 1.1's high-level semantics, such as methods, status codes, header fields, and URIs
 
