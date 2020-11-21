@@ -1,6 +1,14 @@
-# Tools
+## Tools
 
-* 
+### Used Here
+
+* terminal session - available on most operating systems, but a free one is available through a browser at https://linuxcontainers.org/lxd/try-it/
+* [curl](https://curl.se/) - command line tool for transferring data with URLs
+* [Fuseki](https://jena.apache.org/documentation/fuseki2/) - SPARQL server/store
+
+A live Fuseki server sould be available online at http://tutorials.hyperdata.it:8888/
+
+
 # References
 
 ## HTTP
