@@ -1,0 +1,56 @@
+<h1 id="browser-sparql-applications">Browser-SPARQL-Applications</h1>
+<h2 id="introduction">Introduction</h2>
+<ol type="1">
+<li>Me</li>
+<li>Tutorial Aim</li>
+<li>Topics Covered</li>
+<li>Tools Used</li>
+</ol>
+<h2 id="technology-review">Technology Review</h2>
+<h3 id="http">HTTP</h3>
+<h4 id="key-concepts">Key Concepts</h4>
+<ol type="1">
+<li>Client-Server</li>
+<li>REST</li>
+</ol>
+<p>HTTP 1.1’s high-level semantics, such as methods, status codes, header fields, and URIs</p>
+<h4 id="request">Request</h4>
+<h4 id="response">Response</h4>
+<p>Status Codes</p>
+<h4 id="rdf">RDF</h4>
+<ol type="1">
+<li>Model</li>
+<li>Syntaxes</li>
+<li></li>
+</ol>
+<h4 id="development-plan">Development Plan</h4>
+<ol type="1">
+<li>POST a URL to store</li>
+<li>List URLs in store</li>
+<li>POST details to store</li>
+<li>List URLs + details</li>
+<li>add Person</li>
+<li>Bookmarklet 1</li>
+</ol>
+<p>http://tutorials.hyperdata.it:8888/</p>
+<p>Setting up fuseki https://gist.github.com/nichtich/113ecc2831d01eb4ae91508b88c0217c</p>
+<p>https://gist.github.com/nichtich/113ecc2831d01eb4ae91508b88c0217c</p>
+<p>https://harshp.com/dev/semantic_web/setting-up-fuseki</p>
+<p>https://github.com/NatLibFi/Skosmos/wiki/InstallFusekiJenaText</p>
+<p>https://linuxcontainers.org/lxd/try-it/</p>
+<p>admin:pw123</p>
+<p>SELECT * WHERE { ?s a <a href="https://schema.org/WebPage" class="uri">https://schema.org/WebPage</a> }</p>
+<p>in /etc/default/fuseki FUSEKI_HOME=/home/fuseki/fuseki FUSEKI_BASE=/etc/fuseki FUSEKI_ARGS=“–port=8888” had to add the port to fuseki.service</p>
+<ul>
+<li>remote terminal</li>
+</ul>
+<p>https://github.com/butlerx/wetty</p>
+<p>https://github.com/yudai/gotty</p>
+<p>bookmark emoji</p>
+<p>running nginx is on 8080</p>
+<p>default fuseki: admin pw123</p>
+<p>POST /rdf-graph-store?graph=..graph_uri.. HTTP/1.1 Host: example.com Content-Type: text/turtle</p>
+<p>… RDF payload …</p>
+<p>INSERT DATA { GRAPH <graph_uri> { .. RDF payload .. } }</p>
+<p>curl –data-urlencode “query@kr.rq” -H “Accept: text/tab-separated-values”<br />
+# https://query.wikidata.org/bigdata/namespace/wdq/sparql</p>

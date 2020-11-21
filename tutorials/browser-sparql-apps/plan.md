@@ -48,6 +48,8 @@ https://harshp.com/dev/semantic_web/setting-up-fuseki
 
 https://github.com/NatLibFi/Skosmos/wiki/InstallFusekiJenaText
 
+https://linuxcontainers.org/lxd/try-it/
+
 admin:pw123
 
   SELECT * WHERE { ?s a <https://schema.org/WebPage> }
