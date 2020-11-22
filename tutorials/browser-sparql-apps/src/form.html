@@ -87,12 +87,10 @@
           update: turtle
         })
       }).done(function() {
-        //      var fliptoViewPage = function () {
-        //          window.location.href = window.location.href.replace("edit.html", "page.html");
-        //      };
-        alert("done"); // use error banner
+        alert("Done"); // use banner
+        window.close();
       }).fail(function() {
-        alert("error posting data"); // use error banner
+        alert("Error posting data"); // use error banner
       });
     }
 
