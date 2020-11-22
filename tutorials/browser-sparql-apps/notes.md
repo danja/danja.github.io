@@ -27,3 +27,22 @@ console.log("hashCode(\"Hello!\"): ", hashCode('Hello!'));
 
 str.replace(/\//g, "_");
 */
+
+
+
+https://schema.org/
+
+
+INSERT DATA {
+
+<http://foo.com> a <http://purl.org/stuff/bookmark>
+
+}
+
+POST /rdf-graph-store?graph=..graph_uri.. HTTP/1.1
+   Host: example.com
+   Content-Type: text/turtle
+
+   ... RDF payload ...
+
+   INSERT DATA { GRAPH <graph_uri> { .. RDF payload .. } }

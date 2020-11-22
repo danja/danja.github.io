@@ -15,9 +15,9 @@
 
   <script>
       $(document).ready(function() {
-        populateURL();
+      populateURL();
       $('#post').click(function() {
-        postData(formToTurtle());
+      postData(formToTurtle());
     });
   });
 
@@ -78,10 +78,14 @@
       return turtle;
     }
 
+
+
+
+    // http://192.168.0.102:3030/foolicious/update http://localhost:4040/
     function postData(turtle) {
       $.ajax({
         type: "POST",
-        url: "http://tutorials.hyperdata.it:8888/update",
+        url: "http://localhost:3030/foolicious/update",
         data: ({
           update: turtle
         })
@@ -103,6 +107,10 @@
 
 <body>
 
+
+
+  <!-- page URL, title, description, tags, user nickname, date -->
+
   <form>
     <label>URL</label>
     <input type="text" name="url" id="url" value="http://test2">
@@ -111,16 +119,16 @@
     <input type="text" name="title" id="title" value="the title">
     <br/>
     <label>Description</label>
-    <textarea id="description" name="description" rows="6" cols="50"></textarea>
+    <textarea id="description" name="description" rows="6" cols="50">some description</textarea>
     <br/>
     <label>Tags</label>
     <input type="text" name="tags" id="tags" value="tag1, tag2, tag3">
     <br/>
     <label>Nickname</label>
-    <input type="text" name="nick" id="nick">
+    <input type="text" name="nick" id="nick" value="danja">
     <br/>
     <br/>
-    <button type="button" id="post">Save</button>
+    <button type="button" id="post">Click Me!</button>
   </form>
 </body>
 
