@@ -15,10 +15,7 @@
 
   <script>
       $(document).ready(function() {
-      populateURL();
-      $('#post').click(function() {
-      postData(formToTurtle());
-    });
+      list();
   });
 
     function populateURL(){
@@ -78,10 +75,6 @@
       return turtle;
     }
 
-
-
-
-    // http://192.168.0.102:3030/foolicious/update http://localhost:4040/
     function postData(turtle) {
       $.ajax({
         type: "POST",
