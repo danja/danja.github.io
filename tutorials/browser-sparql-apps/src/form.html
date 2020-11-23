@@ -59,7 +59,7 @@
       turtle += "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n";
       turtle += "prefix dc: <http://purl.org/dc/terms/> \n";
       turtle += "prefix foaf: <http://xmlns.com/foaf/0.1/> \n";
-      turtle += "INSERT DATA { GRAPH <http://hyperdata.it/wiki/> { \n";
+      turtle += "INSERT DATA { \n";
 
       turtle += "<" + bookmarkUri + "> a w:Bookmark ; \n";
       turtle += "w:url <" + url + "> ; \n";
@@ -74,7 +74,7 @@
       for (var i = 0; i < tags.length; i++) {
         turtle += "tag:" + tags[i] + " rdfs:label \"" + tags[i] + "\". \n";
       }
-      turtle += "}}";
+      turtle += "}";
       console.log(turtle);
       return turtle;
     }
