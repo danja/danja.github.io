@@ -1,0 +1,9 @@
+.title KiCad schematic
+.include "/home/danny/kicad/KiCad-Spice-Library-master/Models/Transistor/BJT/BJT.lib"
+Q1 GND Net-_Q1-Pad2_ Out 2N3904
+R3 Net-_R3-Pad1_ Out 2k2
+R2 Net-_Q1-Pad2_ Out 1M
+R1 vin Net-_Q1-Pad2_ 10k
+Vin1 vin GND dc 1
+VCC1 Net-_R3-Pad1_ GND dc 9 ac 0 0
+.end
