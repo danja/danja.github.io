@@ -21,7 +21,7 @@ Input     Output
 ## Related
 
 * [Designing (op amp) Gain and Offset in Thirty Seconds](https://www.ti.com/lit/an/sloa097/sloa097.pdf) (PDF)
-* [Single Transistor Amplifier Stages] (https://wiki.analog.com/university/courses/electronics/text/chapter-9)
+* [Single Transistor Amplifier Stages](https://wiki.analog.com/university/courses/electronics/text/chapter-9)
 * [KiCAD](https://kicad.org/)
 * [KiCAD libraries](https://kicad.github.io/)
 
