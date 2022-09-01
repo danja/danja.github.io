@@ -1,0 +1,27 @@
+var annotated_dup =
+[
+    [ "Adafruit_SSD1306", "class_adafruit___s_s_d1306.html", "class_adafruit___s_s_d1306" ],
+    [ "AudioBalanceMode", "class_audio_balance_mode.html", "class_audio_balance_mode" ],
+    [ "AudioPhaseMode", "class_audio_phase_mode.html", "class_audio_phase_mode" ],
+    [ "BrightnessMode", "class_brightness_mode.html", "class_brightness_mode" ],
+    [ "Dispatcher", "class_dispatcher.html", "class_dispatcher" ],
+    [ "EncoderReader", "class_encoder_reader.html", "class_encoder_reader" ],
+    [ "Esp32RotaryEncoder", "class_esp32_rotary_encoder.html", "class_esp32_rotary_encoder" ],
+    [ "ESPMachine", "class_e_s_p_machine.html", "class_e_s_p_machine" ],
+    [ "ESPMachineUI", "class_e_s_p_machine_u_i.html", "class_e_s_p_machine_u_i" ],
+    [ "ESPMachineWaves", "class_e_s_p_machine_waves.html", "class_e_s_p_machine_waves" ],
+    [ "EventReceiver", "class_event_receiver.html", "class_event_receiver" ],
+    [ "FrequencyMode", "class_frequency_mode.html", "class_frequency_mode" ],
+    [ "LedDriver", "class_led_driver.html", "class_led_driver" ],
+    [ "LFO", "class_l_f_o.html", "class_l_f_o" ],
+    [ "LightBalanceMode", "class_light_balance_mode.html", "class_light_balance_mode" ],
+    [ "LightPhaseMode", "class_light_phase_mode.html", "class_light_phase_mode" ],
+    [ "LightWaveMode", "class_light_wave_mode.html", "class_light_wave_mode" ],
+    [ "Mode", "class_mode.html", "class_mode" ],
+    [ "ModeMessage", "struct_mode_message.html", "struct_mode_message" ],
+    [ "Noise", "class_noise.html", "class_noise" ],
+    [ "PinkNoise", "class_pink_noise.html", "class_pink_noise" ],
+    [ "SoundWaveMode", "class_sound_wave_mode.html", "class_sound_wave_mode" ],
+    [ "TinyDisplay", "class_tiny_display.html", "class_tiny_display" ],
+    [ "VolumeMode", "class_volume_mode.html", "class_volume_mode" ]
+];

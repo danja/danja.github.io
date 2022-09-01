@@ -1,0 +1,15 @@
+<map id="ESPMachineUI::ESPMachineUI" name="ESPMachineUI::ESPMachineUI">
+<area shape="rect" id="node1" title=" " alt="" coords="5,195,221,221"/>
+<area shape="rect" id="node2" href="$class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2" title=" " alt="" coords="269,195,407,221"/>
+<area shape="rect" id="node3" href="$class_tiny_display.html#a39d14b6d7c68fb5184af638b2f62e4ef" title=" " alt="" coords="481,81,607,108"/>
+<area shape="rect" id="node7" href="$class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec" title=" " alt="" coords="455,281,633,308"/>
+<area shape="rect" id="node4" href="$class_adafruit___s_s_d1306.html#aa5457e560feed75336001927c8e0f651" title="Allocate RAM for image buffer, initialize peripherals and pins." alt="" coords="704,5,887,32"/>
+<area shape="rect" id="node5" href="$class_adafruit___s_s_d1306.html#afe1e0f5efabd931aab7998275356744d" title="Clear contents of display buffer (set all pixels to off)." alt="" coords="681,56,909,83"/>
+<area shape="rect" id="node6" href="$class_adafruit___s_s_d1306.html#a0ef45af1adca923ef66233b2998a150b" title="Push data currently in RAM to SSD1306 display." alt="" coords="698,107,893,133"/>
+<area shape="rect" id="node8" href="$class_dispatcher.html#a8de0c439bf65c6b5acc2b7df57220231" title=" " alt="" coords="713,157,877,184"/>
+<area shape="rect" id="node9" href="$class_esp32_rotary_encoder.html#afbecfc74b9c4de9d15a8f3b6fa3ef8c8" title=" " alt="" coords="717,209,873,250"/>
+<area shape="rect" id="node10" href="$class_esp32_rotary_encoder.html#a98ac10f0fab8a2e8f8428da5ae171894" title=" " alt="" coords="717,274,873,315"/>
+<area shape="rect" id="node11" href="$class_esp32_rotary_encoder.html#ada71609718ad5136635af12eadda85ab" title=" " alt="" coords="717,339,873,381"/>
+<area shape="rect" id="node12" href="$class_esp32_rotary_encoder.html#a55fb1189048e018ef0ac703e2a12ff5c" title=" " alt="" coords="717,405,873,446"/>
+<area shape="rect" id="node13" href="$class_esp32_rotary_encoder.html#a9a86117583947d37afee901cfea173d8" title=" " alt="" coords="717,470,873,511"/>
+</map>

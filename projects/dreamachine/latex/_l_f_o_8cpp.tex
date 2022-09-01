@@ -1,0 +1,116 @@
+\hypertarget{_l_f_o_8cpp}{}\doxysection{src/\+LFO.cpp File Reference}
+\label{_l_f_o_8cpp}\index{src/LFO.cpp@{src/LFO.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$LFO.\+h$>$}\newline
+Include dependency graph for LFO.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{_l_f_o_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{_l_f_o_8cpp_ada06ab1c4bbd307a9fea75726c8894f1}{on\+Timer}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_l_f_o_8cpp_a10d0822f1c4a2faa0819746fe244c105}{N\+\_\+\+STEPS}} = 256
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{_l_f_o_8cpp_a5e4857d42fb07608fce0fe865856f6cf}{step\+Counter}} = 0
+\item 
+hw\+\_\+timer\+\_\+t $\ast$ \mbox{\hyperlink{_l_f_o_8cpp_a97222eeccb5b18e1fc532806c1efcb34}{timer}} = NULL
+\item 
+volatile Semaphore\+Handle\+\_\+t \mbox{\hyperlink{_l_f_o_8cpp_a6fbd4b274b399ac7672c448d8f667aed}{timer\+Semaphore}}
+\item 
+port\+MUX\+\_\+\+TYPE \mbox{\hyperlink{_l_f_o_8cpp_adedb0f4641b7b425776dbacb23a96576}{timer\+Mux}} = port\+MUX\+\_\+\+INITIALIZER\+\_\+\+UNLOCKED
+\item 
+bool \mbox{\hyperlink{_l_f_o_8cpp_aaa928c9a62449f7946da1e32f66c70d2}{on}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_l_f_o_8cpp_ada06ab1c4bbd307a9fea75726c8894f1}\label{_l_f_o_8cpp_ada06ab1c4bbd307a9fea75726c8894f1}} 
+\index{LFO.cpp@{LFO.cpp}!onTimer@{onTimer}}
+\index{onTimer@{onTimer}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{onTimer()}{onTimer()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR on\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file LFO.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{_l_f_o_8cpp_ada06ab1c4bbd307a9fea75726c8894f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_l_f_o_8cpp_a10d0822f1c4a2faa0819746fe244c105}\label{_l_f_o_8cpp_a10d0822f1c4a2faa0819746fe244c105}} 
+\index{LFO.cpp@{LFO.cpp}!N\_STEPS@{N\_STEPS}}
+\index{N\_STEPS@{N\_STEPS}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{N\_STEPS}{N\_STEPS}}
+{\footnotesize\ttfamily const int N\+\_\+\+STEPS = 256}
+
+
+
+Definition at line 6 of file LFO.\+cpp.
+
+\mbox{\Hypertarget{_l_f_o_8cpp_aaa928c9a62449f7946da1e32f66c70d2}\label{_l_f_o_8cpp_aaa928c9a62449f7946da1e32f66c70d2}} 
+\index{LFO.cpp@{LFO.cpp}!on@{on}}
+\index{on@{on}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{on}{on}}
+{\footnotesize\ttfamily bool on = false}
+
+
+
+Definition at line 17 of file LFO.\+cpp.
+
+\mbox{\Hypertarget{_l_f_o_8cpp_a5e4857d42fb07608fce0fe865856f6cf}\label{_l_f_o_8cpp_a5e4857d42fb07608fce0fe865856f6cf}} 
+\index{LFO.cpp@{LFO.cpp}!stepCounter@{stepCounter}}
+\index{stepCounter@{stepCounter}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{stepCounter}{stepCounter}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t step\+Counter = 0}
+
+
+
+Definition at line 8 of file LFO.\+cpp.
+
+\mbox{\Hypertarget{_l_f_o_8cpp_a97222eeccb5b18e1fc532806c1efcb34}\label{_l_f_o_8cpp_a97222eeccb5b18e1fc532806c1efcb34}} 
+\index{LFO.cpp@{LFO.cpp}!timer@{timer}}
+\index{timer@{timer}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily hw\+\_\+timer\+\_\+t$\ast$ timer = NULL}
+
+
+
+Definition at line 11 of file LFO.\+cpp.
+
+\mbox{\Hypertarget{_l_f_o_8cpp_adedb0f4641b7b425776dbacb23a96576}\label{_l_f_o_8cpp_adedb0f4641b7b425776dbacb23a96576}} 
+\index{LFO.cpp@{LFO.cpp}!timerMux@{timerMux}}
+\index{timerMux@{timerMux}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{timerMux}{timerMux}}
+{\footnotesize\ttfamily port\+MUX\+\_\+\+TYPE timer\+Mux = port\+MUX\+\_\+\+INITIALIZER\+\_\+\+UNLOCKED}
+
+
+
+Definition at line 13 of file LFO.\+cpp.
+
+\mbox{\Hypertarget{_l_f_o_8cpp_a6fbd4b274b399ac7672c448d8f667aed}\label{_l_f_o_8cpp_a6fbd4b274b399ac7672c448d8f667aed}} 
+\index{LFO.cpp@{LFO.cpp}!timerSemaphore@{timerSemaphore}}
+\index{timerSemaphore@{timerSemaphore}!LFO.cpp@{LFO.cpp}}
+\doxysubsubsection{\texorpdfstring{timerSemaphore}{timerSemaphore}}
+{\footnotesize\ttfamily volatile Semaphore\+Handle\+\_\+t timer\+Semaphore}
+
+
+
+Definition at line 12 of file LFO.\+cpp.
+

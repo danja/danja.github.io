@@ -1,0 +1,11 @@
+<map id="Mode::valueToString" name="Mode::valueToString">
+<area shape="rect" id="node1" title=" " alt="" coords="292,225,447,251"/>
+<area shape="rect" id="node2" href="$class_brightness_mode.html#af66868070a337834b1a6ce8f69661107" title=" " alt="" coords="28,5,221,47"/>
+<area shape="rect" id="node3" href="$class_light_balance_mode.html#ab7fcf25a6e96ddb839cbbe01f561f005" title=" " alt="" coords="21,71,229,112"/>
+<area shape="rect" id="node4" href="$class_frequency_mode.html#a91eb7a300340f5bf13bb46bb27219834" title=" " alt="" coords="10,137,239,163"/>
+<area shape="rect" id="node5" href="$class_light_phase_mode.html#a282ef91111d0d463111c14e0fdce7604" title=" " alt="" coords="27,188,222,229"/>
+<area shape="rect" id="node6" href="$class_volume_mode.html#a3019f807ca0722d08b812e2a3c234cfa" title=" " alt="" coords="19,254,231,281"/>
+<area shape="rect" id="node7" href="$class_audio_balance_mode.html#a9c4fddf84652aaf27d9ec346f37d3ee6" title=" " alt="" coords="18,305,231,347"/>
+<area shape="rect" id="node8" href="$class_sound_wave_mode.html#a191cb0fef4f5c0daba58666d47bc16bb" title=" " alt="" coords="5,371,244,398"/>
+<area shape="rect" id="node9" href="$class_audio_phase_mode.html#a2abbee598780a20f7925e1b6c68e1466" title=" " alt="" coords="25,423,225,464"/>
+</map>

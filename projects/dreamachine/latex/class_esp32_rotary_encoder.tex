@@ -1,0 +1,298 @@
+\hypertarget{class_esp32_rotary_encoder}{}\doxysection{Esp32\+Rotary\+Encoder Class Reference}
+\label{class_esp32_rotary_encoder}\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+
+
+{\ttfamily \#include $<$Esp32\+Rotary\+Encoder.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_esp32_rotary_encoder_a25fba85441208a3c185c843096aedcf0}{Esp32\+Rotary\+Encoder}} (uint8\+\_\+t gpio\+CLK, uint8\+\_\+t gpio\+DT, uint8\+\_\+t gpio\+SW)
+\item 
+void \mbox{\hyperlink{class_esp32_rotary_encoder_a3008d2352ca33c93a56b7b424916ca97}{set\+Scale}} (long min\+Value=0, long max\+Value=100, long steps=100, boolean invert=true, bool circle\+Values=true)
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{class_esp32_rotary_encoder_acfd88b432e59f5b3d57fa3a77cb3749d}{update\+Value}} ()
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{class_esp32_rotary_encoder_ac36d5d681ec602938f3225bfe4b2cdb7}{read\+Button\+\_\+\+ISR}} ()
+\item 
+boolean \mbox{\hyperlink{class_esp32_rotary_encoder_a9a86117583947d37afee901cfea173d8}{value\+Changed}} ()
+\item 
+boolean \mbox{\hyperlink{class_esp32_rotary_encoder_afbecfc74b9c4de9d15a8f3b6fa3ef8c8}{button\+Clicked}} ()
+\item 
+void \mbox{\hyperlink{class_esp32_rotary_encoder_a55fb1189048e018ef0ac703e2a12ff5c}{reset\+Value}} ()
+\item 
+void \mbox{\hyperlink{class_esp32_rotary_encoder_ada71609718ad5136635af12eadda85ab}{reset\+Button}} ()
+\item 
+void \mbox{\hyperlink{class_esp32_rotary_encoder_a32c735b46c248dad8ffa51599acbf2c1}{setup}} (void($\ast$ISR\+\_\+callback)(void), void($\ast$ISR\+\_\+button)(void))
+\item 
+void \mbox{\hyperlink{class_esp32_rotary_encoder_aa74d9c320bc5c83387df62c643a2ad62}{reset}} (long new\+Value=0)
+\item 
+long \mbox{\hyperlink{class_esp32_rotary_encoder_a98ac10f0fab8a2e8f8428da5ae171894}{get\+Value}} ()
+\item 
+void \mbox{\hyperlink{class_esp32_rotary_encoder_af6745040ce6340bcc4912b6a84f1eb34}{set\+Encoder\+Value}} (long new\+Value)
+\item 
+long \mbox{\hyperlink{class_esp32_rotary_encoder_a626fbf178cfabf59877ed39cad624a87}{encoder\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile boolean \mbox{\hyperlink{class_esp32_rotary_encoder_aae9b5ee1fa226f78088b092a652d8989}{value\+Change\+Flag}} = false
+\item 
+volatile boolean \mbox{\hyperlink{class_esp32_rotary_encoder_a78133070b98ccb6263852ecaf475bf83}{button\+Clicked\+Flag}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 10 of file Esp32\+Rotary\+Encoder.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a25fba85441208a3c185c843096aedcf0}\label{class_esp32_rotary_encoder_a25fba85441208a3c185c843096aedcf0}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{Esp32RotaryEncoder()}{Esp32RotaryEncoder()}}
+{\footnotesize\ttfamily Esp32\+Rotary\+Encoder\+::\+Esp32\+Rotary\+Encoder (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{gpio\+CLK,  }\item[{uint8\+\_\+t}]{gpio\+DT,  }\item[{uint8\+\_\+t}]{gpio\+SW }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_afbecfc74b9c4de9d15a8f3b6fa3ef8c8}\label{class_esp32_rotary_encoder_afbecfc74b9c4de9d15a8f3b6fa3ef8c8}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!buttonClicked@{buttonClicked}}
+\index{buttonClicked@{buttonClicked}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{buttonClicked()}{buttonClicked()}}
+{\footnotesize\ttfamily boolean Esp32\+Rotary\+Encoder\+::button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_afbecfc74b9c4de9d15a8f3b6fa3ef8c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a626fbf178cfabf59877ed39cad624a87}\label{class_esp32_rotary_encoder_a626fbf178cfabf59877ed39cad624a87}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!encoderChanged@{encoderChanged}}
+\index{encoderChanged@{encoderChanged}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{encoderChanged()}{encoderChanged()}}
+{\footnotesize\ttfamily long Esp32\+Rotary\+Encoder\+::encoder\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a98ac10f0fab8a2e8f8428da5ae171894}\label{class_esp32_rotary_encoder_a98ac10f0fab8a2e8f8428da5ae171894}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!getValue@{getValue}}
+\index{getValue@{getValue}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily long Esp32\+Rotary\+Encoder\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_a98ac10f0fab8a2e8f8428da5ae171894_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_ac36d5d681ec602938f3225bfe4b2cdb7}\label{class_esp32_rotary_encoder_ac36d5d681ec602938f3225bfe4b2cdb7}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!readButton\_ISR@{readButton\_ISR}}
+\index{readButton\_ISR@{readButton\_ISR}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{readButton\_ISR()}{readButton\_ISR()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR Esp32\+Rotary\+Encoder\+::read\+Button\+\_\+\+ISR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_ac36d5d681ec602938f3225bfe4b2cdb7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_aa74d9c320bc5c83387df62c643a2ad62}\label{class_esp32_rotary_encoder_aa74d9c320bc5c83387df62c643a2ad62}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!reset@{reset}}
+\index{reset@{reset}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Esp32\+Rotary\+Encoder\+::reset (\begin{DoxyParamCaption}\item[{long}]{new\+Value = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 134 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_aa74d9c320bc5c83387df62c643a2ad62_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_ada71609718ad5136635af12eadda85ab}\label{class_esp32_rotary_encoder_ada71609718ad5136635af12eadda85ab}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!resetButton@{resetButton}}
+\index{resetButton@{resetButton}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{resetButton()}{resetButton()}}
+{\footnotesize\ttfamily void Esp32\+Rotary\+Encoder\+::reset\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_ada71609718ad5136635af12eadda85ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a55fb1189048e018ef0ac703e2a12ff5c}\label{class_esp32_rotary_encoder_a55fb1189048e018ef0ac703e2a12ff5c}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!resetValue@{resetValue}}
+\index{resetValue@{resetValue}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{resetValue()}{resetValue()}}
+{\footnotesize\ttfamily void Esp32\+Rotary\+Encoder\+::reset\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_a55fb1189048e018ef0ac703e2a12ff5c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_af6745040ce6340bcc4912b6a84f1eb34}\label{class_esp32_rotary_encoder_af6745040ce6340bcc4912b6a84f1eb34}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!setEncoderValue@{setEncoderValue}}
+\index{setEncoderValue@{setEncoderValue}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{setEncoderValue()}{setEncoderValue()}}
+{\footnotesize\ttfamily void Esp32\+Rotary\+Encoder\+::set\+Encoder\+Value (\begin{DoxyParamCaption}\item[{long}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_af6745040ce6340bcc4912b6a84f1eb34_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a3008d2352ca33c93a56b7b424916ca97}\label{class_esp32_rotary_encoder_a3008d2352ca33c93a56b7b424916ca97}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!setScale@{setScale}}
+\index{setScale@{setScale}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Esp32\+Rotary\+Encoder\+::set\+Scale (\begin{DoxyParamCaption}\item[{long}]{min\+Value = {\ttfamily 0},  }\item[{long}]{max\+Value = {\ttfamily 100},  }\item[{long}]{steps = {\ttfamily 100},  }\item[{boolean}]{invert = {\ttfamily true},  }\item[{bool}]{circle\+Values = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_a3008d2352ca33c93a56b7b424916ca97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a32c735b46c248dad8ffa51599acbf2c1}\label{class_esp32_rotary_encoder_a32c735b46c248dad8ffa51599acbf2c1}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!setup@{setup}}
+\index{setup@{setup}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Esp32\+Rotary\+Encoder\+::setup (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{ISR\+\_\+callback,  }\item[{void($\ast$)(void)}]{ISR\+\_\+button }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_a32c735b46c248dad8ffa51599acbf2c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_acfd88b432e59f5b3d57fa3a77cb3749d}\label{class_esp32_rotary_encoder_acfd88b432e59f5b3d57fa3a77cb3749d}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!updateValue@{updateValue}}
+\index{updateValue@{updateValue}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{updateValue()}{updateValue()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR Esp32\+Rotary\+Encoder\+::update\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_acfd88b432e59f5b3d57fa3a77cb3749d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a9a86117583947d37afee901cfea173d8}\label{class_esp32_rotary_encoder_a9a86117583947d37afee901cfea173d8}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!valueChanged@{valueChanged}}
+\index{valueChanged@{valueChanged}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{valueChanged()}{valueChanged()}}
+{\footnotesize\ttfamily boolean Esp32\+Rotary\+Encoder\+::value\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Esp32\+Rotary\+Encoder.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_esp32_rotary_encoder_a9a86117583947d37afee901cfea173d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_esp32_rotary_encoder_a78133070b98ccb6263852ecaf475bf83}\label{class_esp32_rotary_encoder_a78133070b98ccb6263852ecaf475bf83}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!buttonClickedFlag@{buttonClickedFlag}}
+\index{buttonClickedFlag@{buttonClickedFlag}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{buttonClickedFlag}{buttonClickedFlag}}
+{\footnotesize\ttfamily volatile boolean Esp32\+Rotary\+Encoder\+::button\+Clicked\+Flag = false}
+
+
+
+Definition at line 56 of file Esp32\+Rotary\+Encoder.\+h.
+
+\mbox{\Hypertarget{class_esp32_rotary_encoder_aae9b5ee1fa226f78088b092a652d8989}\label{class_esp32_rotary_encoder_aae9b5ee1fa226f78088b092a652d8989}} 
+\index{Esp32RotaryEncoder@{Esp32RotaryEncoder}!valueChangeFlag@{valueChangeFlag}}
+\index{valueChangeFlag@{valueChangeFlag}!Esp32RotaryEncoder@{Esp32RotaryEncoder}}
+\doxysubsubsection{\texorpdfstring{valueChangeFlag}{valueChangeFlag}}
+{\footnotesize\ttfamily volatile boolean Esp32\+Rotary\+Encoder\+::value\+Change\+Flag = false}
+
+
+
+Definition at line 55 of file Esp32\+Rotary\+Encoder.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Esp32\+Rotary\+Encoder/\mbox{\hyperlink{_esp32_rotary_encoder_8h}{Esp32\+Rotary\+Encoder.\+h}}\item 
+lib/\+Esp32\+Rotary\+Encoder/\mbox{\hyperlink{_esp32_rotary_encoder_8cpp}{Esp32\+Rotary\+Encoder.\+cpp}}\end{DoxyCompactItemize}

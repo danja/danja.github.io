@@ -1,0 +1,268 @@
+\hypertarget{_adafruit___s_s_d1306_8cpp}{}\doxysection{lib/\+SSD1306-\/\+Mod/\+Adafruit\+\_\+\+SSD1306.cpp File Reference}
+\label{_adafruit___s_s_d1306_8cpp}\index{lib/SSD1306-\/Mod/Adafruit\_SSD1306.cpp@{lib/SSD1306-\/Mod/Adafruit\_SSD1306.cpp}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Adafruit\+\_\+\+SSD1306.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}splash.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+GFX.\+h$>$}\newline
+Include dependency graph for Adafruit\+\_\+\+SSD1306.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_adafruit___s_s_d1306_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a48c60b057902adf805797f183286728d}{pgm\+\_\+read\+\_\+byte}}(addr)~  ($\ast$(const unsigned char $\ast$)(addr))
+\begin{DoxyCompactList}\small\item\em PROGMEM workaround for non-\/\+AVR. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a9cc15bdad03e0e0b1eb2ca529c8900e9}{WIRE\+\_\+\+MAX}}~32
+\begin{DoxyCompactList}\small\item\em Use common Arduino core default. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_ac2e03903f388a1df1d36283b9e78c55f}{ssd1306\+\_\+swap}}(a,  b)~  (((a) $^\wedge$= (b)), ((b) $^\wedge$= (a)), ((a) $^\wedge$= (b)))
+\begin{DoxyCompactList}\small\item\em No-\/temp-\/var swap operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_aa651e488d89d384a0c41ca3ff06e44f0}{WIRE\+\_\+\+WRITE}}~wire-\/$>$send
+\begin{DoxyCompactList}\small\item\em Wire write function in older Arduino lib. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a894534732a2a40602dbded9e42aa073b}{SSD1306\+\_\+\+SELECT}}~digital\+Write(cs\+Pin, LOW);
+\begin{DoxyCompactList}\small\item\em Device select. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_ad54e478045ab32b03b8196d53e77b971}{SSD1306\+\_\+\+DESELECT}}~digital\+Write(cs\+Pin, HIGH);
+\begin{DoxyCompactList}\small\item\em Device deselect. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a4e46ce82a9f9ee814e3bf9a84a48b4d1}{SSD1306\+\_\+\+MODE\+\_\+\+COMMAND}}~digital\+Write(dc\+Pin, LOW);
+\begin{DoxyCompactList}\small\item\em Command mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a767036f1926bf69e4e581846674743e7}{SSD1306\+\_\+\+MODE\+\_\+\+DATA}}~digital\+Write(dc\+Pin, HIGH);
+\begin{DoxyCompactList}\small\item\em Data mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_af014381d0a7468a5362e760b2aea867e}{SETWIRECLOCK}}
+\begin{DoxyCompactList}\small\item\em Dummy stand-\/in define. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a8a12267a30c5420902b4e9356f8a1e05}{RESWIRECLOCK}}
+\begin{DoxyCompactList}\small\item\em keeps compiler happy \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a11ebf1d08d0a4b8c669142611e185e4c}{SPI\+\_\+\+TRANSACTION\+\_\+\+START}}
+\begin{DoxyCompactList}\small\item\em Dummy stand-\/in define. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_afee4196c8db1b561457c1aa16769d6e2}{SPI\+\_\+\+TRANSACTION\+\_\+\+END}}
+\begin{DoxyCompactList}\small\item\em keeps compiler happy \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_a35c77c7a1b4f1a138123e83f03a8033e}{TRANSACTION\+\_\+\+START}}
+\begin{DoxyCompactList}\small\item\em Wire, SPI or bitbang transfer setup. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_adafruit___s_s_d1306_8cpp_ad6c765c4ed0d6442f51e74c4f476b8a3}{TRANSACTION\+\_\+\+END}}
+\begin{DoxyCompactList}\small\item\em Wire, SPI or bitbang transfer end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a48c60b057902adf805797f183286728d}\label{_adafruit___s_s_d1306_8cpp_a48c60b057902adf805797f183286728d}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!pgm\_read\_byte@{pgm\_read\_byte}}
+\index{pgm\_read\_byte@{pgm\_read\_byte}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{pgm\_read\_byte}{pgm\_read\_byte}}
+{\footnotesize\ttfamily \#define pgm\+\_\+read\+\_\+byte(\begin{DoxyParamCaption}\item[{}]{addr }\end{DoxyParamCaption})~  ($\ast$(const unsigned char $\ast$)(addr))}
+
+
+
+PROGMEM workaround for non-\/\+AVR. 
+
+
+
+Definition at line 46 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a8a12267a30c5420902b4e9356f8a1e05}\label{_adafruit___s_s_d1306_8cpp_a8a12267a30c5420902b4e9356f8a1e05}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!RESWIRECLOCK@{RESWIRECLOCK}}
+\index{RESWIRECLOCK@{RESWIRECLOCK}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{RESWIRECLOCK}{RESWIRECLOCK}}
+{\footnotesize\ttfamily \#define RESWIRECLOCK}
+
+
+
+keeps compiler happy 
+
+
+
+Definition at line 98 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_af014381d0a7468a5362e760b2aea867e}\label{_adafruit___s_s_d1306_8cpp_af014381d0a7468a5362e760b2aea867e}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SETWIRECLOCK@{SETWIRECLOCK}}
+\index{SETWIRECLOCK@{SETWIRECLOCK}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SETWIRECLOCK}{SETWIRECLOCK}}
+{\footnotesize\ttfamily \#define SETWIRECLOCK}
+
+
+
+Dummy stand-\/in define. 
+
+
+
+Definition at line 97 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_afee4196c8db1b561457c1aa16769d6e2}\label{_adafruit___s_s_d1306_8cpp_afee4196c8db1b561457c1aa16769d6e2}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SPI\_TRANSACTION\_END@{SPI\_TRANSACTION\_END}}
+\index{SPI\_TRANSACTION\_END@{SPI\_TRANSACTION\_END}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SPI\_TRANSACTION\_END}{SPI\_TRANSACTION\_END}}
+{\footnotesize\ttfamily \#define SPI\+\_\+\+TRANSACTION\+\_\+\+END}
+
+
+
+keeps compiler happy 
+
+
+
+Definition at line 106 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a11ebf1d08d0a4b8c669142611e185e4c}\label{_adafruit___s_s_d1306_8cpp_a11ebf1d08d0a4b8c669142611e185e4c}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SPI\_TRANSACTION\_START@{SPI\_TRANSACTION\_START}}
+\index{SPI\_TRANSACTION\_START@{SPI\_TRANSACTION\_START}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SPI\_TRANSACTION\_START}{SPI\_TRANSACTION\_START}}
+{\footnotesize\ttfamily \#define SPI\+\_\+\+TRANSACTION\+\_\+\+START}
+
+
+
+Dummy stand-\/in define. 
+
+
+
+Definition at line 105 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_ad54e478045ab32b03b8196d53e77b971}\label{_adafruit___s_s_d1306_8cpp_ad54e478045ab32b03b8196d53e77b971}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SSD1306\_DESELECT@{SSD1306\_DESELECT}}
+\index{SSD1306\_DESELECT@{SSD1306\_DESELECT}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_DESELECT}{SSD1306\_DESELECT}}
+{\footnotesize\ttfamily \#define SSD1306\+\_\+\+DESELECT~digital\+Write(cs\+Pin, HIGH);}
+
+
+
+Device deselect. 
+
+
+
+Definition at line 88 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a4e46ce82a9f9ee814e3bf9a84a48b4d1}\label{_adafruit___s_s_d1306_8cpp_a4e46ce82a9f9ee814e3bf9a84a48b4d1}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SSD1306\_MODE\_COMMAND@{SSD1306\_MODE\_COMMAND}}
+\index{SSD1306\_MODE\_COMMAND@{SSD1306\_MODE\_COMMAND}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_MODE\_COMMAND}{SSD1306\_MODE\_COMMAND}}
+{\footnotesize\ttfamily \#define SSD1306\+\_\+\+MODE\+\_\+\+COMMAND~digital\+Write(dc\+Pin, LOW);}
+
+
+
+Command mode. 
+
+
+
+Definition at line 89 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a767036f1926bf69e4e581846674743e7}\label{_adafruit___s_s_d1306_8cpp_a767036f1926bf69e4e581846674743e7}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SSD1306\_MODE\_DATA@{SSD1306\_MODE\_DATA}}
+\index{SSD1306\_MODE\_DATA@{SSD1306\_MODE\_DATA}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_MODE\_DATA}{SSD1306\_MODE\_DATA}}
+{\footnotesize\ttfamily \#define SSD1306\+\_\+\+MODE\+\_\+\+DATA~digital\+Write(dc\+Pin, HIGH);}
+
+
+
+Data mode. 
+
+
+
+Definition at line 90 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a894534732a2a40602dbded9e42aa073b}\label{_adafruit___s_s_d1306_8cpp_a894534732a2a40602dbded9e42aa073b}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!SSD1306\_SELECT@{SSD1306\_SELECT}}
+\index{SSD1306\_SELECT@{SSD1306\_SELECT}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{SSD1306\_SELECT}{SSD1306\_SELECT}}
+{\footnotesize\ttfamily \#define SSD1306\+\_\+\+SELECT~digital\+Write(cs\+Pin, LOW);}
+
+
+
+Device select. 
+
+
+
+Definition at line 87 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_ac2e03903f388a1df1d36283b9e78c55f}\label{_adafruit___s_s_d1306_8cpp_ac2e03903f388a1df1d36283b9e78c55f}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!ssd1306\_swap@{ssd1306\_swap}}
+\index{ssd1306\_swap@{ssd1306\_swap}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{ssd1306\_swap}{ssd1306\_swap}}
+{\footnotesize\ttfamily \#define ssd1306\+\_\+swap(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~  (((a) $^\wedge$= (b)), ((b) $^\wedge$= (a)), ((a) $^\wedge$= (b)))}
+
+
+
+No-\/temp-\/var swap operation. 
+
+
+
+Definition at line 73 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_ad6c765c4ed0d6442f51e74c4f476b8a3}\label{_adafruit___s_s_d1306_8cpp_ad6c765c4ed0d6442f51e74c4f476b8a3}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!TRANSACTION\_END@{TRANSACTION\_END}}
+\index{TRANSACTION\_END@{TRANSACTION\_END}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{TRANSACTION\_END}{TRANSACTION\_END}}
+{\footnotesize\ttfamily \#define TRANSACTION\+\_\+\+END}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (wire) \{                                                                  \(\backslash\)}
+\DoxyCodeLine{    RESWIRECLOCK;                                                              \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{else} \{                                                                     \(\backslash\)}
+\DoxyCodeLine{    SSD1306\_DESELECT;                                                          \(\backslash\)}
+\DoxyCodeLine{    if (spi) \{                                                                 \(\backslash\)}
+\DoxyCodeLine{      SPI\_TRANSACTION\_END;                                                     \(\backslash\)}
+\DoxyCodeLine{    \}                                                                          \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+
+
+Wire, SPI or bitbang transfer end. 
+
+
+
+Definition at line 136 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a35c77c7a1b4f1a138123e83f03a8033e}\label{_adafruit___s_s_d1306_8cpp_a35c77c7a1b4f1a138123e83f03a8033e}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!TRANSACTION\_START@{TRANSACTION\_START}}
+\index{TRANSACTION\_START@{TRANSACTION\_START}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{TRANSACTION\_START}{TRANSACTION\_START}}
+{\footnotesize\ttfamily \#define TRANSACTION\+\_\+\+START}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (wire) \{                                                                  \(\backslash\)}
+\DoxyCodeLine{    SETWIRECLOCK;                                                              \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{else} \{                                                                     \(\backslash\)}
+\DoxyCodeLine{    if (spi) \{                                                                 \(\backslash\)}
+\DoxyCodeLine{      SPI\_TRANSACTION\_START;                                                   \(\backslash\)}
+\DoxyCodeLine{    \}                                                                          \(\backslash\)}
+\DoxyCodeLine{    SSD1306\_SELECT;                                                            \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+
+
+Wire, SPI or bitbang transfer setup. 
+
+
+
+Definition at line 127 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_a9cc15bdad03e0e0b1eb2ca529c8900e9}\label{_adafruit___s_s_d1306_8cpp_a9cc15bdad03e0e0b1eb2ca529c8900e9}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!WIRE\_MAX@{WIRE\_MAX}}
+\index{WIRE\_MAX@{WIRE\_MAX}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{WIRE\_MAX}{WIRE\_MAX}}
+{\footnotesize\ttfamily \#define WIRE\+\_\+\+MAX~32}
+
+
+
+Use common Arduino core default. 
+
+
+
+Definition at line 68 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+
+\mbox{\Hypertarget{_adafruit___s_s_d1306_8cpp_aa651e488d89d384a0c41ca3ff06e44f0}\label{_adafruit___s_s_d1306_8cpp_aa651e488d89d384a0c41ca3ff06e44f0}} 
+\index{Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}!WIRE\_WRITE@{WIRE\_WRITE}}
+\index{WIRE\_WRITE@{WIRE\_WRITE}!Adafruit\_SSD1306.cpp@{Adafruit\_SSD1306.cpp}}
+\doxysubsubsection{\texorpdfstring{WIRE\_WRITE}{WIRE\_WRITE}}
+{\footnotesize\ttfamily \#define WIRE\+\_\+\+WRITE~wire-\/$>$send}
+
+
+
+Wire write function in older Arduino lib. 
+
+
+
+Definition at line 78 of file Adafruit\+\_\+\+SSD1306.\+cpp.
+

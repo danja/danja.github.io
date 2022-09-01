@@ -1,0 +1,324 @@
+\hypertarget{class_e_s_p_machine}{}\doxysection{ESPMachine Class Reference}
+\label{class_e_s_p_machine}\index{ESPMachine@{ESPMachine}}
+
+
+{\ttfamily \#include $<$ESPMachine.\+h$>$}
+
+
+
+Collaboration diagram for ESPMachine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_e_s_p_machine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0}{ESPMachine}} ()
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_a8c60da1d449db306ce881c8966c01534}{load\+Modes}} ()
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_a938f37b0f7d1d2fa7f6c6012a8a38066}{set\+Mode}} (int mode\+Index)
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_a7f5948db51f3a2c2a828c5bf6f090cf9}{update}} ()
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_a68e2521414e45c33c5073243693c4628}{on\+Encoder\+Click}} (\mbox{\hyperlink{_encoder_reader_8h_a3fcab9da0d2ed53873cb6eaf6ef879c5}{Button\+Event\+Enum}} button)
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_ae59e20965af93bc46130890c5cdec4a8}{on\+Encoder\+Rotate}} (\mbox{\hyperlink{_encoder_reader_8h_a0ed22c4fdbb5b0bcfd9ecc732696434b}{Encoder\+Event\+Enum}} encoder, float value)
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_a38ed1e9a996185e722876e76117e5868}{register\+Callback}} (\mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ \mbox{\hyperlink{_encoder_reader_8h_a3fcab9da0d2ed53873cb6eaf6ef879c5}{Button\+Event\+Enum}} $>$ \&dispatcher)
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_a05e787c90b1ca0238729814b72a8150b}{register\+Callback}} (\mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ \mbox{\hyperlink{_encoder_reader_8h_a0ed22c4fdbb5b0bcfd9ecc732696434b}{Encoder\+Event\+Enum}}, float $>$ \&dispatcher)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_a70f0871ff4b4b653c2765bab2cde0208}{brightness\+Value}} = 0
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_a6a00fe9c739089fe22953ad73f11b1d3}{light\+\_\+balance\+Value}} = 50
+\item 
+float \mbox{\hyperlink{class_e_s_p_machine_aba922d09210d2845b7b5276411162fa6}{frequency\+Value}} = 10
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_adc4908e71287e537e8cbb5be3231bf02}{light\+\_\+wave\+Value}} = 0
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_a072d800eb16a3e420566c60bc0e70894}{light\+\_\+phase\+Value}} = 0
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_ad76e9d32acb96930273824da9b6dadad}{volume\+Value}} = 0
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_aecf9fdde50dc34475c644f9a039616a2}{audio\+\_\+balance\+Value}} = 50
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_ab95119175ea967b0d731b6835c3aaa9f}{sound\+\_\+type\+Value}} = 0
+\item 
+int \mbox{\hyperlink{class_e_s_p_machine_a50be0ee934bbcd39d57749453ed5be46}{audio\+\_\+phase\+Value}} = 0
+\item 
+\mbox{\hyperlink{class_mode}{Mode}} $\ast$ \mbox{\hyperlink{class_e_s_p_machine_a257b8008ebe0c5cd7dbdf45b38d02873}{current\+Mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 19 of file ESPMachine.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0}\label{class_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0}} 
+\index{ESPMachine@{ESPMachine}!ESPMachine@{ESPMachine}}
+\index{ESPMachine@{ESPMachine}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{ESPMachine()}{ESPMachine()}}
+{\footnotesize\ttfamily ESPMachine\+::\+ESPMachine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file ESPMachine.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_e_s_p_machine_a8c60da1d449db306ce881c8966c01534}\label{class_e_s_p_machine_a8c60da1d449db306ce881c8966c01534}} 
+\index{ESPMachine@{ESPMachine}!loadModes@{loadModes}}
+\index{loadModes@{loadModes}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{loadModes()}{loadModes()}}
+{\footnotesize\ttfamily void ESPMachine\+::load\+Modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file ESPMachine.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_e_s_p_machine_a8c60da1d449db306ce881c8966c01534_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_a68e2521414e45c33c5073243693c4628}\label{class_e_s_p_machine_a68e2521414e45c33c5073243693c4628}} 
+\index{ESPMachine@{ESPMachine}!onEncoderClick@{onEncoderClick}}
+\index{onEncoderClick@{onEncoderClick}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{onEncoderClick()}{onEncoderClick()}}
+{\footnotesize\ttfamily void ESPMachine\+::on\+Encoder\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_encoder_reader_8h_a3fcab9da0d2ed53873cb6eaf6ef879c5}{Button\+Event\+Enum}}}]{button }\end{DoxyParamCaption})}
+
+
+
+Definition at line 118 of file ESPMachine.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_a68e2521414e45c33c5073243693c4628_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_ae59e20965af93bc46130890c5cdec4a8}\label{class_e_s_p_machine_ae59e20965af93bc46130890c5cdec4a8}} 
+\index{ESPMachine@{ESPMachine}!onEncoderRotate@{onEncoderRotate}}
+\index{onEncoderRotate@{onEncoderRotate}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{onEncoderRotate()}{onEncoderRotate()}}
+{\footnotesize\ttfamily void ESPMachine\+::on\+Encoder\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_encoder_reader_8h_a0ed22c4fdbb5b0bcfd9ecc732696434b}{Encoder\+Event\+Enum}}}]{encoder,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file ESPMachine.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_ae59e20965af93bc46130890c5cdec4a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_a38ed1e9a996185e722876e76117e5868}\label{class_e_s_p_machine_a38ed1e9a996185e722876e76117e5868}} 
+\index{ESPMachine@{ESPMachine}!registerCallback@{registerCallback}}
+\index{registerCallback@{registerCallback}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{registerCallback()}{registerCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ESPMachine\+::register\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ \mbox{\hyperlink{_encoder_reader_8h_a3fcab9da0d2ed53873cb6eaf6ef879c5}{Button\+Event\+Enum}} $>$ \&}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 45 of file ESPMachine.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_a38ed1e9a996185e722876e76117e5868_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_a38ed1e9a996185e722876e76117e5868_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_a05e787c90b1ca0238729814b72a8150b}\label{class_e_s_p_machine_a05e787c90b1ca0238729814b72a8150b}} 
+\index{ESPMachine@{ESPMachine}!registerCallback@{registerCallback}}
+\index{registerCallback@{registerCallback}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{registerCallback()}{registerCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ESPMachine\+::register\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ \mbox{\hyperlink{_encoder_reader_8h_a0ed22c4fdbb5b0bcfd9ecc732696434b}{Encoder\+Event\+Enum}}, float $>$ \&}]{dispatcher }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 51 of file ESPMachine.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_a05e787c90b1ca0238729814b72a8150b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_a938f37b0f7d1d2fa7f6c6012a8a38066}\label{class_e_s_p_machine_a938f37b0f7d1d2fa7f6c6012a8a38066}} 
+\index{ESPMachine@{ESPMachine}!setMode@{setMode}}
+\index{setMode@{setMode}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily void ESPMachine\+::set\+Mode (\begin{DoxyParamCaption}\item[{int}]{mode\+Index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file ESPMachine.\+cpp.
+
+\mbox{\Hypertarget{class_e_s_p_machine_a7f5948db51f3a2c2a828c5bf6f090cf9}\label{class_e_s_p_machine_a7f5948db51f3a2c2a828c5bf6f090cf9}} 
+\index{ESPMachine@{ESPMachine}!update@{update}}
+\index{update@{update}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ESPMachine\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file ESPMachine.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_a7f5948db51f3a2c2a828c5bf6f090cf9_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_e_s_p_machine_aecf9fdde50dc34475c644f9a039616a2}\label{class_e_s_p_machine_aecf9fdde50dc34475c644f9a039616a2}} 
+\index{ESPMachine@{ESPMachine}!audio\_balanceValue@{audio\_balanceValue}}
+\index{audio\_balanceValue@{audio\_balanceValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{audio\_balanceValue}{audio\_balanceValue}}
+{\footnotesize\ttfamily int ESPMachine\+::audio\+\_\+balance\+Value = 50}
+
+
+
+Definition at line 33 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_a50be0ee934bbcd39d57749453ed5be46}\label{class_e_s_p_machine_a50be0ee934bbcd39d57749453ed5be46}} 
+\index{ESPMachine@{ESPMachine}!audio\_phaseValue@{audio\_phaseValue}}
+\index{audio\_phaseValue@{audio\_phaseValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{audio\_phaseValue}{audio\_phaseValue}}
+{\footnotesize\ttfamily int ESPMachine\+::audio\+\_\+phase\+Value = 0}
+
+
+
+Definition at line 35 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_a70f0871ff4b4b653c2765bab2cde0208}\label{class_e_s_p_machine_a70f0871ff4b4b653c2765bab2cde0208}} 
+\index{ESPMachine@{ESPMachine}!brightnessValue@{brightnessValue}}
+\index{brightnessValue@{brightnessValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{brightnessValue}{brightnessValue}}
+{\footnotesize\ttfamily int ESPMachine\+::brightness\+Value = 0}
+
+
+
+Definition at line 26 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_a257b8008ebe0c5cd7dbdf45b38d02873}\label{class_e_s_p_machine_a257b8008ebe0c5cd7dbdf45b38d02873}} 
+\index{ESPMachine@{ESPMachine}!currentMode@{currentMode}}
+\index{currentMode@{currentMode}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{currentMode}{currentMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mode}{Mode}}$\ast$ ESPMachine\+::current\+Mode}
+
+
+
+Definition at line 37 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_aba922d09210d2845b7b5276411162fa6}\label{class_e_s_p_machine_aba922d09210d2845b7b5276411162fa6}} 
+\index{ESPMachine@{ESPMachine}!frequencyValue@{frequencyValue}}
+\index{frequencyValue@{frequencyValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{frequencyValue}{frequencyValue}}
+{\footnotesize\ttfamily float ESPMachine\+::frequency\+Value = 10}
+
+
+
+Definition at line 28 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_a6a00fe9c739089fe22953ad73f11b1d3}\label{class_e_s_p_machine_a6a00fe9c739089fe22953ad73f11b1d3}} 
+\index{ESPMachine@{ESPMachine}!light\_balanceValue@{light\_balanceValue}}
+\index{light\_balanceValue@{light\_balanceValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{light\_balanceValue}{light\_balanceValue}}
+{\footnotesize\ttfamily int ESPMachine\+::light\+\_\+balance\+Value = 50}
+
+
+
+Definition at line 27 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_a072d800eb16a3e420566c60bc0e70894}\label{class_e_s_p_machine_a072d800eb16a3e420566c60bc0e70894}} 
+\index{ESPMachine@{ESPMachine}!light\_phaseValue@{light\_phaseValue}}
+\index{light\_phaseValue@{light\_phaseValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{light\_phaseValue}{light\_phaseValue}}
+{\footnotesize\ttfamily int ESPMachine\+::light\+\_\+phase\+Value = 0}
+
+
+
+Definition at line 30 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_adc4908e71287e537e8cbb5be3231bf02}\label{class_e_s_p_machine_adc4908e71287e537e8cbb5be3231bf02}} 
+\index{ESPMachine@{ESPMachine}!light\_waveValue@{light\_waveValue}}
+\index{light\_waveValue@{light\_waveValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{light\_waveValue}{light\_waveValue}}
+{\footnotesize\ttfamily int ESPMachine\+::light\+\_\+wave\+Value = 0}
+
+
+
+Definition at line 29 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_ab95119175ea967b0d731b6835c3aaa9f}\label{class_e_s_p_machine_ab95119175ea967b0d731b6835c3aaa9f}} 
+\index{ESPMachine@{ESPMachine}!sound\_typeValue@{sound\_typeValue}}
+\index{sound\_typeValue@{sound\_typeValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{sound\_typeValue}{sound\_typeValue}}
+{\footnotesize\ttfamily int ESPMachine\+::sound\+\_\+type\+Value = 0}
+
+
+
+Definition at line 34 of file ESPMachine.\+h.
+
+\mbox{\Hypertarget{class_e_s_p_machine_ad76e9d32acb96930273824da9b6dadad}\label{class_e_s_p_machine_ad76e9d32acb96930273824da9b6dadad}} 
+\index{ESPMachine@{ESPMachine}!volumeValue@{volumeValue}}
+\index{volumeValue@{volumeValue}!ESPMachine@{ESPMachine}}
+\doxysubsubsection{\texorpdfstring{volumeValue}{volumeValue}}
+{\footnotesize\ttfamily int ESPMachine\+::volume\+Value = 0}
+
+
+
+Definition at line 32 of file ESPMachine.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_e_s_p_machine_8h}{ESPMachine.\+h}}\item 
+src/\mbox{\hyperlink{_e_s_p_machine_8cpp}{ESPMachine.\+cpp}}\end{DoxyCompactItemize}

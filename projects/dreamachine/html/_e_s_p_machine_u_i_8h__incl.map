@@ -1,0 +1,13 @@
+<map id="src/ESPMachineUI.h" name="src/ESPMachineUI.h">
+<area shape="rect" id="node1" title=" " alt="" coords="469,5,620,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="487,229,567,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="379,229,463,256"/>
+<area shape="rect" id="node4" href="$_e_s_p_machine_8h.html" title=" " alt="" coords="328,80,441,107"/>
+<area shape="rect" id="node5" href="$_dispatcher_8hpp.html" title=" " alt="" coords="42,229,162,256"/>
+<area shape="rect" id="node8" href="$_mode_8h.html" title=" " alt="" coords="385,155,456,181"/>
+<area shape="rect" id="node9" href="$_encoder_reader_8h.html" title=" " alt="" coords="177,155,309,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,304,92,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="117,304,159,331"/>
+<area shape="rect" id="node10" href="$_esp32_rotary_encoder_8h.html" title=" " alt="" coords="186,229,354,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="219,304,321,331"/>
+</map>

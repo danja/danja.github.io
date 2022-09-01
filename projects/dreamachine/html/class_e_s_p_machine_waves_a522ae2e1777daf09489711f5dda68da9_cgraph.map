@@ -1,0 +1,15 @@
+<map id="ESPMachineWaves::Waves" name="ESPMachineWaves::Waves">
+<area shape="rect" id="node1" title=" " alt="" coords="5,157,203,184"/>
+<area shape="rect" id="node2" href="$class_l_f_o.html#aa359640eb835de627c817a545d0bed53" title=" " alt="" coords="285,5,415,32"/>
+<area shape="rect" id="node3" href="$class_noise.html#afd804df26691edd23951b0adb9e7bcdf" title=" " alt="" coords="279,56,421,83"/>
+<area shape="rect" id="node5" href="$class_led_driver.html#a77d8082172ee3b64372e2e7bcf23b836" title=" " alt="" coords="251,107,449,133"/>
+<area shape="rect" id="node8" href="$class_noise.html#ac4a1fbaf8ae50e4f43277fd876ed095c" title=" " alt="" coords="263,157,437,184"/>
+<area shape="rect" id="node10" href="$class_led_driver.html#ae9edd43a2579705980536f8aa9ab5ded" title=" " alt="" coords="259,208,441,235"/>
+<area shape="rect" id="node11" href="$class_l_f_o.html#aa46a85bdf6f99f6e24d11f1f2c5f2aed" title=" " alt="" coords="279,259,421,285"/>
+<area shape="rect" id="node13" href="$class_led_driver.html#af18744070dd31234e218136f7efec363" title=" " alt="" coords="259,309,441,336"/>
+<area shape="rect" id="node4" href="$class_pink_noise.html#a3c3737baa1b244081a46284dc067dfd2" title=" " alt="" coords="528,56,647,83"/>
+<area shape="rect" id="node6" href="$class_dispatcher.html#acf810957bee34f655300abc077fac6b3" title=" " alt="" coords="497,157,677,184"/>
+<area shape="rect" id="node7" href="$class_led_driver.html#a4dc27c117e4577e51b2e8dee0eb4ee77" title=" " alt="" coords="512,107,663,133"/>
+<area shape="rect" id="node9" href="$class_noise.html#a77fc40626ca4abf8b880333c0e826faa" title=" " alt="" coords="510,208,665,235"/>
+<area shape="rect" id="node12" href="$class_l_f_o.html#a2f7343f47eeb6d9c903c51c6a3dd1f74" title=" " alt="" coords="529,259,645,285"/>
+</map>

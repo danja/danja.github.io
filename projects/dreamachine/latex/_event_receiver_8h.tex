@@ -1,0 +1,72 @@
+\hypertarget{_event_receiver_8h}{}\doxysection{lib/\+Observer/\+Event\+Receiver.h File Reference}
+\label{_event_receiver_8h}\index{lib/Observer/EventReceiver.h@{lib/Observer/EventReceiver.h}}
+{\ttfamily \#include $<$WString.\+h$>$}\newline
+{\ttfamily \#include $<$Dispatcher.\+hpp$>$}\newline
+Include dependency graph for Event\+Receiver.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{_event_receiver_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{_event_receiver_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_event_receiver}{Event\+Receiver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \{ \newline
+\mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7867571d87023a2497e6826fbde8ed94}{NOTE\+\_\+\+ON}}
+, \mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faad9f1e80e9d867906d5dfdd41c58eb7fd}{NOTE\+\_\+\+OFF}}
+, \mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa422467bc4cf92561b3f69beb035930b5}{VALUE\+\_\+\+CHANGE}}
+, \mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faafeab8859c7ee98564b9d30aff2519c1b}{EVENT2}}
+, \newline
+\mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa123e738b45ca2814f5d7ff7ce90f8a27}{EVENT3}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}\label{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}} 
+\index{EventReceiver.h@{EventReceiver.h}!EventType@{EventType}}
+\index{EventType@{EventType}!EventReceiver.h@{EventReceiver.h}}
+\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTE\_ON@{NOTE\_ON}!EventReceiver.h@{EventReceiver.h}}\index{EventReceiver.h@{EventReceiver.h}!NOTE\_ON@{NOTE\_ON}}}\mbox{\Hypertarget{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7867571d87023a2497e6826fbde8ed94}\label{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7867571d87023a2497e6826fbde8ed94}} 
+NOTE\+\_\+\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTE\_OFF@{NOTE\_OFF}!EventReceiver.h@{EventReceiver.h}}\index{EventReceiver.h@{EventReceiver.h}!NOTE\_OFF@{NOTE\_OFF}}}\mbox{\Hypertarget{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faad9f1e80e9d867906d5dfdd41c58eb7fd}\label{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faad9f1e80e9d867906d5dfdd41c58eb7fd}} 
+NOTE\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_CHANGE@{VALUE\_CHANGE}!EventReceiver.h@{EventReceiver.h}}\index{EventReceiver.h@{EventReceiver.h}!VALUE\_CHANGE@{VALUE\_CHANGE}}}\mbox{\Hypertarget{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa422467bc4cf92561b3f69beb035930b5}\label{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa422467bc4cf92561b3f69beb035930b5}} 
+VALUE\+\_\+\+CHANGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVENT2@{EVENT2}!EventReceiver.h@{EventReceiver.h}}\index{EventReceiver.h@{EventReceiver.h}!EVENT2@{EVENT2}}}\mbox{\Hypertarget{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faafeab8859c7ee98564b9d30aff2519c1b}\label{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faafeab8859c7ee98564b9d30aff2519c1b}} 
+EVENT2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVENT3@{EVENT3}!EventReceiver.h@{EventReceiver.h}}\index{EventReceiver.h@{EventReceiver.h}!EVENT3@{EVENT3}}}\mbox{\Hypertarget{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa123e738b45ca2814f5d7ff7ce90f8a27}\label{_event_receiver_8h_a2628ea8d12e8b2563c32f05dc7fff6faa123e738b45ca2814f5d7ff7ce90f8a27}} 
+EVENT3&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 7 of file Event\+Receiver.\+h.
+

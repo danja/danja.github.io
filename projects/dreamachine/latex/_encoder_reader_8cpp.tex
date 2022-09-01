@@ -1,0 +1,257 @@
+\hypertarget{_encoder_reader_8cpp}{}\doxysection{src/\+Encoder\+Reader.cpp File Reference}
+\label{_encoder_reader_8cpp}\index{src/EncoderReader.cpp@{src/EncoderReader.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Esp32\+Rotary\+Encoder.\+h$>$}\newline
+{\ttfamily \#include $<$Encoder\+Reader.\+h$>$}\newline
+Include dependency graph for Encoder\+Reader.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_encoder_reader_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{_encoder_reader_8cpp_a659539bec4b936894633283fe12335a0}{encoder\+Event1}} ()
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{_encoder_reader_8cpp_a86b1a1bd402b7c050432f43ed4ef01cc}{button\+Event1}} ()
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{_encoder_reader_8cpp_a85715231d947e6b1c2df51b4ddc9a48b}{encoder\+Event2}} ()
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{_encoder_reader_8cpp_a969a78834242297bc91a4e6128f4ffee}{button\+Event2}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_adf3cf64b2f66926034afdf84c94497f0}{ENCODER\+\_\+1\+\_\+\+CLK}} = 34
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_a9d7441e0f1cf328ef10d4d0d97790bb3}{ENCODER\+\_\+1\+\_\+\+DT}} = 35
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_afff8356285beb203f725a8825c726cb0}{ENCODER\+\_\+1\+\_\+\+SW}} = 16
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_a4496fc7fabae9543de34f56763050b31}{ENCODER\+\_\+2\+\_\+\+CLK}} = 36
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_aedaa5e6653d83ee2032f8c9bd1a35484}{ENCODER\+\_\+2\+\_\+\+DT}} = 39
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_af5660fa1e4bd8ef63ea80dc02641d0cc}{ENCODER\+\_\+2\+\_\+\+SW}} = 4
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_a8e2b4b4c54cf495bb8ebf140a780107a}{ENCODER\+\_\+1\+\_\+\+STEPS}} = 10
+\item 
+const int \mbox{\hyperlink{_encoder_reader_8cpp_ae3eaae4836a57ebe87b3afa2338db374}{ENCODER\+\_\+2\+\_\+\+STEPS}} = 10
+\item 
+\mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}} \mbox{\hyperlink{_encoder_reader_8cpp_ac726eca753aa8422a3984caf92a3f8d1}{encoder1}} = \mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}}(\mbox{\hyperlink{_encoder_reader_8cpp_adf3cf64b2f66926034afdf84c94497f0}{ENCODER\+\_\+1\+\_\+\+CLK}}, \mbox{\hyperlink{_encoder_reader_8cpp_a9d7441e0f1cf328ef10d4d0d97790bb3}{ENCODER\+\_\+1\+\_\+\+DT}}, \mbox{\hyperlink{_encoder_reader_8cpp_afff8356285beb203f725a8825c726cb0}{ENCODER\+\_\+1\+\_\+\+SW}})
+\item 
+\mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}} \mbox{\hyperlink{_encoder_reader_8cpp_a547da407a76eaa9700c00541fb16b49f}{encoder2}} = \mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}}(\mbox{\hyperlink{_encoder_reader_8cpp_a4496fc7fabae9543de34f56763050b31}{ENCODER\+\_\+2\+\_\+\+CLK}}, \mbox{\hyperlink{_encoder_reader_8cpp_aedaa5e6653d83ee2032f8c9bd1a35484}{ENCODER\+\_\+2\+\_\+\+DT}}, \mbox{\hyperlink{_encoder_reader_8cpp_af5660fa1e4bd8ef63ea80dc02641d0cc}{ENCODER\+\_\+2\+\_\+\+SW}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_encoder_reader_8cpp_a86b1a1bd402b7c050432f43ed4ef01cc}\label{_encoder_reader_8cpp_a86b1a1bd402b7c050432f43ed4ef01cc}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!buttonEvent1@{buttonEvent1}}
+\index{buttonEvent1@{buttonEvent1}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonEvent1()}{buttonEvent1()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR button\+Event1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file Encoder\+Reader.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{_encoder_reader_8cpp_a86b1a1bd402b7c050432f43ed4ef01cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_encoder_reader_8cpp_a86b1a1bd402b7c050432f43ed4ef01cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_encoder_reader_8cpp_a969a78834242297bc91a4e6128f4ffee}\label{_encoder_reader_8cpp_a969a78834242297bc91a4e6128f4ffee}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!buttonEvent2@{buttonEvent2}}
+\index{buttonEvent2@{buttonEvent2}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonEvent2()}{buttonEvent2()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR button\+Event2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 93 of file Encoder\+Reader.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{_encoder_reader_8cpp_a969a78834242297bc91a4e6128f4ffee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_encoder_reader_8cpp_a969a78834242297bc91a4e6128f4ffee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_encoder_reader_8cpp_a659539bec4b936894633283fe12335a0}\label{_encoder_reader_8cpp_a659539bec4b936894633283fe12335a0}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!encoderEvent1@{encoderEvent1}}
+\index{encoderEvent1@{encoderEvent1}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{encoderEvent1()}{encoderEvent1()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR encoder\+Event1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file Encoder\+Reader.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_encoder_reader_8cpp_a659539bec4b936894633283fe12335a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_encoder_reader_8cpp_a659539bec4b936894633283fe12335a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_encoder_reader_8cpp_a85715231d947e6b1c2df51b4ddc9a48b}\label{_encoder_reader_8cpp_a85715231d947e6b1c2df51b4ddc9a48b}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!encoderEvent2@{encoderEvent2}}
+\index{encoderEvent2@{encoderEvent2}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{encoderEvent2()}{encoderEvent2()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR encoder\+Event2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file Encoder\+Reader.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_encoder_reader_8cpp_a85715231d947e6b1c2df51b4ddc9a48b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_encoder_reader_8cpp_a85715231d947e6b1c2df51b4ddc9a48b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_encoder_reader_8cpp_ac726eca753aa8422a3984caf92a3f8d1}\label{_encoder_reader_8cpp_ac726eca753aa8422a3984caf92a3f8d1}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!encoder1@{encoder1}}
+\index{encoder1@{encoder1}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{encoder1}{encoder1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}} encoder1 = \mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}}(\mbox{\hyperlink{_encoder_reader_8cpp_adf3cf64b2f66926034afdf84c94497f0}{ENCODER\+\_\+1\+\_\+\+CLK}}, \mbox{\hyperlink{_encoder_reader_8cpp_a9d7441e0f1cf328ef10d4d0d97790bb3}{ENCODER\+\_\+1\+\_\+\+DT}}, \mbox{\hyperlink{_encoder_reader_8cpp_afff8356285beb203f725a8825c726cb0}{ENCODER\+\_\+1\+\_\+\+SW}})}
+
+
+
+Definition at line 17 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_a547da407a76eaa9700c00541fb16b49f}\label{_encoder_reader_8cpp_a547da407a76eaa9700c00541fb16b49f}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!encoder2@{encoder2}}
+\index{encoder2@{encoder2}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{encoder2}{encoder2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}} encoder2 = \mbox{\hyperlink{class_esp32_rotary_encoder}{Esp32\+Rotary\+Encoder}}(\mbox{\hyperlink{_encoder_reader_8cpp_a4496fc7fabae9543de34f56763050b31}{ENCODER\+\_\+2\+\_\+\+CLK}}, \mbox{\hyperlink{_encoder_reader_8cpp_aedaa5e6653d83ee2032f8c9bd1a35484}{ENCODER\+\_\+2\+\_\+\+DT}}, \mbox{\hyperlink{_encoder_reader_8cpp_af5660fa1e4bd8ef63ea80dc02641d0cc}{ENCODER\+\_\+2\+\_\+\+SW}})}
+
+
+
+Definition at line 18 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_adf3cf64b2f66926034afdf84c94497f0}\label{_encoder_reader_8cpp_adf3cf64b2f66926034afdf84c94497f0}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_1\_CLK@{ENCODER\_1\_CLK}}
+\index{ENCODER\_1\_CLK@{ENCODER\_1\_CLK}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_1\_CLK}{ENCODER\_1\_CLK}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+1\+\_\+\+CLK = 34}
+
+
+
+Definition at line 6 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_a9d7441e0f1cf328ef10d4d0d97790bb3}\label{_encoder_reader_8cpp_a9d7441e0f1cf328ef10d4d0d97790bb3}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_1\_DT@{ENCODER\_1\_DT}}
+\index{ENCODER\_1\_DT@{ENCODER\_1\_DT}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_1\_DT}{ENCODER\_1\_DT}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+1\+\_\+\+DT = 35}
+
+
+
+Definition at line 7 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_a8e2b4b4c54cf495bb8ebf140a780107a}\label{_encoder_reader_8cpp_a8e2b4b4c54cf495bb8ebf140a780107a}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_1\_STEPS@{ENCODER\_1\_STEPS}}
+\index{ENCODER\_1\_STEPS@{ENCODER\_1\_STEPS}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_1\_STEPS}{ENCODER\_1\_STEPS}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+1\+\_\+\+STEPS = 10}
+
+
+
+Definition at line 14 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_afff8356285beb203f725a8825c726cb0}\label{_encoder_reader_8cpp_afff8356285beb203f725a8825c726cb0}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_1\_SW@{ENCODER\_1\_SW}}
+\index{ENCODER\_1\_SW@{ENCODER\_1\_SW}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_1\_SW}{ENCODER\_1\_SW}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+1\+\_\+\+SW = 16}
+
+
+
+Definition at line 8 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_a4496fc7fabae9543de34f56763050b31}\label{_encoder_reader_8cpp_a4496fc7fabae9543de34f56763050b31}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_2\_CLK@{ENCODER\_2\_CLK}}
+\index{ENCODER\_2\_CLK@{ENCODER\_2\_CLK}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_2\_CLK}{ENCODER\_2\_CLK}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+2\+\_\+\+CLK = 36}
+
+
+
+Definition at line 10 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_aedaa5e6653d83ee2032f8c9bd1a35484}\label{_encoder_reader_8cpp_aedaa5e6653d83ee2032f8c9bd1a35484}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_2\_DT@{ENCODER\_2\_DT}}
+\index{ENCODER\_2\_DT@{ENCODER\_2\_DT}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_2\_DT}{ENCODER\_2\_DT}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+2\+\_\+\+DT = 39}
+
+
+
+Definition at line 11 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_ae3eaae4836a57ebe87b3afa2338db374}\label{_encoder_reader_8cpp_ae3eaae4836a57ebe87b3afa2338db374}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_2\_STEPS@{ENCODER\_2\_STEPS}}
+\index{ENCODER\_2\_STEPS@{ENCODER\_2\_STEPS}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_2\_STEPS}{ENCODER\_2\_STEPS}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+2\+\_\+\+STEPS = 10}
+
+
+
+Definition at line 15 of file Encoder\+Reader.\+cpp.
+
+\mbox{\Hypertarget{_encoder_reader_8cpp_af5660fa1e4bd8ef63ea80dc02641d0cc}\label{_encoder_reader_8cpp_af5660fa1e4bd8ef63ea80dc02641d0cc}} 
+\index{EncoderReader.cpp@{EncoderReader.cpp}!ENCODER\_2\_SW@{ENCODER\_2\_SW}}
+\index{ENCODER\_2\_SW@{ENCODER\_2\_SW}!EncoderReader.cpp@{EncoderReader.cpp}}
+\doxysubsubsection{\texorpdfstring{ENCODER\_2\_SW}{ENCODER\_2\_SW}}
+{\footnotesize\ttfamily const int ENCODER\+\_\+2\+\_\+\+SW = 4}
+
+
+
+Definition at line 12 of file Encoder\+Reader.\+cpp.
+

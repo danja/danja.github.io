@@ -1,0 +1,129 @@
+\hypertarget{_noise_8cpp}{}\doxysection{src/\+Noise.cpp File Reference}
+\label{_noise_8cpp}\index{src/Noise.cpp@{src/Noise.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Noise.\+h$>$}\newline
+{\ttfamily \#include $<$Pink\+Noise.\+h$>$}\newline
+Include dependency graph for Noise.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_noise_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void IRAM\+\_\+\+ATTR \mbox{\hyperlink{_noise_8cpp_af2d9f6f4c60f40d4c4c7134d9a25ca8c}{on\+Noise\+Timer}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+hw\+\_\+timer\+\_\+t $\ast$ \mbox{\hyperlink{_noise_8cpp_a8fcfb5fb3111703ae3fec569b8cea100}{noise\+Timer}} = NULL
+\item 
+volatile Semaphore\+Handle\+\_\+t \mbox{\hyperlink{_noise_8cpp_acce076aaf18c35bec19c1128d0eb4ea9}{noise\+Timer\+Semaphore}}
+\item 
+port\+MUX\+\_\+\+TYPE \mbox{\hyperlink{_noise_8cpp_a92dd5bac241d0f6156720c6c7893dde2}{noise\+Timer\+Mux}} = port\+MUX\+\_\+\+INITIALIZER\+\_\+\+UNLOCKED
+\item 
+int \mbox{\hyperlink{_noise_8cpp_a6150e0515f7202e2fb518f7206ed97dc}{x}} = 0
+\item 
+\mbox{\hyperlink{class_pink_noise}{Pink\+Noise}} \mbox{\hyperlink{_noise_8cpp_a590682f3c7467e7d06877eca67129aa6}{pink\+Noise}}
+\item 
+long \mbox{\hyperlink{_noise_8cpp_a590915cbb5554ba0afcd7f45e3f3e580}{mino}} = 0
+\item 
+long \mbox{\hyperlink{_noise_8cpp_ae5c1c235919d35706665abca63c23a1b}{maxo}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_noise_8cpp_af2d9f6f4c60f40d4c4c7134d9a25ca8c}\label{_noise_8cpp_af2d9f6f4c60f40d4c4c7134d9a25ca8c}} 
+\index{Noise.cpp@{Noise.cpp}!onNoiseTimer@{onNoiseTimer}}
+\index{onNoiseTimer@{onNoiseTimer}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{onNoiseTimer()}{onNoiseTimer()}}
+{\footnotesize\ttfamily void IRAM\+\_\+\+ATTR on\+Noise\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Noise.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{_noise_8cpp_af2d9f6f4c60f40d4c4c7134d9a25ca8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_noise_8cpp_ae5c1c235919d35706665abca63c23a1b}\label{_noise_8cpp_ae5c1c235919d35706665abca63c23a1b}} 
+\index{Noise.cpp@{Noise.cpp}!maxo@{maxo}}
+\index{maxo@{maxo}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{maxo}{maxo}}
+{\footnotesize\ttfamily long maxo = 0}
+
+
+
+Definition at line 55 of file Noise.\+cpp.
+
+\mbox{\Hypertarget{_noise_8cpp_a590915cbb5554ba0afcd7f45e3f3e580}\label{_noise_8cpp_a590915cbb5554ba0afcd7f45e3f3e580}} 
+\index{Noise.cpp@{Noise.cpp}!mino@{mino}}
+\index{mino@{mino}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{mino}{mino}}
+{\footnotesize\ttfamily long mino = 0}
+
+
+
+Definition at line 54 of file Noise.\+cpp.
+
+\mbox{\Hypertarget{_noise_8cpp_a8fcfb5fb3111703ae3fec569b8cea100}\label{_noise_8cpp_a8fcfb5fb3111703ae3fec569b8cea100}} 
+\index{Noise.cpp@{Noise.cpp}!noiseTimer@{noiseTimer}}
+\index{noiseTimer@{noiseTimer}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{noiseTimer}{noiseTimer}}
+{\footnotesize\ttfamily hw\+\_\+timer\+\_\+t$\ast$ noise\+Timer = NULL}
+
+
+
+Definition at line 6 of file Noise.\+cpp.
+
+\mbox{\Hypertarget{_noise_8cpp_a92dd5bac241d0f6156720c6c7893dde2}\label{_noise_8cpp_a92dd5bac241d0f6156720c6c7893dde2}} 
+\index{Noise.cpp@{Noise.cpp}!noiseTimerMux@{noiseTimerMux}}
+\index{noiseTimerMux@{noiseTimerMux}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{noiseTimerMux}{noiseTimerMux}}
+{\footnotesize\ttfamily port\+MUX\+\_\+\+TYPE noise\+Timer\+Mux = port\+MUX\+\_\+\+INITIALIZER\+\_\+\+UNLOCKED}
+
+
+
+Definition at line 8 of file Noise.\+cpp.
+
+\mbox{\Hypertarget{_noise_8cpp_acce076aaf18c35bec19c1128d0eb4ea9}\label{_noise_8cpp_acce076aaf18c35bec19c1128d0eb4ea9}} 
+\index{Noise.cpp@{Noise.cpp}!noiseTimerSemaphore@{noiseTimerSemaphore}}
+\index{noiseTimerSemaphore@{noiseTimerSemaphore}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{noiseTimerSemaphore}{noiseTimerSemaphore}}
+{\footnotesize\ttfamily volatile Semaphore\+Handle\+\_\+t noise\+Timer\+Semaphore}
+
+
+
+Definition at line 7 of file Noise.\+cpp.
+
+\mbox{\Hypertarget{_noise_8cpp_a590682f3c7467e7d06877eca67129aa6}\label{_noise_8cpp_a590682f3c7467e7d06877eca67129aa6}} 
+\index{Noise.cpp@{Noise.cpp}!pinkNoise@{pinkNoise}}
+\index{pinkNoise@{pinkNoise}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{pinkNoise}{pinkNoise}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pink_noise}{Pink\+Noise}} pink\+Noise}
+
+
+
+Definition at line 12 of file Noise.\+cpp.
+
+\mbox{\Hypertarget{_noise_8cpp_a6150e0515f7202e2fb518f7206ed97dc}\label{_noise_8cpp_a6150e0515f7202e2fb518f7206ed97dc}} 
+\index{Noise.cpp@{Noise.cpp}!x@{x}}
+\index{x@{x}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x = 0}
+
+
+
+Definition at line 10 of file Noise.\+cpp.
+

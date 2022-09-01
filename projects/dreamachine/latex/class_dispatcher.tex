@@ -1,0 +1,114 @@
+\hypertarget{class_dispatcher}{}\doxysection{Dispatcher$<$ Args $>$ Class Template Reference}
+\label{class_dispatcher}\index{Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}}
+
+
+{\ttfamily \#include $<$Dispatcher.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_dispatcher_1_1_callback_i_d}{Callback\+ID}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(Args...)$>$ \mbox{\hyperlink{class_dispatcher_a55dfc1d66f6395c86065d7aa19e9ec9b}{Callback\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dispatcher_1_1_callback_i_d}{Callback\+ID}} \mbox{\hyperlink{class_dispatcher_acf810957bee34f655300abc077fac6b3}{add\+Callback}} (\mbox{\hyperlink{class_dispatcher_a55dfc1d66f6395c86065d7aa19e9ec9b}{Callback\+Type}} callback)
+\item 
+void \mbox{\hyperlink{class_dispatcher_ae1fdeced13f99e2bfb1809495bd43486}{del\+Callback}} (\mbox{\hyperlink{class_dispatcher_1_1_callback_i_d}{Callback\+ID}} \&id)
+\item 
+void \mbox{\hyperlink{class_dispatcher_a8de0c439bf65c6b5acc2b7df57220231}{broadcast}} (Args... args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename... Args$>$\newline
+class Dispatcher$<$ Args $>$}
+
+
+
+Definition at line 12 of file Dispatcher.\+hpp.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_dispatcher_a55dfc1d66f6395c86065d7aa19e9ec9b}\label{class_dispatcher_a55dfc1d66f6395c86065d7aa19e9ec9b}} 
+\index{Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}!CallbackType@{CallbackType}}
+\index{CallbackType@{CallbackType}!Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{CallbackType}{CallbackType}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+typedef std\+::function$<$void(Args...)$>$ \mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ Args $>$\+::\mbox{\hyperlink{class_dispatcher_a55dfc1d66f6395c86065d7aa19e9ec9b}{Callback\+Type}}}
+
+
+
+Definition at line 15 of file Dispatcher.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dispatcher_acf810957bee34f655300abc077fac6b3}\label{class_dispatcher_acf810957bee34f655300abc077fac6b3}} 
+\index{Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}!addCallback@{addCallback}}
+\index{addCallback@{addCallback}!Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{addCallback()}{addCallback()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+\mbox{\hyperlink{class_dispatcher_1_1_callback_i_d}{Callback\+ID}} \mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ Args $>$\+::add\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dispatcher_a55dfc1d66f6395c86065d7aa19e9ec9b}{Callback\+Type}}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file Dispatcher.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dispatcher_acf810957bee34f655300abc077fac6b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dispatcher_a8de0c439bf65c6b5acc2b7df57220231}\label{class_dispatcher_a8de0c439bf65c6b5acc2b7df57220231}} 
+\index{Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{broadcast()}{broadcast()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void \mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ Args $>$\+::broadcast (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 51 of file Dispatcher.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dispatcher_a8de0c439bf65c6b5acc2b7df57220231_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dispatcher_ae1fdeced13f99e2bfb1809495bd43486}\label{class_dispatcher_ae1fdeced13f99e2bfb1809495bd43486}} 
+\index{Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}!delCallback@{delCallback}}
+\index{delCallback@{delCallback}!Dispatcher$<$ Args $>$@{Dispatcher$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{delCallback()}{delCallback()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void \mbox{\hyperlink{class_dispatcher}{Dispatcher}}$<$ Args $>$\+::del\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dispatcher_1_1_callback_i_d}{Callback\+ID}} \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 43 of file Dispatcher.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_dispatcher_ae1fdeced13f99e2bfb1809495bd43486_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Observer/\mbox{\hyperlink{_dispatcher_8hpp}{Dispatcher.\+hpp}}\end{DoxyCompactItemize}

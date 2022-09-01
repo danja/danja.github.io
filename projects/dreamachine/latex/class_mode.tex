@@ -1,0 +1,233 @@
+\hypertarget{class_mode}{}\doxysection{Mode Class Reference}
+\label{class_mode}\index{Mode@{Mode}}
+
+
+{\ttfamily \#include $<$Mode.\+h$>$}
+
+
+
+Inheritance diagram for Mode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_mode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_mode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mode_a098246baedeee64fa0ed3b53547cf55f}{Mode}} ()
+\item 
+void \mbox{\hyperlink{class_mode_a4bc891c0bb5681baeb6e8137e3e34db5}{init}} (int index, string \+\_\+label, long \+\_\+min\+Value, long \+\_\+max\+Value, long \+\_\+steps, bool \+\_\+invert, bool \+\_\+circle\+Values)
+\item 
+virtual string \mbox{\hyperlink{class_mode_ac9cd2baa340fb383511dc020ffa0499f}{get\+Value\+String}} ()
+\item 
+void \mbox{\hyperlink{class_mode_a04377740ec9b9b595841cda62a5631ef}{set\+Value}} (long value)
+\item 
+long \mbox{\hyperlink{class_mode_a7a696c77bc271bca5b272f87b361ae99}{get\+Value}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_mode_af8da385ab7ed1540c2de8f225d09de8d}{value\+To\+String}} (long value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_mode_message}{Mode\+Message}} \mbox{\hyperlink{class_mode_a0506292fada357d1b4d68e3086e0da0a}{mode\+Message}}
+\item 
+string \mbox{\hyperlink{class_mode_a38a698c8b9c0a3b3948515eab04040ee}{label}} = \char`\"{}ABCDEFGHIJ\char`\"{}
+\item 
+long \mbox{\hyperlink{class_mode_a667feb1a1f481dfb60150b29937927aa}{min\+Value}} = 0
+\item 
+long \mbox{\hyperlink{class_mode_a89e964c354922b62ac52ba3c2a3caae1}{max\+Value}} = 0
+\item 
+long \mbox{\hyperlink{class_mode_a13cc07ce926afedb624fbb01e7290e17}{steps}} = 0
+\item 
+bool \mbox{\hyperlink{class_mode_aab557cea6b12a23bc4e4bb1aba8f669a}{invert}} = false
+\item 
+bool \mbox{\hyperlink{class_mode_a334fdb3722aafab635e5e040d3a2f955}{circle\+Values}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 29 of file Mode.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mode_a098246baedeee64fa0ed3b53547cf55f}\label{class_mode_a098246baedeee64fa0ed3b53547cf55f}} 
+\index{Mode@{Mode}!Mode@{Mode}}
+\index{Mode@{Mode}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{Mode()}{Mode()}}
+{\footnotesize\ttfamily Mode\+::\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file Mode.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mode_a7a696c77bc271bca5b272f87b361ae99}\label{class_mode_a7a696c77bc271bca5b272f87b361ae99}} 
+\index{Mode@{Mode}!getValue@{getValue}}
+\index{getValue@{getValue}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily long Mode\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Mode.\+cpp.
+
+\mbox{\Hypertarget{class_mode_ac9cd2baa340fb383511dc020ffa0499f}\label{class_mode_ac9cd2baa340fb383511dc020ffa0499f}} 
+\index{Mode@{Mode}!getValueString@{getValueString}}
+\index{getValueString@{getValueString}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{getValueString()}{getValueString()}}
+{\footnotesize\ttfamily virtual string Mode\+::get\+Value\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_audio_phase_mode_a2abbee598780a20f7925e1b6c68e1466}{Audio\+Phase\+Mode}}, \mbox{\hyperlink{class_sound_wave_mode_a191cb0fef4f5c0daba58666d47bc16bb}{Sound\+Wave\+Mode}}, \mbox{\hyperlink{class_audio_balance_mode_a9c4fddf84652aaf27d9ec346f37d3ee6}{Audio\+Balance\+Mode}}, \mbox{\hyperlink{class_volume_mode_a3019f807ca0722d08b812e2a3c234cfa}{Volume\+Mode}}, \mbox{\hyperlink{class_light_phase_mode_a282ef91111d0d463111c14e0fdce7604}{Light\+Phase\+Mode}}, \mbox{\hyperlink{class_light_wave_mode_a29a8c362190309bccfd4eee3ac2b7e39}{Light\+Wave\+Mode}}, \mbox{\hyperlink{class_frequency_mode_a91eb7a300340f5bf13bb46bb27219834}{Frequency\+Mode}}, \mbox{\hyperlink{class_light_balance_mode_ab7fcf25a6e96ddb839cbbe01f561f005}{Light\+Balance\+Mode}}, and \mbox{\hyperlink{class_brightness_mode_af66868070a337834b1a6ce8f69661107}{Brightness\+Mode}}.
+
+
+
+Definition at line 45 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_a4bc891c0bb5681baeb6e8137e3e34db5}\label{class_mode_a4bc891c0bb5681baeb6e8137e3e34db5}} 
+\index{Mode@{Mode}!init@{init}}
+\index{init@{init}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Mode\+::init (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{string}]{\+\_\+label,  }\item[{long}]{\+\_\+min\+Value,  }\item[{long}]{\+\_\+max\+Value,  }\item[{long}]{\+\_\+steps,  }\item[{bool}]{\+\_\+invert,  }\item[{bool}]{\+\_\+circle\+Values }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Mode.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_mode_a4bc891c0bb5681baeb6e8137e3e34db5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mode_a04377740ec9b9b595841cda62a5631ef}\label{class_mode_a04377740ec9b9b595841cda62a5631ef}} 
+\index{Mode@{Mode}!setValue@{setValue}}
+\index{setValue@{setValue}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Mode\+::set\+Value (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file Mode.\+cpp.
+
+\mbox{\Hypertarget{class_mode_af8da385ab7ed1540c2de8f225d09de8d}\label{class_mode_af8da385ab7ed1540c2de8f225d09de8d}} 
+\index{Mode@{Mode}!valueToString@{valueToString}}
+\index{valueToString@{valueToString}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{valueToString()}{valueToString()}}
+{\footnotesize\ttfamily string Mode\+::value\+To\+String (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 34 of file Mode.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mode_af8da385ab7ed1540c2de8f225d09de8d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mode_a334fdb3722aafab635e5e040d3a2f955}\label{class_mode_a334fdb3722aafab635e5e040d3a2f955}} 
+\index{Mode@{Mode}!circleValues@{circleValues}}
+\index{circleValues@{circleValues}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{circleValues}{circleValues}}
+{\footnotesize\ttfamily bool Mode\+::circle\+Values = true}
+
+
+
+Definition at line 41 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_aab557cea6b12a23bc4e4bb1aba8f669a}\label{class_mode_aab557cea6b12a23bc4e4bb1aba8f669a}} 
+\index{Mode@{Mode}!invert@{invert}}
+\index{invert@{invert}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{invert}{invert}}
+{\footnotesize\ttfamily bool Mode\+::invert = false}
+
+
+
+Definition at line 40 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_a38a698c8b9c0a3b3948515eab04040ee}\label{class_mode_a38a698c8b9c0a3b3948515eab04040ee}} 
+\index{Mode@{Mode}!label@{label}}
+\index{label@{label}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily string Mode\+::label = \char`\"{}ABCDEFGHIJ\char`\"{}}
+
+
+
+Definition at line 36 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_a89e964c354922b62ac52ba3c2a3caae1}\label{class_mode_a89e964c354922b62ac52ba3c2a3caae1}} 
+\index{Mode@{Mode}!maxValue@{maxValue}}
+\index{maxValue@{maxValue}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{maxValue}{maxValue}}
+{\footnotesize\ttfamily long Mode\+::max\+Value = 0}
+
+
+
+Definition at line 38 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_a667feb1a1f481dfb60150b29937927aa}\label{class_mode_a667feb1a1f481dfb60150b29937927aa}} 
+\index{Mode@{Mode}!minValue@{minValue}}
+\index{minValue@{minValue}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{minValue}{minValue}}
+{\footnotesize\ttfamily long Mode\+::min\+Value = 0}
+
+
+
+Definition at line 37 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_a0506292fada357d1b4d68e3086e0da0a}\label{class_mode_a0506292fada357d1b4d68e3086e0da0a}} 
+\index{Mode@{Mode}!modeMessage@{modeMessage}}
+\index{modeMessage@{modeMessage}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{modeMessage}{modeMessage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_mode_message}{Mode\+Message}} Mode\+::mode\+Message}
+
+
+
+Definition at line 33 of file Mode.\+h.
+
+\mbox{\Hypertarget{class_mode_a13cc07ce926afedb624fbb01e7290e17}\label{class_mode_a13cc07ce926afedb624fbb01e7290e17}} 
+\index{Mode@{Mode}!steps@{steps}}
+\index{steps@{steps}!Mode@{Mode}}
+\doxysubsubsection{\texorpdfstring{steps}{steps}}
+{\footnotesize\ttfamily long Mode\+::steps = 0}
+
+
+
+Definition at line 39 of file Mode.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_mode_8h}{Mode.\+h}}\item 
+src/\mbox{\hyperlink{_mode_8cpp}{Mode.\+cpp}}\end{DoxyCompactItemize}

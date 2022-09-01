@@ -1,0 +1,137 @@
+\hypertarget{class_e_s_p_machine_u_i}{}\doxysection{ESPMachine\+UI Class Reference}
+\label{class_e_s_p_machine_u_i}\index{ESPMachineUI@{ESPMachineUI}}
+
+
+{\ttfamily \#include $<$ESPMachine\+UI.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_e_s_p_machine_u_i_ac40746603a7fa90bbd75b6788fd3016e}{ESPMachine\+UI}} ()
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_u_i_a47c5bfe76c1dfcb53de5f16294ca0bd1}{attach\+Encoder}} (\mbox{\hyperlink{class_e_s_p_machine}{ESPMachine}} dreamachine)
+\item 
+void \mbox{\hyperlink{class_e_s_p_machine_u_i_a940cedbabd35d0a8aee42ab01698d213}{update\+Display}} (string label, string value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_e_s_p_machine_u_i_a2a78ce3ed424e0446381666c54381bc2}{UI}} (void $\ast$pv\+Parameter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 11 of file ESPMachine\+UI.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_e_s_p_machine_u_i_ac40746603a7fa90bbd75b6788fd3016e}\label{class_e_s_p_machine_u_i_ac40746603a7fa90bbd75b6788fd3016e}} 
+\index{ESPMachineUI@{ESPMachineUI}!ESPMachineUI@{ESPMachineUI}}
+\index{ESPMachineUI@{ESPMachineUI}!ESPMachineUI@{ESPMachineUI}}
+\doxysubsubsection{\texorpdfstring{ESPMachineUI()}{ESPMachineUI()}}
+{\footnotesize\ttfamily ESPMachine\+UI\+::\+ESPMachine\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\ttfamily x\+Task\+Create\+Pinned\+To\+Core(UI, \char`\"{}\+ESPMachine\+UI\char`\"{}, 4096, NULL, 2, \&ui\+Handle, 0);}
+
+The function {\ttfamily x\+Task\+Create\+Pinned\+To\+Core} creates a task (a thread) and pins it to a core. The first argument is the name of the function that will be run as a task. The second argument is the name of the task. The third argument is the stack size. The fourth argument is a pointer to the function\textquotesingle{}s arguments. The fifth argument is the priority of the task. The sixth argument is a pointer to the task handle. The seventh argument is the core to pin the task to 
+
+Definition at line 19 of file ESPMachine\+UI.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_ac40746603a7fa90bbd75b6788fd3016e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_e_s_p_machine_u_i_a47c5bfe76c1dfcb53de5f16294ca0bd1}\label{class_e_s_p_machine_u_i_a47c5bfe76c1dfcb53de5f16294ca0bd1}} 
+\index{ESPMachineUI@{ESPMachineUI}!attachEncoder@{attachEncoder}}
+\index{attachEncoder@{attachEncoder}!ESPMachineUI@{ESPMachineUI}}
+\doxysubsubsection{\texorpdfstring{attachEncoder()}{attachEncoder()}}
+{\footnotesize\ttfamily void ESPMachine\+UI\+::attach\+Encoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_e_s_p_machine}{ESPMachine}}}]{dreamachine }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file ESPMachine\+UI.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_a47c5bfe76c1dfcb53de5f16294ca0bd1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_a47c5bfe76c1dfcb53de5f16294ca0bd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_u_i_a2a78ce3ed424e0446381666c54381bc2}\label{class_e_s_p_machine_u_i_a2a78ce3ed424e0446381666c54381bc2}} 
+\index{ESPMachineUI@{ESPMachineUI}!UI@{UI}}
+\index{UI@{UI}!ESPMachineUI@{ESPMachineUI}}
+\doxysubsubsection{\texorpdfstring{UI()}{UI()}}
+{\footnotesize\ttfamily void ESPMachine\+UI\+::\+UI (\begin{DoxyParamCaption}\item[{void $\ast$}]{pv\+Parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 44 of file ESPMachine\+UI.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_a2a78ce3ed424e0446381666c54381bc2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_a2a78ce3ed424e0446381666c54381bc2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_s_p_machine_u_i_a940cedbabd35d0a8aee42ab01698d213}\label{class_e_s_p_machine_u_i_a940cedbabd35d0a8aee42ab01698d213}} 
+\index{ESPMachineUI@{ESPMachineUI}!updateDisplay@{updateDisplay}}
+\index{updateDisplay@{updateDisplay}!ESPMachineUI@{ESPMachineUI}}
+\doxysubsubsection{\texorpdfstring{updateDisplay()}{updateDisplay()}}
+{\footnotesize\ttfamily void ESPMachine\+UI\+::update\+Display (\begin{DoxyParamCaption}\item[{string}]{label,  }\item[{string}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file ESPMachine\+UI.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_a940cedbabd35d0a8aee42ab01698d213_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_s_p_machine_u_i_a940cedbabd35d0a8aee42ab01698d213_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_e_s_p_machine_u_i_8h}{ESPMachine\+UI.\+h}}\item 
+src/\mbox{\hyperlink{_e_s_p_machine_u_i_8cpp}{ESPMachine\+UI.\+cpp}}\end{DoxyCompactItemize}
