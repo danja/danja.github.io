@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('class_e_s_p_machine.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,6 +62,7 @@ $(document).ready(function(){initNavTree('class_e_s_p_machine.html',''); initRes
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -99,11 +79,16 @@ Collaboration diagram for ESPMachine:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_s_p_machine__coll__graph.png" border="0" usemap="#a_e_s_p_machine_coll__map" alt="Collaboration graph"/></div>
 <map name="a_e_s_p_machine_coll__map" id="a_e_s_p_machine_coll__map">
-<area shape="rect" title=" " alt="" coords="13,184,114,211"/>
-<area shape="rect" href="class_mode.html" title=" " alt="" coords="34,95,93,121"/>
-<area shape="rect" href="struct_mode_message.html" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" title=" " alt="" coords="235,601,394,781"/>
+<area shape="rect" href="class_mode.html" title=" " alt="" coords="247,388,390,539"/>
+<area shape="rect" title=" " alt="" coords="521,145,580,223"/>
+<area shape="rect" href="struct_mode_message.html" title=" " alt="" coords="130,145,246,223"/>
+<area shape="rect" title=" " alt="" coords="44,5,83,83"/>
+<area shape="rect" title=" " alt="" coords="257,5,308,83"/>
+<area shape="rect" title=" " alt="" coords="424,145,474,223"/>
+<area shape="rect" title=" " alt="" coords="416,425,468,502"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -166,17 +151,41 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00021">21</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00025">25</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0_cgraph.png" border="0" usemap="#aclass_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0_cgraph" alt=""/></div>
 <map name="aclass_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0_cgraph" id="aclass_e_s_p_machine_af3ecb977982594cc122e60f48355e9d0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,193,57"/>
-<area shape="rect" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1" title=" " alt="" coords="241,31,457,57"/>
-<area shape="rect" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868" title=" " alt="" coords="505,31,720,57"/>
-<area shape="rect" href="class_dispatcher.html#acf810957bee34f655300abc077fac6b3" title=" " alt="" coords="783,5,963,32"/>
-<area shape="rect" href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628" title=" " alt="" coords="768,56,977,83"/>
+<area shape="rect" title=" " alt="" coords="5,208,193,235"/>
+<area shape="rect" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1" title=" " alt="" coords="241,81,457,108"/>
+<area shape="rect" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2" title=" " alt="" coords="281,436,418,463"/>
+<area shape="rect" href="class_e_s_p_machine_waves.html#a522ae2e1777daf09489711f5dda68da9" title=" " alt="" coords="251,208,448,235"/>
+<area shape="rect" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868" title=" " alt="" coords="505,5,720,32"/>
+<area shape="rect" href="class_dispatcher.html#acf810957bee34f655300abc077fac6b3" title=" " alt="" coords="792,56,972,83"/>
+<area shape="rect" href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628" title=" " alt="" coords="777,5,987,32"/>
+<area shape="rect" href="class_tiny_display.html#a39d14b6d7c68fb5184af638b2f62e4ef" title=" " alt="" coords="549,436,676,463"/>
+<area shape="rect" href="class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec" title=" " alt="" coords="523,661,702,688"/>
+<area shape="rect" href="class_adafruit___s_s_d1306.html#aa5457e560feed75336001927c8e0f651" title="Allocate RAM for image buffer, initialize peripherals and pins." alt="" coords="791,385,973,412"/>
+<area shape="rect" href="class_adafruit___s_s_d1306.html#afe1e0f5efabd931aab7998275356744d" title="Clear contents of display buffer (set all pixels to off)." alt="" coords="768,436,996,463"/>
+<area shape="rect" href="class_adafruit___s_s_d1306.html#a0ef45af1adca923ef66233b2998a150b" title="Push data currently in RAM to SSD1306 display." alt="" coords="785,487,979,513"/>
+<area shape="rect" href="class_dispatcher.html#a8de0c439bf65c6b5acc2b7df57220231" title=" " alt="" coords="800,537,964,564"/>
+<area shape="rect" href="class_esp32_rotary_encoder.html#afbecfc74b9c4de9d15a8f3b6fa3ef8c8" title=" " alt="" coords="804,589,960,630"/>
+<area shape="rect" href="class_esp32_rotary_encoder.html#a98ac10f0fab8a2e8f8428da5ae171894" title=" " alt="" coords="804,654,960,695"/>
+<area shape="rect" href="class_esp32_rotary_encoder.html#ada71609718ad5136635af12eadda85ab" title=" " alt="" coords="804,719,960,761"/>
+<area shape="rect" href="class_esp32_rotary_encoder.html#a55fb1189048e018ef0ac703e2a12ff5c" title=" " alt="" coords="804,785,960,826"/>
+<area shape="rect" href="class_esp32_rotary_encoder.html#a9a86117583947d37afee901cfea173d8" title=" " alt="" coords="804,850,960,891"/>
+<area shape="rect" href="class_l_f_o.html#aa359640eb835de627c817a545d0bed53" title=" " alt="" coords="547,107,678,133"/>
+<area shape="rect" href="class_noise.html#afd804df26691edd23951b0adb9e7bcdf" title=" " alt="" coords="541,208,684,235"/>
+<area shape="rect" href="class_noise.html#ac4a1fbaf8ae50e4f43277fd876ed095c" title=" " alt="" coords="526,157,699,184"/>
+<area shape="rect" href="class_led_driver.html#a77d8082172ee3b64372e2e7bcf23b836" title=" " alt="" coords="513,56,712,83"/>
+<area shape="rect" href="class_led_driver.html#ae9edd43a2579705980536f8aa9ab5ded" title=" " alt="" coords="521,259,704,285"/>
+<area shape="rect" href="class_l_f_o.html#aa46a85bdf6f99f6e24d11f1f2c5f2aed" title=" " alt="" coords="541,360,684,387"/>
+<area shape="rect" href="class_led_driver.html#af18744070dd31234e218136f7efec363" title=" " alt="" coords="522,309,703,336"/>
+<area shape="rect" href="class_pink_noise.html#a3c3737baa1b244081a46284dc067dfd2" title=" " alt="" coords="823,208,941,235"/>
+<area shape="rect" href="class_noise.html#a77fc40626ca4abf8b880333c0e826faa" title=" " alt="" coords="805,157,959,184"/>
+<area shape="rect" href="class_led_driver.html#a4dc27c117e4577e51b2e8dee0eb4ee77" title=" " alt="" coords="807,107,957,133"/>
+<area shape="rect" href="class_l_f_o.html#a2f7343f47eeb6d9c903c51c6a3dd1f74" title=" " alt="" coords="824,335,940,361"/>
 </map>
 </div>
 
@@ -198,7 +207,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00039">39</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00060">60</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -227,7 +236,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00118">118</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00114">114</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -268,7 +277,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00138">138</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00132">132</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -383,7 +392,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00076">76</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00097">97</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -402,7 +411,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00095">95</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00107">107</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -583,13 +592,9 @@ Here is the call graph for this function:</div>
 <li>src/<a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_e_s_p_machine.html">ESPMachine</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
 </body>
 </html>

@@ -5,14 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dreamachine: src/ESPMachineUI.cpp Source File</title>
+<title>Dreamachine: src/UI/ESPMachineUI.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_e_s_p_machine_u_i_8cpp_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,6 +62,11 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_u_i_8cpp_source.html','
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7ad25bca70c4d3d9103f75d82f41ef94.html">UI</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ESPMachineUI.cpp</div>  </div>
@@ -95,70 +79,68 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_u_i_8cpp_source.html','
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_e_s_p_machine_u_i_8h.html">ESPMachineUI.h</a>&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_e_s_p_machine_u_i_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">    8</a></span>&#160;TaskHandle_t <a class="code" href="_e_s_p_machine_u_i_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a> = NULL;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// TaskHandle_t uiHandle = NULL;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e">   19</a></span>&#160;<a class="code" href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e">ESPMachineUI::ESPMachineUI</a>()</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    xTaskCreatePinnedToCore(</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">UI</a>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="stringliteral">&quot;ESPMachineUI&quot;</span>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        4096, <span class="comment">// stack size, was 4096, 64000 // high 97004</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        NULL,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        2, <span class="comment">// priority</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        &amp;<a class="code" href="_e_s_p_machine_u_i_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        0); <span class="comment">// core</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e">   10</a></span>&#160;<a class="code" href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e">ESPMachineUI::ESPMachineUI</a>()</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">ESPMachineUI::ESPMachineUI()</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    xTaskCreatePinnedToCore(</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">        UI,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        &quot;ESPMachineUI&quot;,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        4096, // stack size, was 4096, 64000 // high 97004</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">        NULL,</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">        2, // priority</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">        &amp;uiHandle,</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        0); // core</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">   27</a></span>&#160;<a class="code" href="class_tiny_display.html">TinyDisplay</a> <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a> = <a class="code" href="class_tiny_display.html">TinyDisplay</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">   29</a></span>&#160;<a class="code" href="class_encoder_reader.html">EncoderReader</a> <a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">   31</a></span>&#160;<a class="code" href="class_tiny_display.html">TinyDisplay</a> <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a> = <a class="code" href="class_tiny_display.html">TinyDisplay</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">   33</a></span>&#160;<a class="code" href="class_encoder_reader.html">EncoderReader</a> <a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">ESPMachineUI::attachEncoder</a>(<a class="code" href="class_e_s_p_machine.html">ESPMachine</a> dreamachine) <span class="comment">// should probably extract interface</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    dreamachine.<a class="code" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868">registerCallback</a>(<a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>.<a class="code" href="class_encoder_reader.html#a69aa4d1819786c357e0c52e2fed7b077">buttonDispatcher</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dreamachine.<a class="code" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868">registerCallback</a>(<a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>.<a class="code" href="class_encoder_reader.html#ace382220443c6d434758fa92e545e2b5">encoderDispatcher</a>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*********************/</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/***** UI THREAD *****/</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/*********************/</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">ESPMachineUI::UI</a>(<span class="keywordtype">void</span> *pvParameter)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a>.<a class="code" href="class_tiny_display.html#a39d14b6d7c68fb5184af638b2f62e4ef">init</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// delay(500);</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// tinyDisplay.drawLabel(&quot;Starting...&quot;);</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">        tinyDisplay.drawLabel(&quot;Starting...&quot;);</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">        tinyDisplay.drawValue(&quot;0%&quot;);</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">        tinyDisplay.drawValue(&quot;100%&quot;);</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">        tinyDisplay.drawLabel(&quot;Working&quot;);</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">while</span> (1) <span class="comment">// MAIN UI LOOP</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//     Serial.println(&quot;UI&quot;);</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        delay(10);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>.<a class="code" href="class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec">operate</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">ESPMachineUI::updateDisplay</a>(<span class="keywordtype">string</span> label, <span class="keywordtype">string</span> value)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a>.<a class="code" href="class_tiny_display.html#a8bc232c708299e47862576501e1443ad">drawLabel</a>(label);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a>.<a class="code" href="class_tiny_display.html#a2eeeb7784382d34cbb0bdfaccea05dae">drawValue</a>(value);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="ttc" id="a_e_s_p_machine_u_i_8cpp_html_a243e6ae65d60b85ca3a156e17c81af55"><div class="ttname"><a href="_e_s_p_machine_u_i_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a></div><div class="ttdeci">TaskHandle_t uiHandle</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00008">ESPMachineUI.cpp:8</a></div></div>
-<div class="ttc" id="a_e_s_p_machine_u_i_8cpp_html_ad2d4f08c9e613a5b5a3602dff6869d93"><div class="ttname"><a href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a></div><div class="ttdeci">TinyDisplay tinyDisplay</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00031">ESPMachineUI.cpp:31</a></div></div>
-<div class="ttc" id="a_e_s_p_machine_u_i_8cpp_html_aea878670e9bc6b1c4478b81529f59d98"><div class="ttname"><a href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a></div><div class="ttdeci">EncoderReader encoderReader</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00033">ESPMachineUI.cpp:33</a></div></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">ESPMachineUI::attachEncoder</a>(<a class="code" href="class_e_s_p_machine.html">ESPMachine</a> dreamachine) <span class="comment">// should probably extract interface</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    dreamachine.<a class="code" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868">registerCallback</a>(<a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>.<a class="code" href="class_encoder_reader.html#a69aa4d1819786c357e0c52e2fed7b077">buttonDispatcher</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    dreamachine.<a class="code" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868">registerCallback</a>(<a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>.<a class="code" href="class_encoder_reader.html#ace382220443c6d434758fa92e545e2b5">encoderDispatcher</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*********************/</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/***** UI THREAD *****/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/*********************/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">ESPMachineUI::UI</a>(<span class="keywordtype">void</span> *pvParameter)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a>.<a class="code" href="class_tiny_display.html#a39d14b6d7c68fb5184af638b2f62e4ef">init</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    delay(100);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span> (1) <span class="comment">// MAIN UI LOOP</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//     Serial.println(&quot;UI&quot;);</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        delay(10);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a>.<a class="code" href="class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec">operate</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">ESPMachineUI::updateDisplay</a>(<span class="keywordtype">string</span> label, <span class="keywordtype">string</span> value)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a>.<a class="code" href="class_tiny_display.html#a8bc232c708299e47862576501e1443ad">drawLabel</a>(label);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a>.<a class="code" href="class_tiny_display.html#a2eeeb7784382d34cbb0bdfaccea05dae">drawValue</a>(value);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="ttc" id="a_e_s_p_machine_u_i_8cpp_html_ad2d4f08c9e613a5b5a3602dff6869d93"><div class="ttname"><a href="_e_s_p_machine_u_i_8cpp.html#ad2d4f08c9e613a5b5a3602dff6869d93">tinyDisplay</a></div><div class="ttdeci">TinyDisplay tinyDisplay</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00027">ESPMachineUI.cpp:27</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_u_i_8cpp_html_aea878670e9bc6b1c4478b81529f59d98"><div class="ttname"><a href="_e_s_p_machine_u_i_8cpp.html#aea878670e9bc6b1c4478b81529f59d98">encoderReader</a></div><div class="ttdeci">EncoderReader encoderReader</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00029">ESPMachineUI.cpp:29</a></div></div>
 <div class="ttc" id="a_e_s_p_machine_u_i_8h_html"><div class="ttname"><a href="_e_s_p_machine_u_i_8h.html">ESPMachineUI.h</a></div></div>
 <div class="ttc" id="a_encoder_reader_8h_html"><div class="ttname"><a href="_encoder_reader_8h.html">EncoderReader.h</a></div></div>
 <div class="ttc" id="a_tiny_display_8h_html"><div class="ttname"><a href="_tiny_display_8h.html">TinyDisplay.h</a></div></div>
 <div class="ttc" id="aclass_e_s_p_machine_html"><div class="ttname"><a href="class_e_s_p_machine.html">ESPMachine</a></div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8h_source.html#l00019">ESPMachine.h:20</a></div></div>
 <div class="ttc" id="aclass_e_s_p_machine_html_a38ed1e9a996185e722876e76117e5868"><div class="ttname"><a href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868">ESPMachine::registerCallback</a></div><div class="ttdeci">void registerCallback(Dispatcher&lt; ButtonEventEnum &gt; &amp;dispatcher)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8h_source.html#l00045">ESPMachine.h:45</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a2a78ce3ed424e0446381666c54381bc2"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">ESPMachineUI::UI</a></div><div class="ttdeci">static void UI(void *pvParameter)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00044">ESPMachineUI.cpp:44</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a47c5bfe76c1dfcb53de5f16294ca0bd1"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">ESPMachineUI::attachEncoder</a></div><div class="ttdeci">void attachEncoder(ESPMachine dreamachine)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00035">ESPMachineUI.cpp:35</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a940cedbabd35d0a8aee42ab01698d213"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">ESPMachineUI::updateDisplay</a></div><div class="ttdeci">void updateDisplay(string label, string value)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00064">ESPMachineUI.cpp:64</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_u_i_html_ac40746603a7fa90bbd75b6788fd3016e"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e">ESPMachineUI::ESPMachineUI</a></div><div class="ttdeci">ESPMachineUI()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00019">ESPMachineUI.cpp:19</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a2a78ce3ed424e0446381666c54381bc2"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">ESPMachineUI::UI</a></div><div class="ttdeci">static void UI(void *pvParameter)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00040">ESPMachineUI.cpp:40</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a47c5bfe76c1dfcb53de5f16294ca0bd1"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">ESPMachineUI::attachEncoder</a></div><div class="ttdeci">void attachEncoder(ESPMachine dreamachine)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00031">ESPMachineUI.cpp:31</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a940cedbabd35d0a8aee42ab01698d213"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">ESPMachineUI::updateDisplay</a></div><div class="ttdeci">void updateDisplay(string label, string value)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00054">ESPMachineUI.cpp:54</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_ac40746603a7fa90bbd75b6788fd3016e"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e">ESPMachineUI::ESPMachineUI</a></div><div class="ttdeci">ESPMachineUI()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00010">ESPMachineUI.cpp:10</a></div></div>
 <div class="ttc" id="aclass_encoder_reader_html"><div class="ttname"><a href="class_encoder_reader.html">EncoderReader</a></div><div class="ttdef"><b>Definition:</b> <a href="_encoder_reader_8h_source.html#l00019">EncoderReader.h:20</a></div></div>
 <div class="ttc" id="aclass_encoder_reader_html_a69aa4d1819786c357e0c52e2fed7b077"><div class="ttname"><a href="class_encoder_reader.html#a69aa4d1819786c357e0c52e2fed7b077">EncoderReader::buttonDispatcher</a></div><div class="ttdeci">Dispatcher&lt; ButtonEventEnum &gt; buttonDispatcher</div><div class="ttdef"><b>Definition:</b> <a href="_encoder_reader_8h_source.html#l00027">EncoderReader.h:27</a></div></div>
 <div class="ttc" id="aclass_encoder_reader_html_a894959b5ab61cb3191f09a2e60e26eec"><div class="ttname"><a href="class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec">EncoderReader::operate</a></div><div class="ttdeci">void operate()</div><div class="ttdef"><b>Definition:</b> <a href="_encoder_reader_8cpp_source.html#l00033">EncoderReader.cpp:33</a></div></div>
@@ -168,13 +150,9 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_u_i_8cpp_source.html','
 <div class="ttc" id="aclass_tiny_display_html_a39d14b6d7c68fb5184af638b2f62e4ef"><div class="ttname"><a href="class_tiny_display.html#a39d14b6d7c68fb5184af638b2f62e4ef">TinyDisplay::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="_tiny_display_8cpp_source.html#l00017">TinyDisplay.cpp:17</a></div></div>
 <div class="ttc" id="aclass_tiny_display_html_a8bc232c708299e47862576501e1443ad"><div class="ttname"><a href="class_tiny_display.html#a8bc232c708299e47862576501e1443ad">TinyDisplay::drawLabel</a></div><div class="ttdeci">void drawLabel(const string label)</div><div class="ttdef"><b>Definition:</b> <a href="_tiny_display_8cpp_source.html#l00051">TinyDisplay.cpp:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_e_s_p_machine_u_i_8cpp.html">ESPMachineUI.cpp</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
 </body>
 </html>

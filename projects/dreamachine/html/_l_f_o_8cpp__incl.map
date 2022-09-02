@@ -1,5 +1,5 @@
-<map id="src/LFO.cpp" name="src/LFO.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="47,5,144,32"/>
+<map id="src/Engine/LFO.cpp" name="src/Engine/LFO.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="23,5,168,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,89,107"/>
 <area shape="rect" id="node3" href="$_l_f_o_8h.html" title=" " alt="" coords="114,80,173,107"/>
 <area shape="rect" id="node4" href="$_dispatcher_8hpp.html" title=" " alt="" coords="83,155,203,181"/>

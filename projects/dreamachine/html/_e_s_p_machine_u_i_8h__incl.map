@@ -1,5 +1,5 @@
-<map id="src/ESPMachineUI.h" name="src/ESPMachineUI.h">
-<area shape="rect" id="node1" title=" " alt="" coords="469,5,620,32"/>
+<map id="src/UI/ESPMachineUI.h" name="src/UI/ESPMachineUI.h">
+<area shape="rect" id="node1" title=" " alt="" coords="461,5,629,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="487,229,567,256"/>
 <area shape="rect" id="node3" title=" " alt="" coords="379,229,463,256"/>
 <area shape="rect" id="node4" href="$_e_s_p_machine_8h.html" title=" " alt="" coords="328,80,441,107"/>

@@ -1,5 +1,5 @@
-<map id="src/EncoderReader.cpp" name="src/EncoderReader.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="42,5,213,32"/>
+<map id="src/UI/EncoderReader.cpp" name="src/UI/EncoderReader.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="33,5,221,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,89,107"/>
 <area shape="rect" id="node3" href="$_esp32_rotary_encoder_8h.html" title=" " alt="" coords="43,155,211,181"/>
 <area shape="rect" id="node5" href="$_encoder_reader_8h.html" title=" " alt="" coords="165,80,297,107"/>

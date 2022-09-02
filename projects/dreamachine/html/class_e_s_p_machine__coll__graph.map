@@ -1,5 +1,10 @@
 <map id="ESPMachine" name="ESPMachine">
-<area shape="rect" id="node1" title=" " alt="" coords="13,184,114,211"/>
-<area shape="rect" id="node2" href="$class_mode.html" title=" " alt="" coords="34,95,93,121"/>
-<area shape="rect" id="node3" href="$struct_mode_message.html" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,601,394,781"/>
+<area shape="rect" id="node2" href="$class_mode.html" title=" " alt="" coords="247,388,390,539"/>
+<area shape="rect" id="node3" title=" " alt="" coords="521,145,580,223"/>
+<area shape="rect" id="node4" href="$struct_mode_message.html" title=" " alt="" coords="130,145,246,223"/>
+<area shape="rect" id="node5" title=" " alt="" coords="44,5,83,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="257,5,308,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="424,145,474,223"/>
+<area shape="rect" id="node8" title=" " alt="" coords="416,425,468,502"/>
 </map>

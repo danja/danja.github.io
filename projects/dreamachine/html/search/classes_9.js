@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pinknoise_344',['PinkNoise',['../class_pink_noise.html',1,'']]]
+  ['pinknoise_347',['PinkNoise',['../class_pink_noise.html',1,'']]]
 ];

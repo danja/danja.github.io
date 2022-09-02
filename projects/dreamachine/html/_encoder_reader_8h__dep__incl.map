@@ -1,9 +1,9 @@
-<map id="src/EncoderReader.h" name="src/EncoderReader.h">
-<area shape="rect" id="node1" title=" " alt="" coords="217,5,372,32"/>
-<area shape="rect" id="node2" href="$_encoder_reader_8cpp.html" title=" " alt="" coords="5,80,176,107"/>
-<area shape="rect" id="node3" href="$_e_s_p_machine_8cpp.html" title=" " alt="" coords="189,229,339,256"/>
-<area shape="rect" id="node4" href="$_e_s_p_machine_8h.html" title=" " alt="" coords="280,80,416,107"/>
-<area shape="rect" id="node6" href="$_e_s_p_machine_u_i_8cpp.html" title=" " alt="" coords="451,229,616,256"/>
-<area shape="rect" id="node5" href="$_e_s_p_machine_u_i_8h.html" title=" " alt="" coords="302,155,453,181"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title=" " alt="" coords="477,155,582,181"/>
+<map id="src/UI/EncoderReader.h" name="src/UI/EncoderReader.h">
+<area shape="rect" id="node1" title=" " alt="" coords="297,5,470,32"/>
+<area shape="rect" id="node2" href="$_e_s_p_machine_8cpp.html" title=" " alt="" coords="5,229,156,256"/>
+<area shape="rect" id="node3" href="$_e_s_p_machine_8h.html" title=" " alt="" coords="174,80,310,107"/>
+<area shape="rect" id="node6" href="$_e_s_p_machine_u_i_8cpp.html" title=" " alt="" coords="301,229,484,256"/>
+<area shape="rect" id="node7" href="$_encoder_reader_8cpp.html" title=" " alt="" coords="492,80,680,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="119,155,224,181"/>
+<area shape="rect" id="node5" href="$_e_s_p_machine_u_i_8h.html" title=" " alt="" coords="249,155,417,181"/>
 </map>

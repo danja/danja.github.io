@@ -1,5 +1,5 @@
-<map id="src/ESPMachineUI.cpp" name="src/ESPMachineUI.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="523,5,688,32"/>
+<map id="src/UI/ESPMachineUI.cpp" name="src/UI/ESPMachineUI.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="514,5,697,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="761,304,845,331"/>
 <area shape="rect" id="node3" href="$_encoder_reader_8h.html" title=" " alt="" coords="318,229,450,256"/>
 <area shape="rect" id="node9" href="$_tiny_display_8h.html" title=" " alt="" coords="394,80,502,107"/>

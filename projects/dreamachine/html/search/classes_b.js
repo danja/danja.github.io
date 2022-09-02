@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tinydisplay_346',['TinyDisplay',['../class_tiny_display.html',1,'']]]
+  ['tinydisplay_349',['TinyDisplay',['../class_tiny_display.html',1,'']]]
 ];

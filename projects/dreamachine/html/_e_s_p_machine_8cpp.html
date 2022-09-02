@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_e_s_p_machine_8cpp.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,6 +62,11 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_8cpp.html',''); initRes
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#var-members">Variables</a>  </div>
@@ -123,12 +107,18 @@ Include dependency graph for ESPMachine.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a243e6ae65d60b85ca3a156e17c81af55"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a> = NULL</td></tr>
+<tr class="separator:a243e6ae65d60b85ca3a156e17c81af55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec1da1de2574db7a894165efe380e89"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#a7ec1da1de2574db7a894165efe380e89">wavesHandle</a> = NULL</td></tr>
+<tr class="separator:a7ec1da1de2574db7a894165efe380e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46a57f008994cc6a2a0fbd5daf7b96c6"><td class="memItemLeft" align="right" valign="top">QueueHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a></td></tr>
 <tr class="separator:a46a57f008994cc6a2a0fbd5daf7b96c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2d02611b740f1601a51bee888a4e891"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a> = 9</td></tr>
 <tr class="separator:ad2d02611b740f1601a51bee888a4e891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac21a742d2d06d5913dc84fce02b52579"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_s_p_machine_u_i.html">ESPMachineUI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a></td></tr>
 <tr class="separator:ac21a742d2d06d5913dc84fce02b52579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb85c64034ba320bc7a6455289365016"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_s_p_machine_waves.html">ESPMachineWaves</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#abb85c64034ba320bc7a6455289365016">waves</a></td></tr>
+<tr class="separator:abb85c64034ba320bc7a6455289365016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0bed38cbf7d2c767ee8656917a37cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mode.html">Mode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a> [<a class="el" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a>]</td></tr>
 <tr class="separator:ad0bed38cbf7d2c767ee8656917a37cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -145,7 +135,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00013">13</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00016">16</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -161,7 +151,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00019">19</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00023">23</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -177,7 +167,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00015">15</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00018">18</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -193,18 +183,62 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00017">17</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00020">20</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a243e6ae65d60b85ca3a156e17c81af55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243e6ae65d60b85ca3a156e17c81af55">&#9670;&nbsp;</a></span>uiHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t uiHandle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00013">13</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abb85c64034ba320bc7a6455289365016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb85c64034ba320bc7a6455289365016">&#9670;&nbsp;</a></span>waves</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_e_s_p_machine_waves.html">ESPMachineWaves</a> waves</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00021">21</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7ec1da1de2574db7a894165efe380e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec1da1de2574db7a894165efe380e89">&#9670;&nbsp;</a></span>wavesHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t wavesHandle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_e_s_p_machine_8cpp_source.html#l00014">14</a> of file <a class="el" href="_e_s_p_machine_8cpp_source.html">ESPMachine.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_e_s_p_machine_8cpp.html">ESPMachine.cpp</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
 </body>
 </html>

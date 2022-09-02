@@ -1,5 +1,9 @@
 <map id="VolumeMode" name="VolumeMode">
-<area shape="rect" id="node1" title=" " alt="" coords="9,171,117,197"/>
-<area shape="rect" id="node2" href="$class_mode.html" title=" " alt="" coords="34,95,93,121"/>
-<area shape="rect" id="node3" href="$struct_mode_message.html" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="129,500,271,577"/>
+<area shape="rect" id="node2" href="$class_mode.html" title=" " alt="" coords="129,300,271,451"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,145,64,223"/>
+<area shape="rect" id="node4" href="$struct_mode_message.html" title=" " alt="" coords="89,145,205,223"/>
+<area shape="rect" id="node5" title=" " alt="" coords="91,5,130,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="204,5,255,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="371,145,421,223"/>
 </map>

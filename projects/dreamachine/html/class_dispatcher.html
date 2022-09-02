@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('class_dispatcher.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,6 +62,7 @@ $(document).ready(function(){initNavTree('class_dispatcher.html',''); initResiza
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -95,6 +75,14 @@ $(document).ready(function(){initNavTree('class_dispatcher.html',''); initResiza
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_dispatcher_8hpp_source.html">Dispatcher.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Dispatcher&lt; Args &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_dispatcher__coll__graph.png" border="0" usemap="#a_dispatcher_3_01_args_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="a_dispatcher_3_01_args_01_4_coll__map" id="a_dispatcher_3_01_args_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,156,112"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -173,16 +161,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_dispatcher_acf810957bee34f655300abc077fac6b3_icgraph.png" border="0" usemap="#aclass_dispatcher_acf810957bee34f655300abc077fac6b3_icgraph" alt=""/></div>
 <map name="aclass_dispatcher_acf810957bee34f655300abc077fac6b3_icgraph" id="aclass_dispatcher_acf810957bee34f655300abc077fac6b3_icgraph">
-<area shape="rect" title=" " alt="" coords="828,107,1008,133"/>
-<area shape="rect" href="dispatcher__example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="637,5,692,32"/>
-<area shape="rect" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868" title=" " alt="" coords="557,56,772,83"/>
-<area shape="rect" href="class_event_receiver.html#a64ea02738337008183f4569364675956" title=" " alt="" coords="549,107,780,133"/>
-<area shape="rect" href="class_led_driver.html#a77d8082172ee3b64372e2e7bcf23b836" title=" " alt="" coords="565,157,764,184"/>
-<area shape="rect" href="class_noise.html#ac4a1fbaf8ae50e4f43277fd876ed095c" title=" " alt="" coords="578,208,751,235"/>
-<area shape="rect" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1" title=" " alt="" coords="285,56,501,83"/>
-<area shape="rect" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0" title=" " alt="" coords="27,56,215,83"/>
-<area shape="rect" href="class_e_s_p_machine_waves.html#a522ae2e1777daf09489711f5dda68da9" title=" " alt="" coords="295,183,492,209"/>
-<area shape="rect" href="class_e_s_p_machine_waves.html#a699796f531acf45322d0bcc831cd7be7" title=" " alt="" coords="5,175,237,217"/>
+<area shape="rect" title=" " alt="" coords="784,107,964,133"/>
+<area shape="rect" href="dispatcher__example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="593,5,648,32"/>
+<area shape="rect" href="class_e_s_p_machine.html#a38ed1e9a996185e722876e76117e5868" title=" " alt="" coords="513,56,728,83"/>
+<area shape="rect" href="class_event_receiver.html#a64ea02738337008183f4569364675956" title=" " alt="" coords="505,107,736,133"/>
+<area shape="rect" href="class_noise.html#ac4a1fbaf8ae50e4f43277fd876ed095c" title=" " alt="" coords="534,157,707,184"/>
+<area shape="rect" href="class_led_driver.html#a77d8082172ee3b64372e2e7bcf23b836" title=" " alt="" coords="521,208,720,235"/>
+<area shape="rect" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1" title=" " alt="" coords="241,81,457,108"/>
+<area shape="rect" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0" title=" " alt="" coords="5,132,193,159"/>
+<area shape="rect" href="class_e_s_p_machine_waves.html#a522ae2e1777daf09489711f5dda68da9" title=" " alt="" coords="251,157,448,184"/>
 </map>
 </div>
 
@@ -220,11 +207,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_dispatcher_a8de0c439bf65c6b5acc2b7df57220231_icgraph.png" border="0" usemap="#aclass_dispatcher_a8de0c439bf65c6b5acc2b7df57220231_icgraph" alt=""/></div>
 <map name="aclass_dispatcher_a8de0c439bf65c6b5acc2b7df57220231_icgraph" id="aclass_dispatcher_a8de0c439bf65c6b5acc2b7df57220231_icgraph">
-<area shape="rect" title=" " alt="" coords="681,31,845,57"/>
-<area shape="rect" href="dispatcher__example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="517,5,571,32"/>
-<area shape="rect" href="class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec" title=" " alt="" coords="455,56,633,83"/>
-<area shape="rect" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2" title=" " alt="" coords="269,56,407,83"/>
-<area shape="rect" href="class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e" title=" " alt="" coords="5,56,221,83"/>
+<area shape="rect" title=" " alt="" coords="653,31,817,57"/>
+<area shape="rect" href="dispatcher__example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="489,5,543,32"/>
+<area shape="rect" href="class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec" title=" " alt="" coords="427,56,605,83"/>
+<area shape="rect" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2" title=" " alt="" coords="241,56,379,83"/>
+<area shape="rect" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0" title=" " alt="" coords="5,56,193,83"/>
 </map>
 </div>
 
@@ -273,13 +260,9 @@ Here is the caller graph for this function:</div>
 <li>lib/Observer/<a class="el" href="_dispatcher_8hpp_source.html">Dispatcher.hpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_dispatcher.html">Dispatcher</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
 </body>
 </html>

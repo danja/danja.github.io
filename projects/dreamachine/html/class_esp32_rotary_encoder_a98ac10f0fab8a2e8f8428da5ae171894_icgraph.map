@@ -1,6 +1,6 @@
 <map id="Esp32RotaryEncoder::getValue" name="Esp32RotaryEncoder::getValue">
-<area shape="rect" id="node1" title=" " alt="" coords="681,5,837,47"/>
-<area shape="rect" id="node2" href="$class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec" title=" " alt="" coords="455,13,633,39"/>
-<area shape="rect" id="node3" href="$class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2" title=" " alt="" coords="269,13,407,39"/>
-<area shape="rect" id="node4" href="$class_e_s_p_machine_u_i.html#ac40746603a7fa90bbd75b6788fd3016e" title=" " alt="" coords="5,13,221,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="653,5,809,47"/>
+<area shape="rect" id="node2" href="$class_encoder_reader.html#a894959b5ab61cb3191f09a2e60e26eec" title=" " alt="" coords="427,13,605,39"/>
+<area shape="rect" id="node3" href="$class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2" title=" " alt="" coords="241,13,379,39"/>
+<area shape="rect" id="node4" href="$class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0" title=" " alt="" coords="5,13,193,39"/>
 </map>

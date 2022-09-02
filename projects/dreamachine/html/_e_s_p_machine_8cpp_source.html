@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,23 +48,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_e_s_p_machine_8cpp_source.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -83,6 +62,11 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_8cpp_source.html',''); 
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ESPMachine.cpp</div>  </div>
@@ -100,153 +84,150 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_8cpp_source.html',''); 
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">   13</a></span>&#160;QueueHandle_t <a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">   15</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a> = 9;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">   17</a></span>&#160;<a class="code" href="class_e_s_p_machine_u_i.html">ESPMachineUI</a> <a class="code" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">   19</a></span>&#160;<a class="code" href="class_mode.html">Mode</a> *<a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a>];</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0">   21</a></span>&#160;<a class="code" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0">ESPMachine::ESPMachine</a>()</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a> = xQueueCreate(<a class="code" href="_q_8h.html#a1d178674d9e4e3562dbecac3cca6dc0f">QUEUE_LENGTH</a>, <a class="code" href="_q_8h.html#afbebd8669abd38e60e096ff34429f389">QUEUE_ITEM_SIZE</a>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a> == NULL)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        Serial.println(<span class="stringliteral">&quot;Error creating the intercoreQueue&quot;</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">   13</a></span>&#160;TaskHandle_t <a class="code" href="_e_s_p_machine_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a> = NULL;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#a7ec1da1de2574db7a894165efe380e89">   14</a></span>&#160;TaskHandle_t <a class="code" href="_e_s_p_machine_8cpp.html#a7ec1da1de2574db7a894165efe380e89">wavesHandle</a> = NULL;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">   16</a></span>&#160;QueueHandle_t <a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">   18</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a> = 9;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">   20</a></span>&#160;<a class="code" href="class_e_s_p_machine_u_i.html">ESPMachineUI</a> <a class="code" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#abb85c64034ba320bc7a6455289365016">   21</a></span>&#160;<a class="code" href="class_e_s_p_machine_waves.html">ESPMachineWaves</a> <a class="code" href="_e_s_p_machine_8cpp.html#abb85c64034ba320bc7a6455289365016">waves</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">   23</a></span>&#160;<a class="code" href="class_mode.html">Mode</a> *<a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a>];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0">   25</a></span>&#160;<a class="code" href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0">ESPMachine::ESPMachine</a>()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a>.<a class="code" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">attachEncoder</a>(*<span class="keyword">this</span>); <span class="comment">// attaches callbacks</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    loadModes();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a>.<a class="code" href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">attachEncoder</a>(*<span class="keyword">this</span>); <span class="comment">// attaches callbacks</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_e_s_p_machine_waves.html">ESPMachineWaves</a> waves; <span class="comment">// if this is placed up there ^^ it kills the encoder input</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// update();</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a8c60da1d449db306ce881c8966c01534">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a8c60da1d449db306ce881c8966c01534">ESPMachine::loadModes</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>] = <span class="keyword">new</span> <a class="code" href="class_brightness_mode.html">BrightnessMode</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>, <span class="stringliteral">&quot;Brightness&quot;</span>, 0, 100, 100, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>] = <span class="keyword">new</span> <a class="code" href="class_frequency_mode.html">FrequencyMode</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>, <span class="stringliteral">&quot;Frequency &quot;</span>, 1, 11, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    xTaskCreatePinnedToCore(</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_e_s_p_machine_waves.html#a522ae2e1777daf09489711f5dda68da9">ESPMachineWaves::Waves</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="stringliteral">&quot;ESPMachineWaves&quot;</span>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        4096, <span class="comment">// was 2048, 4096</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        NULL,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        2,            <span class="comment">// 1 | portPRIVILEGE_BIT,</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        &amp;<a class="code" href="_e_s_p_machine_8cpp.html#a7ec1da1de2574db7a894165efe380e89">wavesHandle</a>, <span class="comment">// was &amp;AudioTask,</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        1);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    xTaskCreatePinnedToCore(</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">ESPMachineUI::UI</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="stringliteral">&quot;ESPMachineUI&quot;</span>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        4096, <span class="comment">// stack size, was 4096, 64000 // high 97004</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        NULL,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        2, <span class="comment">// priority</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        &amp;<a class="code" href="_e_s_p_machine_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        0); <span class="comment">// core</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658af96bfa1d2451abaeccb0bb3e38dde2db">modeSelect::LIGHT_PHASE</a>] = <span class="keyword">new</span> <a class="code" href="class_light_phase_mode.html">LightPhaseMode</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658af96bfa1d2451abaeccb0bb3e38dde2db">modeSelect::LIGHT_PHASE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658af96bfa1d2451abaeccb0bb3e38dde2db">modeSelect::LIGHT_PHASE</a>, <span class="stringliteral">&quot;Light /-\\ &quot;</span>, 0, 360, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658afb8172693e58d6e8457cc3c43bc2d20c">modeSelect::LIGHT_BALANCE</a>] = <span class="keyword">new</span> <a class="code" href="class_light_balance_mode.html">LightBalanceMode</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658afb8172693e58d6e8457cc3c43bc2d20c">modeSelect::LIGHT_BALANCE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658afb8172693e58d6e8457cc3c43bc2d20c">modeSelect::LIGHT_BALANCE</a>, <span class="stringliteral">&quot;Light &lt;-&gt; &quot;</span>, 0, 100, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a> = xQueueCreate(<a class="code" href="_q_8h.html#a1d178674d9e4e3562dbecac3cca6dc0f">QUEUE_LENGTH</a>, <a class="code" href="_q_8h.html#afbebd8669abd38e60e096ff34429f389">QUEUE_ITEM_SIZE</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a> == NULL)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        Serial.println(<span class="stringliteral">&quot;Error creating the intercoreQueue&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a320b831a84a70f96e5118bd3cb3a4913">modeSelect::LIGHT_WAVE</a>] = <span class="keyword">new</span> <a class="code" href="class_light_wave_mode.html">LightWaveMode</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a320b831a84a70f96e5118bd3cb3a4913">modeSelect::LIGHT_WAVE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a320b831a84a70f96e5118bd3cb3a4913">modeSelect::LIGHT_WAVE</a>, <span class="stringliteral">&quot;Light Wave&quot;</span>, 0, 1, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a9d326c2efb1f1ef1840d474c0f9b8a48">modeSelect::VOLUME</a>] = <span class="keyword">new</span> <a class="code" href="class_volume_mode.html">VolumeMode</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a9d326c2efb1f1ef1840d474c0f9b8a48">modeSelect::VOLUME</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a9d326c2efb1f1ef1840d474c0f9b8a48">modeSelect::VOLUME</a>, <span class="stringliteral">&quot;Volume    &quot;</span>, 0, 100, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1">modeSelect::AUDIO_BALANCE</a>] = <span class="keyword">new</span> <a class="code" href="class_audio_balance_mode.html">AudioBalanceMode</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1">modeSelect::AUDIO_BALANCE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1">modeSelect::AUDIO_BALANCE</a>, <span class="stringliteral">&quot;Audio &lt;-&gt; &quot;</span>, 0, 100, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b">modeSelect::AUDIO_PHASE</a>] = <span class="keyword">new</span> <a class="code" href="class_audio_phase_mode.html">AudioPhaseMode</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b">modeSelect::AUDIO_PHASE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b">modeSelect::AUDIO_PHASE</a>, <span class="stringliteral">&quot;Audio /-\\ &quot;</span>, 0, 360, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    loadModes();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// ui.attachEncoder(*this); // attaches callbacks</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//  ESPMachineWaves waves; // if this is placed up there ^^ it kills the encoder input</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a8c60da1d449db306ce881c8966c01534">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a8c60da1d449db306ce881c8966c01534">ESPMachine::loadModes</a>()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>] = <span class="keyword">new</span> <a class="code" href="class_brightness_mode.html">BrightnessMode</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>, <span class="stringliteral">&quot;Brightness&quot;</span>, 0, 100, 100, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a7ac89696237d196f68235005d8665e27">modeSelect::SOUND_WAVE</a>] = <span class="keyword">new</span> <a class="code" href="class_sound_wave_mode.html">SoundWaveMode</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a7ac89696237d196f68235005d8665e27">modeSelect::SOUND_WAVE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a7ac89696237d196f68235005d8665e27">modeSelect::SOUND_WAVE</a>, <span class="stringliteral">&quot;Sound Wave&quot;</span>, 0, 1, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>] = <span class="keyword">new</span> <a class="code" href="class_frequency_mode.html">FrequencyMode</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>, <span class="stringliteral">&quot;Frequency &quot;</span>, 1, 11, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    this-&gt;currentMode = <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// delay(500);</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// update();</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    delay(1000);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//   ui.updateDisplay(currentMode-&gt;label, currentMode-&gt;getValueString());</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a938f37b0f7d1d2fa7f6c6012a8a38066">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a938f37b0f7d1d2fa7f6c6012a8a38066">ESPMachine::setMode</a>(<span class="keywordtype">int</span> modeIndex)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    this-&gt;modeIndex = modeIndex;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (this-&gt;modeIndex &gt;= <a class="code" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a>)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        this-&gt;modeIndex = 0;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;currentMode = <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[modeIndex];</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658af96bfa1d2451abaeccb0bb3e38dde2db">modeSelect::LIGHT_PHASE</a>] = <span class="keyword">new</span> <a class="code" href="class_light_phase_mode.html">LightPhaseMode</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658af96bfa1d2451abaeccb0bb3e38dde2db">modeSelect::LIGHT_PHASE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658af96bfa1d2451abaeccb0bb3e38dde2db">modeSelect::LIGHT_PHASE</a>, <span class="stringliteral">&quot;Light /-\\ &quot;</span>, 0, 360, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658afb8172693e58d6e8457cc3c43bc2d20c">modeSelect::LIGHT_BALANCE</a>] = <span class="keyword">new</span> <a class="code" href="class_light_balance_mode.html">LightBalanceMode</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658afb8172693e58d6e8457cc3c43bc2d20c">modeSelect::LIGHT_BALANCE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658afb8172693e58d6e8457cc3c43bc2d20c">modeSelect::LIGHT_BALANCE</a>, <span class="stringliteral">&quot;Light &lt;-&gt; &quot;</span>, 0, 100, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a320b831a84a70f96e5118bd3cb3a4913">modeSelect::LIGHT_WAVE</a>] = <span class="keyword">new</span> <a class="code" href="class_light_wave_mode.html">LightWaveMode</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a320b831a84a70f96e5118bd3cb3a4913">modeSelect::LIGHT_WAVE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a320b831a84a70f96e5118bd3cb3a4913">modeSelect::LIGHT_WAVE</a>, <span class="stringliteral">&quot;Light Wave&quot;</span>, 0, 1, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a9d326c2efb1f1ef1840d474c0f9b8a48">modeSelect::VOLUME</a>] = <span class="keyword">new</span> <a class="code" href="class_volume_mode.html">VolumeMode</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a9d326c2efb1f1ef1840d474c0f9b8a48">modeSelect::VOLUME</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a9d326c2efb1f1ef1840d474c0f9b8a48">modeSelect::VOLUME</a>, <span class="stringliteral">&quot;Volume    &quot;</span>, 0, 100, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1">modeSelect::AUDIO_BALANCE</a>] = <span class="keyword">new</span> <a class="code" href="class_audio_balance_mode.html">AudioBalanceMode</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1">modeSelect::AUDIO_BALANCE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1">modeSelect::AUDIO_BALANCE</a>, <span class="stringliteral">&quot;Audio &lt;-&gt; &quot;</span>, 0, 100, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b">modeSelect::AUDIO_PHASE</a>] = <span class="keyword">new</span> <a class="code" href="class_audio_phase_mode.html">AudioPhaseMode</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b">modeSelect::AUDIO_PHASE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b">modeSelect::AUDIO_PHASE</a>, <span class="stringliteral">&quot;Audio /-\\ &quot;</span>, 0, 360, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">void ESPMachine::nextMode()</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">{</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    this-&gt;modeIndex++;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    this-&gt;currentMode = modes[modeIndex];</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">}</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a7f5948db51f3a2c2a828c5bf6f090cf9">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a7f5948db51f3a2c2a828c5bf6f090cf9">ESPMachine::update</a>()</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    xQueueSend(<a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a>, &amp;currentMode-&gt;modeMessage, <a class="code" href="_q_8h.html#aaf1b4d3ef82f871713caca24de51d399">QUEUE_SEND_DELAY</a>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// currentMode-&gt;modeMessage.maxValue = 7;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">        Serial.print(&quot;----ALabel : &quot;);</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">        Serial.println(currentMode-&gt;modeMessage.maxValue);</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">        Serial.println(currentMode-&gt;label.c_str());</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">        Serial.print(&quot;Value : &quot;);</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">        Serial.println(currentMode-&gt;getValueString().c_str());</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a>.<a class="code" href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">updateDisplay</a>(currentMode-&gt;label, currentMode-&gt;getValueString());</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">        Serial.print(&quot;BLabel : &quot;);</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">        Serial.println(currentMode-&gt;modeMessage.maxValue);</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">        Serial.println(currentMode-&gt;label.c_str());</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">        Serial.print(&quot;Value : &quot;);</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">        Serial.println(currentMode-&gt;getValueString().c_str());</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628">ESPMachine::onEncoderClick</a>(<a class="code" href="_encoder_reader_8h.html#a3fcab9da0d2ed53873cb6eaf6ef879c5">ButtonEventEnum</a> button)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> (button == <a class="code" href="_encoder_reader_8h.html#a3fcab9da0d2ed53873cb6eaf6ef879c5a9ff81294e2a80975384720536a400da9">BUTTON_1_EVENT</a>)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        setMode(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// modeIndex = modeSelect::BRIGHTNESS;</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">//   this-&gt;currentMode = modes[modeIndex];</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        currentMode-&gt;modeMessage.value = 0;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Serial.println(<span class="stringliteral">&quot;..............&quot;</span>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Serial.println(currentMode-&gt;modeMessage.index);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        Serial.println(currentMode-&gt;modeMessage.value);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        update();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (button == <a class="code" href="_encoder_reader_8h.html#a3fcab9da0d2ed53873cb6eaf6ef879c5a2dd5b69cecdff50d87d70259d368525a">BUTTON_2_EVENT</a>)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        setMode(++modeIndex);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        update();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#ae59e20965af93bc46130890c5cdec4a8">  138</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#ae59e20965af93bc46130890c5cdec4a8">ESPMachine::onEncoderRotate</a>(<a class="code" href="_encoder_reader_8h.html#a0ed22c4fdbb5b0bcfd9ecc732696434b">EncoderEventEnum</a> encoder, <span class="keywordtype">float</span> value)</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (encoder == <a class="code" href="_encoder_reader_8h.html#a0ed22c4fdbb5b0bcfd9ecc732696434ba16e9aae1c24578b595c4879097f876b8">ENCODER_1_EVENT</a>)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a7ac89696237d196f68235005d8665e27">modeSelect::SOUND_WAVE</a>] = <span class="keyword">new</span> <a class="code" href="class_sound_wave_mode.html">SoundWaveMode</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a7ac89696237d196f68235005d8665e27">modeSelect::SOUND_WAVE</a>]-&gt;<a class="code" href="class_mode.html#a4bc891c0bb5681baeb6e8137e3e34db5">init</a>(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a7ac89696237d196f68235005d8665e27">modeSelect::SOUND_WAVE</a>, <span class="stringliteral">&quot;Sound Wave&quot;</span>, 0, 1, 10, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    this-&gt;currentMode = <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a0ef2c92b2317b95f9ef1ae102029d676">modeSelect::FREQUENCY</a>];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// delay(500);</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// update();</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    delay(1000);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//   ui.updateDisplay(currentMode-&gt;label, currentMode-&gt;getValueString());</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a938f37b0f7d1d2fa7f6c6012a8a38066">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a938f37b0f7d1d2fa7f6c6012a8a38066">ESPMachine::setMode</a>(<span class="keywordtype">int</span> modeIndex)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    this-&gt;modeIndex = modeIndex;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (this-&gt;modeIndex &gt;= <a class="code" href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;modeIndex = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    this-&gt;currentMode = <a class="code" href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a>[modeIndex];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a7f5948db51f3a2c2a828c5bf6f090cf9">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a7f5948db51f3a2c2a828c5bf6f090cf9">ESPMachine::update</a>()</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    xQueueSend(<a class="code" href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a>, &amp;currentMode-&gt;modeMessage, <a class="code" href="_q_8h.html#aaf1b4d3ef82f871713caca24de51d399">QUEUE_SEND_DELAY</a>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a>.<a class="code" href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">updateDisplay</a>(currentMode-&gt;label, currentMode-&gt;getValueString());</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628">ESPMachine::onEncoderClick</a>(<a class="code" href="_encoder_reader_8h.html#a3fcab9da0d2ed53873cb6eaf6ef879c5">ButtonEventEnum</a> button)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (button == <a class="code" href="_encoder_reader_8h.html#a3fcab9da0d2ed53873cb6eaf6ef879c5a9ff81294e2a80975384720536a400da9">BUTTON_1_EVENT</a>)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        setMode(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        currentMode-&gt;modeMessage.value = 0;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">//  Serial.println(&quot;..............&quot;);</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;modeMessage.index);</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;modeMessage.value);</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        update();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (button == <a class="code" href="_encoder_reader_8h.html#a3fcab9da0d2ed53873cb6eaf6ef879c5a2dd5b69cecdff50d87d70259d368525a">BUTTON_2_EVENT</a>)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        setMode(++modeIndex);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        update();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="class_e_s_p_machine.html#ae59e20965af93bc46130890c5cdec4a8">  132</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_e_s_p_machine.html#ae59e20965af93bc46130890c5cdec4a8">ESPMachine::onEncoderRotate</a>(<a class="code" href="_encoder_reader_8h.html#a0ed22c4fdbb5b0bcfd9ecc732696434b">EncoderEventEnum</a> encoder, <span class="keywordtype">float</span> value)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (encoder == <a class="code" href="_encoder_reader_8h.html#a0ed22c4fdbb5b0bcfd9ecc732696434ba16e9aae1c24578b595c4879097f876b8">ENCODER_1_EVENT</a>)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        setMode(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        currentMode-&gt;setValue(value);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        update();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (encoder == <a class="code" href="_encoder_reader_8h.html#a0ed22c4fdbb5b0bcfd9ecc732696434ba62fe5b36e04c58b486f16ef22d5b4c72">ENCODER_2_EVENT</a>)</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        setMode(<a class="code" href="_mode_8h.html#a00891d155a7e4a53313b1afa43046658a46b1a1705dc1e975e82422901b8ecdf2">modeSelect::BRIGHTNESS</a>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        currentMode-&gt;setValue(value);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        update();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (encoder == <a class="code" href="_encoder_reader_8h.html#a0ed22c4fdbb5b0bcfd9ecc732696434ba62fe5b36e04c58b486f16ef22d5b4c72">ENCODER_2_EVENT</a>)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">//   Serial.println(&quot;---&quot;);</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;label.c_str());</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        currentMode-&gt;setValue(value);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;label.c_str());</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        update();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;label.c_str());</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="ttc" id="a_e_s_p_machine_8cpp_html_a46a57f008994cc6a2a0fbd5daf7b96c6"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a></div><div class="ttdeci">QueueHandle_t intercoreQueue</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00013">ESPMachine.cpp:13</a></div></div>
-<div class="ttc" id="a_e_s_p_machine_8cpp_html_ac21a742d2d06d5913dc84fce02b52579"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a></div><div class="ttdeci">ESPMachineUI ui</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00017">ESPMachine.cpp:17</a></div></div>
-<div class="ttc" id="a_e_s_p_machine_8cpp_html_ad0bed38cbf7d2c767ee8656917a37cd6"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a></div><div class="ttdeci">Mode * modes[N_MODES]</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00019">ESPMachine.cpp:19</a></div></div>
-<div class="ttc" id="a_e_s_p_machine_8cpp_html_ad2d02611b740f1601a51bee888a4e891"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a></div><div class="ttdeci">const int N_MODES</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00015">ESPMachine.cpp:15</a></div></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">//   Serial.println(&quot;---&quot;);</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;label.c_str());</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        currentMode-&gt;setValue(value);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;label.c_str());</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        update();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// Serial.println(currentMode-&gt;label.c_str());</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_a243e6ae65d60b85ca3a156e17c81af55"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#a243e6ae65d60b85ca3a156e17c81af55">uiHandle</a></div><div class="ttdeci">TaskHandle_t uiHandle</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00013">ESPMachine.cpp:13</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_a46a57f008994cc6a2a0fbd5daf7b96c6"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#a46a57f008994cc6a2a0fbd5daf7b96c6">intercoreQueue</a></div><div class="ttdeci">QueueHandle_t intercoreQueue</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00016">ESPMachine.cpp:16</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_a7ec1da1de2574db7a894165efe380e89"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#a7ec1da1de2574db7a894165efe380e89">wavesHandle</a></div><div class="ttdeci">TaskHandle_t wavesHandle</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00014">ESPMachine.cpp:14</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_abb85c64034ba320bc7a6455289365016"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#abb85c64034ba320bc7a6455289365016">waves</a></div><div class="ttdeci">ESPMachineWaves waves</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00021">ESPMachine.cpp:21</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_ac21a742d2d06d5913dc84fce02b52579"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#ac21a742d2d06d5913dc84fce02b52579">ui</a></div><div class="ttdeci">ESPMachineUI ui</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00020">ESPMachine.cpp:20</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_ad0bed38cbf7d2c767ee8656917a37cd6"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#ad0bed38cbf7d2c767ee8656917a37cd6">modes</a></div><div class="ttdeci">Mode * modes[N_MODES]</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00023">ESPMachine.cpp:23</a></div></div>
+<div class="ttc" id="a_e_s_p_machine_8cpp_html_ad2d02611b740f1601a51bee888a4e891"><div class="ttname"><a href="_e_s_p_machine_8cpp.html#ad2d02611b740f1601a51bee888a4e891">N_MODES</a></div><div class="ttdeci">const int N_MODES</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00018">ESPMachine.cpp:18</a></div></div>
 <div class="ttc" id="a_e_s_p_machine_8h_html"><div class="ttname"><a href="_e_s_p_machine_8h.html">ESPMachine.h</a></div></div>
 <div class="ttc" id="a_e_s_p_machine_u_i_8h_html"><div class="ttname"><a href="_e_s_p_machine_u_i_8h.html">ESPMachineUI.h</a></div></div>
 <div class="ttc" id="a_e_s_p_machine_waves_8h_html"><div class="ttname"><a href="_e_s_p_machine_waves_8h.html">ESPMachineWaves.h</a></div></div>
@@ -274,16 +255,18 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_8cpp_source.html',''); 
 <div class="ttc" id="aclass_audio_balance_mode_html"><div class="ttname"><a href="class_audio_balance_mode.html">AudioBalanceMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00108">Mode.h:109</a></div></div>
 <div class="ttc" id="aclass_audio_phase_mode_html"><div class="ttname"><a href="class_audio_phase_mode.html">AudioPhaseMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00124">Mode.h:125</a></div></div>
 <div class="ttc" id="aclass_brightness_mode_html"><div class="ttname"><a href="class_brightness_mode.html">BrightnessMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00058">Mode.h:59</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_html_a68e2521414e45c33c5073243693c4628"><div class="ttname"><a href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628">ESPMachine::onEncoderClick</a></div><div class="ttdeci">void onEncoderClick(ButtonEventEnum button)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00118">ESPMachine.cpp:118</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_html_a7f5948db51f3a2c2a828c5bf6f090cf9"><div class="ttname"><a href="class_e_s_p_machine.html#a7f5948db51f3a2c2a828c5bf6f090cf9">ESPMachine::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00095">ESPMachine.cpp:95</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_html_a8c60da1d449db306ce881c8966c01534"><div class="ttname"><a href="class_e_s_p_machine.html#a8c60da1d449db306ce881c8966c01534">ESPMachine::loadModes</a></div><div class="ttdeci">void loadModes()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00039">ESPMachine.cpp:39</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_html_a938f37b0f7d1d2fa7f6c6012a8a38066"><div class="ttname"><a href="class_e_s_p_machine.html#a938f37b0f7d1d2fa7f6c6012a8a38066">ESPMachine::setMode</a></div><div class="ttdeci">void setMode(int modeIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00076">ESPMachine.cpp:76</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_html_ae59e20965af93bc46130890c5cdec4a8"><div class="ttname"><a href="class_e_s_p_machine.html#ae59e20965af93bc46130890c5cdec4a8">ESPMachine::onEncoderRotate</a></div><div class="ttdeci">void onEncoderRotate(EncoderEventEnum encoder, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00138">ESPMachine.cpp:138</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_html_af3ecb977982594cc122e60f48355e9d0"><div class="ttname"><a href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0">ESPMachine::ESPMachine</a></div><div class="ttdeci">ESPMachine()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00021">ESPMachine.cpp:21</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_html_a68e2521414e45c33c5073243693c4628"><div class="ttname"><a href="class_e_s_p_machine.html#a68e2521414e45c33c5073243693c4628">ESPMachine::onEncoderClick</a></div><div class="ttdeci">void onEncoderClick(ButtonEventEnum button)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00114">ESPMachine.cpp:114</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_html_a7f5948db51f3a2c2a828c5bf6f090cf9"><div class="ttname"><a href="class_e_s_p_machine.html#a7f5948db51f3a2c2a828c5bf6f090cf9">ESPMachine::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00107">ESPMachine.cpp:107</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_html_a8c60da1d449db306ce881c8966c01534"><div class="ttname"><a href="class_e_s_p_machine.html#a8c60da1d449db306ce881c8966c01534">ESPMachine::loadModes</a></div><div class="ttdeci">void loadModes()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00060">ESPMachine.cpp:60</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_html_a938f37b0f7d1d2fa7f6c6012a8a38066"><div class="ttname"><a href="class_e_s_p_machine.html#a938f37b0f7d1d2fa7f6c6012a8a38066">ESPMachine::setMode</a></div><div class="ttdeci">void setMode(int modeIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00097">ESPMachine.cpp:97</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_html_ae59e20965af93bc46130890c5cdec4a8"><div class="ttname"><a href="class_e_s_p_machine.html#ae59e20965af93bc46130890c5cdec4a8">ESPMachine::onEncoderRotate</a></div><div class="ttdeci">void onEncoderRotate(EncoderEventEnum encoder, float value)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00132">ESPMachine.cpp:132</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_html_af3ecb977982594cc122e60f48355e9d0"><div class="ttname"><a href="class_e_s_p_machine.html#af3ecb977982594cc122e60f48355e9d0">ESPMachine::ESPMachine</a></div><div class="ttdeci">ESPMachine()</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_8cpp_source.html#l00025">ESPMachine.cpp:25</a></div></div>
 <div class="ttc" id="aclass_e_s_p_machine_u_i_html"><div class="ttname"><a href="class_e_s_p_machine_u_i.html">ESPMachineUI</a></div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8h_source.html#l00011">ESPMachineUI.h:12</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a47c5bfe76c1dfcb53de5f16294ca0bd1"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">ESPMachineUI::attachEncoder</a></div><div class="ttdeci">void attachEncoder(ESPMachine dreamachine)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00035">ESPMachineUI.cpp:35</a></div></div>
-<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a940cedbabd35d0a8aee42ab01698d213"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">ESPMachineUI::updateDisplay</a></div><div class="ttdeci">void updateDisplay(string label, string value)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00064">ESPMachineUI.cpp:64</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a2a78ce3ed424e0446381666c54381bc2"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a2a78ce3ed424e0446381666c54381bc2">ESPMachineUI::UI</a></div><div class="ttdeci">static void UI(void *pvParameter)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00040">ESPMachineUI.cpp:40</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a47c5bfe76c1dfcb53de5f16294ca0bd1"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1">ESPMachineUI::attachEncoder</a></div><div class="ttdeci">void attachEncoder(ESPMachine dreamachine)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00031">ESPMachineUI.cpp:31</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_u_i_html_a940cedbabd35d0a8aee42ab01698d213"><div class="ttname"><a href="class_e_s_p_machine_u_i.html#a940cedbabd35d0a8aee42ab01698d213">ESPMachineUI::updateDisplay</a></div><div class="ttdeci">void updateDisplay(string label, string value)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_u_i_8cpp_source.html#l00054">ESPMachineUI.cpp:54</a></div></div>
 <div class="ttc" id="aclass_e_s_p_machine_waves_html"><div class="ttname"><a href="class_e_s_p_machine_waves.html">ESPMachineWaves</a></div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_waves_8h_source.html#l00006">ESPMachineWaves.h:7</a></div></div>
+<div class="ttc" id="aclass_e_s_p_machine_waves_html_a522ae2e1777daf09489711f5dda68da9"><div class="ttname"><a href="class_e_s_p_machine_waves.html#a522ae2e1777daf09489711f5dda68da9">ESPMachineWaves::Waves</a></div><div class="ttdeci">static void Waves(void *pvParameter)</div><div class="ttdef"><b>Definition:</b> <a href="_e_s_p_machine_waves_8cpp_source.html#l00029">ESPMachineWaves.cpp:29</a></div></div>
 <div class="ttc" id="aclass_frequency_mode_html"><div class="ttname"><a href="class_frequency_mode.html">FrequencyMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00074">Mode.h:75</a></div></div>
 <div class="ttc" id="aclass_light_balance_mode_html"><div class="ttname"><a href="class_light_balance_mode.html">LightBalanceMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00066">Mode.h:67</a></div></div>
 <div class="ttc" id="aclass_light_phase_mode_html"><div class="ttname"><a href="class_light_phase_mode.html">LightPhaseMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00092">Mode.h:93</a></div></div>
@@ -293,13 +276,9 @@ $(document).ready(function(){initNavTree('_e_s_p_machine_8cpp_source.html',''); 
 <div class="ttc" id="aclass_sound_wave_mode_html"><div class="ttname"><a href="class_sound_wave_mode.html">SoundWaveMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00116">Mode.h:117</a></div></div>
 <div class="ttc" id="aclass_volume_mode_html"><div class="ttname"><a href="class_volume_mode.html">VolumeMode</a></div><div class="ttdef"><b>Definition:</b> <a href="_mode_8h_source.html#l00100">Mode.h:101</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_e_s_p_machine_8cpp.html">ESPMachine.cpp</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
 </body>
 </html>
