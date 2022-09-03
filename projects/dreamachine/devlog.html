@@ -1,0 +1,404 @@
+<p><strong>2022-09-01</strong></p>
+
+<p>Yay! I got the pink noise gen bit working, modulated from LFO.</p>
+
+<p>Decided it was a good time to pause, do some docs, see what was needed to tidy things up.</p>
+
+<p>Replaced refs to 'Dreamachine<em>' to 'ESPMachine</em>', with generalising in mind.</p>
+
+<p>The SSD1306 display bits got messed up, so replaced those, redid splash screen. (There must be a way of doing it without hacking into the driver source, but I can't be bothered looking right now).</p>
+
+<p><strong>2022-08-30</strong></p>
+
+<p>I got a fair bit further, but along the way did a git revert, wiped the notes...</p>
+
+<p>DAC GPIO are 25, 26</p>
+
+<p><strong>2022-08-26</strong></p>
+
+<p>The queue between processes on Core 0 and Core 1 was almost working, but :</p>
+
+<p>CORRUPT HEAP: Bad head</p>
+
+<p>First probably was that I was setting the queue item size from an uninitialized struct (empty box!).</p>
+
+<p>Fiddled around a bit elsewhere.</p>
+
+<p>The labels bizarrely kept resetting to the initialized default. I couldn't see how to check these in the debugger, but then I realised that they don't need to be passed with the message!
+Much more stable now.</p>
+
+<p>Ah...but I do still need to pass a ref. to the current mode...</p>
+
+<p>I changed the splash screen :</p>
+
+<ul>
+<li>copied .pio/lib/Adafruit SSD1306 to /lib/</li>
+<li>removed ref in /platformio.ini</li>
+<li>made 128x64 .bmp in Gimp</li>
+<li>converted with https://javl.github.io/image2cpp/</li>
+<li>backed up splash.h</li>
+<li>pasted in my values</li>
+</ul>
+
+<p><strong>2022-08-25</strong></p>
+
+<p>This thing is so concurrency-heavy!</p>
+
+<p>So now, when the Mode is changed in Dreamachine.cpp, on Core 0, I need it to pass whatever values have changed over to DreamachineWaves on Core 1.</p>
+
+<p>For a similar job, in LFO, it was textbook semaphore-based so I pretty much copy-and-pasted the relevant code.</p>
+
+<p>Comms between cores is central to the whole application(s), so I really need a clear idea of what's going on.</p>
+
+<p>A possibility would be to use RTOS Task Notifications, eg. with</p>
+
+<p>https://www.freertos.org/RTOS<em>Task</em>Notification<em>As</em>Mailbox.html</p>
+
+<p>But with this :</p>
+
+<ul>
+<li>Only 32-bit values can be sent</li>
+<li>The value is saved as the receiving task's notification value, and there can only be one notification value at any one time</li>
+</ul>
+
+<p>These are faster, and I could probably squeeze what's needed for Dreamachine into this approach, but I think it makes more sense to do it in a more general purpose way using
+FreeRTOS Queues.</p>
+
+<p>https://www.freertos.org/Embedded-RTOS-Queues.html</p>
+
+<p>So over to:</p>
+
+<p>https://www.freertos.org/Documentation/RTOS_book.html
+Tutorial, Chapter 4, Queue Management</p>
+
+<ul>
+<li>bleah, not clear</li>
+</ul>
+
+<p>RTOS Reference Manual, P.163</p>
+
+<p>https://techtutorialsx.com/2017/08/20/esp32-arduino-freertos-queues/</p>
+
+<p><strong>2022-08-24</strong></p>
+
+<p>I got past my annoying problem this morning. The encoder can now update the display.</p>
+
+<p>Next problem is getting it to update eg. the LED frequency.</p>
+
+<p>Does get confusing fast, the different scopes, what has to be static.</p>
+
+<p><strong>2022-08-23</strong></p>
+
+<p>I realised an easy (but still quite clean) way to handle the different application/UI modes, 'Brightness', 'Frequency' etc, was to implement them as (an array of) objects.</p>
+
+<p>But last night, coding it up, ran into trouble. So I cut the code back to something really simple, there's still a disconnect somewhere. Just now I had a look, still couldn't see the problem.</p>
+
+<p>Then I remembered I'd bought an ESP Prog JTAG board when I started working on Chatterbox. Could not get it to work then.</p>
+
+<p>I just plugged it into Dreamachine - It Just Worked - and now I have proper debugging!!!!</p>
+
+<p>https://medium.com/@manuel.bl/low-cost-esp32-in-circuit-debugging-dbbee39e508b</p>
+
+<p>```
+TDI (Test Data In)
+TDO (Test Data Out)
+TCK (Test Clock)
+TMS (Test Mode Select)
+TRST (Test Reset) optional.
+On the ESP32, the JTAG pins are GPIO pins at the same time. So during debugging, you cannot use them. They are:</p>
+
+<p>GPIO12 — TDI
+GPIO15 — TDO
+GPIO13 — TCK
+GPIO14 — TMS
+The reset pin (TRST) is not fully supported by OpenOCD. Fortunately, it’s optional.
+```</p>
+
+<p>https://medium.com/@manuel.bl/low-cost-esp32-in-circuit-debugging-dbbee39e508b</p>
+
+<p>I'm too tired to do any more tonight, but this should be a real timesaver. Proper magic!!!</p>
+
+<p><strong>2022-08-21</strong></p>
+
+<p>To try and sort out wonky organisation decided some visualisation would be useful.</p>
+
+<p>Installed :</p>
+
+<ul>
+<li>doxygen</li>
+<li>doxygen-gui (runs as doxywizard) : generates config, runs</li>
+<li>mintlify doc writer (vscode extension) : highlight source, it generates comments</li>
+</ul>
+
+<p>I went around and around in circles again - literally.</p>
+
+<p>Getting the right bits static and the right pointer reference, hugely confusing.</p>
+
+<p>But now the encoder is talking to the display via a callback to Dreamachine.cpp. Phew!!!</p>
+
+<p><strong>2022-08-20</strong></p>
+
+<p>It took me a long time, but I've now got an EncoderReader (wrapping both encoders) dispatching events.
+But the high-level organisation is now a bit wonky :)</p>
+
+<p><strong>2022-08-19</strong></p>
+
+<p>I just wasted a load more time unsuccessfully trying to implement the State pattern.</p>
+
+<p><strong>2022-08-15</strong></p>
+
+<p>Hah! I was setting sine wave LFO to 100Hz, Bitscope meter was saying it was 16.8Hz. Was going around in circles until I double-checked wih Bitscope DSO - that said 100Hz!</p>
+
+<p>Ok, so that's near enough for now.</p>
+
+<p>The noise generator bits are the fun part, leave for now.</p>
+
+<p>Get the overall prog logic in place first.</p>
+
+<p>Design Patterns book suggests State. Found a reasonably clear example :</p>
+
+<p>https://refactoring.guru/design-patterns/state/cpp/example</p>
+
+<p>Renaming State to Mode and Context to Dreamachine.</p>
+
+<p>Nooo!</p>
+
+<p>I got hopelessly confused, circular dependencies etc.</p>
+
+<p>The functionality I need is very simple, I reckon I'll set it up with a simple switch(){} first, refactor later if it seems necessary.</p>
+
+<p><strong>2022-08-13</strong></p>
+
+<p>Renamed the LightWave class to LFO. It should be more general-purpose, not tied to how it is used.</p>
+
+<p>Useful examples :</p>
+
+<p>https://github.com/espressif/arduino-esp32/tree/master/libraries/ESP32/examples</p>
+
+<p><strong>2022-08-12</strong></p>
+
+<p>To try putting something on the DreamMachineWaves core, set up a timer to flash LEDs. Works a treat, at least up to 440Hz (tested with earpiece &amp; guitar tuner!).</p>
+
+<p>Code in LightWave class, derived from https://github.com/espressif/arduino-esp32/blob/master/libraries/ESP32/examples/Timer/RepeatTimer/RepeatTimer.ino</p>
+
+<p><strong>2022-08-11</strong></p>
+
+<p>LATER : got the encoder a bit closer, good enough for now. Split the processes off between the 2 ESP32 cores : DreamachineUI, DreamachineWaves</p>
+
+<p>I got frustrated with the rotary encoder lib so have changed it radically, now is https://github.com/danja/Esp32RotaryEncoder</p>
+
+<p>TODO :</p>
+
+<ul>
+<li>move current readme to a blog post, create something new</li>
+<li>encoder start, end, nSteps</li>
+<li><p>encoder set current</p></li>
+<li><p>state struct</p></li>
+<li>link encoder, state, display</li>
+</ul>
+
+<p><strong>2022-08-10</strong></p>
+
+<p>The other day I did get the LEDs basically working.</p>
+
+<p>The code around the rotary encoders is pretty horrible, so (like the display) am putting it in a wrapper class.</p>
+
+<p>I've got that basically working, still need to add button handler, tidy up.</p>
+
+<p>It <em>is</em> possible to use the change interrupt directly, but has to happen fast or it crashes -</p>
+
+<p>Guru Meditation Error: Core 1 panic'ed (Interrupt wdt timeout on CPU1)</p>
+
+<p>"When an interrupt handler is called, it blocks the entire system. So it must only do minimal work and return quickly. Serial communication however is slow and causes long delays. Thus, your program is terminated by the watchdog ("wdt" is the abbreviation for the watchdog)."</p>
+
+<p>Which explains why the lib exposes polling as the main access method.</p>
+
+<p>But the lib examples are missing an obvious trick : use the interrupt call to set a flag. With the main loop checking flag, only updating values/display when it's changed.</p>
+
+<p>Grrr. The button handling code in the lib is actually disabling the button interrupt.</p>
+
+<p>Need to :</p>
+
+<ul>
+<li>remove ESP8266 bits (for clarity)</li>
+<li>remove defaults</li>
+<li>use seperate encoder + button interrupts (setup( , ))</li>
+<li>remove current button handling</li>
+<li>add button debouncing</li>
+</ul>
+
+<p><strong>2022-08-02</strong></p>
+
+<p>Time to look at the main function of this thing : controlling the big LEDs.</p>
+
+<p>I've rigged up LEDs on sunglasses with a stereo 3.5mm jack socket.</p>
+
+<p>Because the LEDs might be out of circuit at times, I'll add a dummy load of 1k or so to their transistor drivers, collector to +ve.</p>
+
+<p>Now I need to find two free GPIO pins that can do PWM.</p>
+
+<p>GPIO 32 PWM LED<em>L
+GPIO 33 PWM LED</em>R</p>
+
+<p><strong>2022-07-30</strong></p>
+
+<p>rotary encoders + switches basically working - counting the wrong way, I need to look how the value scaling in the lib works.</p>
+
+<p>Couple of related issues I had worth noting :</p>
+
+<p>The rotary encoders I have are mounted on little PCBs with 3 resistors on their backs. I haven't bothered tracing tracks, but presumably pull-up or pull-down.</p>
+
+<p>I tried using GPIO 2, which is connected to an onboard LED. Stupid idea to begin with, and in practice with a resistor connected to <em>something</em>, this stopped the program uploading.</p>
+
+<p>In the encoder lib code, it has some lines like :</p>
+
+<p>pinMode(this->encoderAPin, INPUT_PULLDOWN);</p>
+
+<p>etc.</p>
+
+<p>This seemed to conflict with the onboard resistors, I got around this by adding :</p>
+
+<p>pinMode(ENCODER<em>1</em>CLK, INPUT);</p>
+
+<p>etc.</p>
+
+<p>After the encoder objects' creation, but before begin()</p>
+
+<hr />
+
+<p>EARLIER</p>
+
+<p>Rotary encoder time. There are quite a few libs that can manage these things, probably near-equivalent. If the encoder button can be handled here that'd be convenient. I'd prefer something interrupt-driven, polling can get messy fast. This lib appears to fit the bill : https://github.com/igorantolic/ai-esp32-rotary-encoder</p>
+
+<p>So installed from PlatformIO. Now to pick GPIOs - I want ones without overloaded functionality I might need elsewhere.</p>
+
+<p>I want 2 encoders (with buttons). Each needs 3 GPIOs : CLK, DT, SW</p>
+
+<p>The list at https://randomnerdtutorials.com/esp32-pinout-reference-gpios/
+is a great starting point (extract below)</p>
+
+<p>I may use the DACs,
+GPIO25
+GPIO26</p>
+
+<p>I'm already using:
+GPIO 22 display SCL
+GPIO 21 display SDA</p>
+
+<p>checking for potential later use, to connect UDA1334A I2S DAC in Chatterbox:
+GPIO 25
+GPIO 26
+GPIO 27</p>
+
+<p>These look promising :
+GPIO 34 input only
+GPIO 35 input only
+GPIO 36 input only
+GPIO 39 input only</p>
+
+<p>plus (both ADC/RTC, neither of which I need)
+GPIO 2
+GPIO 4</p>
+
+<p>Ok, so try:</p>
+
+<p>Encoder1 ESP32
+CLK GPIO 34
+DT GPIO 35
+SW GPIO 2 NO! 16</p>
+
+<p>Encoder2 ESP32
+CLK GPIO 36
+DT GPIO 39
+SW GPIO 4</p>
+
+<p>Hmm, that's annoying, although this lib appears to be interrupt-driven, the examples all seem to poll.
+Not a big deal - I'll go along with the examples for now. If that doesn't seem nice, I must be able to add an interrupt callback encoderChanged() somewhere...</p>
+
+<hr />
+
+<p><strong>2022-07-30</strong></p>
+
+<p>I have the display working. Next step there is to make it usable. Wrap the display lib into a class that only exposes the functionality I need through simple functions.</p>
+
+<p>The UI will be modal, with the press of a button changing mode.</p>
+
+<p>The display is (rather bizarrely) split into two areas - a top 1/5 or so shows yellow, the rest shows blue.</p>
+
+<p>I guess a simple way of exploiting this is to use the top (yellow) line to show current mode, area below the value.</p>
+
+<p>Brightness : 70%
+Frequency : 33 Hz
+Phase : 90°
+Volume : 80%
+Wave : sine
+Noise : white</p>
+
+<p>It's a dot matrix display so I guess it makes sense to exploit this with some kind of graphic indication as well as text. That suggests three functions :</p>
+
+<p>drawLabel(labelString)
+drawValue(valueString)
+drawGraphic(graphicObject)</p>
+
+<p>(The latter two can probably be wrapped together somehow, but that can wait until later)</p>
+
+<p>rename to displayXXX()</p>
+
+<p>probably need a display(labelString, valueString) ..?</p>
+
+<p>https://github.com/adafruit/Adafruit_SSD1306</p>
+
+<p>https://github.com/adafruit/Adafruit-GFX-Library</p>
+
+<p>I noticed this, don't think it was necessary : https://rntlab.com/question/esp32-oled-ssd1306-issue/</p>
+
+<p><strong>2022-07-29</strong></p>
+
+<p>Had a bit of trouble writing to the ESP32, the USB connection wasn't been recognised.</p>
+
+<p>ls /dev/ttyUSB*</p>
+
+<p>lsmod|grep usbserial</p>
+
+<p>sudo modprobe cp210x</p>
+
+<p>sudo rmmod cp210x
+sudo insmod /lib/modules/5.15.0-43-generic/kernel/drivers/usb/serial/cp210x.ko</p>
+
+<p>uninstall brltty</p>
+
+<p>systemctl stop brltty-udev.service
+sudo systemctl mask brltty-udev.service
+systemctl stop brltty.service
+systemctl disable brltty.service</p>
+
+<p>Got this display example to work (after adding forward function definitions) :</p>
+
+<p>https://randomnerdtutorials.com/esp32-ssd1306-oled-display-arduino-ide/</p>
+
+<hr />
+
+<p>I thought I'd better test the LEDs, just in case. Wound up doing some <a href="https://github.com/danja/dreamachine/blob/main/images/led-driver-sums.jpeg">sums</a> and <a href="https://github.com/danja/dreamachine/blob/main/images/led-driver-measure.jpeg">measurements</a></p>
+
+<p>The LEDs are rated at 1W, 3.2-3.4 V 350mA, but voltage drop was actually about 2v.</p>
+
+<p>I aimed for 100mA drive from a BC109 on a 5v PSU.</p>
+
+<p>With the BC109 common emitter, I found a base resistor of 680R (going to +3.3v) and a collector resistor of 10R (going through LED to +5v) gave me 95mA.</p>
+
+<p>It's not exactly dazzling, but may be bright enough, is certainly good enough for now.</p>
+
+<p><strong>2022-07-23</strong></p>
+
+<p>The LED driving and signal generation should be straightforward enough, known territory.</p>
+
+<p>This display is new to me, I reckon try to get that working first, then add rotary encoders.</p>
+
+<p>Libraries :</p>
+
+<h4>Display 0.96 inch SSD1306 OLED display (GM009605)</h4>
+
+<ul>
+<li>Adafruit_SSD1306</li>
+<li>Adafruit_GFX</li>
+</ul>
