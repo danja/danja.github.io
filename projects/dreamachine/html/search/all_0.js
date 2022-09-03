@@ -7,12 +7,11 @@ var searchData=
   ['adafruit_5fssd1306_2eh_4',['Adafruit_SSD1306.h',['../_adafruit___s_s_d1306_8h.html',1,'']]],
   ['addcallback_5',['addCallback',['../class_dispatcher.html#acf810957bee34f655300abc077fac6b3',1,'Dispatcher']]],
   ['amodemessage_6',['AModeMessage',['../_mode_8h.html#ab3bb6f9f20fe06ee822120be594e61e6',1,'Mode.h']]],
-  ['arduino_20library_20for_20monochrome_20oleds_20based_20on_20ssd1306_20drivers_2e_7',['Arduino library for monochrome OLEDs based on SSD1306 drivers.',['../index.html',1,'']]],
-  ['attachencoder_8',['attachEncoder',['../class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1',1,'ESPMachineUI']]],
-  ['audio_5fbalance_9',['AUDIO_BALANCE',['../_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1',1,'Mode.h']]],
-  ['audio_5fbalancevalue_10',['audio_balanceValue',['../class_e_s_p_machine.html#aecf9fdde50dc34475c644f9a039616a2',1,'ESPMachine']]],
-  ['audio_5fphase_11',['AUDIO_PHASE',['../_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b',1,'Mode.h']]],
-  ['audio_5fphasevalue_12',['audio_phaseValue',['../class_e_s_p_machine.html#a50be0ee934bbcd39d57749453ed5be46',1,'ESPMachine']]],
-  ['audiobalancemode_13',['AudioBalanceMode',['../class_audio_balance_mode.html',1,'']]],
-  ['audiophasemode_14',['AudioPhaseMode',['../class_audio_phase_mode.html',1,'']]]
+  ['attachencoder_7',['attachEncoder',['../class_e_s_p_machine_u_i.html#a47c5bfe76c1dfcb53de5f16294ca0bd1',1,'ESPMachineUI']]],
+  ['audio_5fbalance_8',['AUDIO_BALANCE',['../_mode_8h.html#a00891d155a7e4a53313b1afa43046658a617b03dd5b4a96d96eb534470399e1d1',1,'Mode.h']]],
+  ['audio_5fbalancevalue_9',['audio_balanceValue',['../class_e_s_p_machine.html#aecf9fdde50dc34475c644f9a039616a2',1,'ESPMachine']]],
+  ['audio_5fphase_10',['AUDIO_PHASE',['../_mode_8h.html#a00891d155a7e4a53313b1afa43046658a87605c5da5c4db566bce3eafc6ff429b',1,'Mode.h']]],
+  ['audio_5fphasevalue_11',['audio_phaseValue',['../class_e_s_p_machine.html#a50be0ee934bbcd39d57749453ed5be46',1,'ESPMachine']]],
+  ['audiobalancemode_12',['AudioBalanceMode',['../class_audio_balance_mode.html',1,'']]],
+  ['audiophasemode_13',['AudioPhaseMode',['../class_audio_phase_mode.html',1,'']]]
 ];

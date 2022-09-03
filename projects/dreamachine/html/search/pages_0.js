@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arduino_20library_20for_20monochrome_20oleds_20based_20on_20ssd1306_20drivers_2e_656',['Arduino library for monochrome OLEDs based on SSD1306 drivers.',['../index.html',1,'']]]
+  ['readme_655',['README',['../md_lib__s_s_d1306__mod__r_e_a_d_m_e.html',1,'']]]
 ];

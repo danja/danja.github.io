@@ -1,0 +1,6 @@
+<map id="Adafruit_SSD1306::begin" name="Adafruit_SSD1306::begin">
+<area shape="rect" id="node1" title="Allocate RAM for image buffer, initialize peripherals and pins." alt="" coords="5,64,188,91"/>
+<area shape="rect" id="node2" href="$class_adafruit___s_s_d1306.html#afe1e0f5efabd931aab7998275356744d" title="Clear contents of display buffer (set all pixels to off)." alt="" coords="236,5,464,32"/>
+<area shape="rect" id="node3" href="$class_adafruit___s_s_d1306.html#a018550c5b9f0463cb7cd2a74efa4ee48" title="Issue single command to SSD1306, using I2C or hard/soft SPI as needed. Because command calls are ofte..." alt="" coords="249,57,451,98"/>
+<area shape="rect" id="node4" href="$class_adafruit___s_s_d1306.html#a799f35d2b93cb7a84840a94da69259be" title="Issue list of commands to SSD1306, same rules as above re: transactions. This is a protected function..." alt="" coords="249,122,451,163"/>
+</map>

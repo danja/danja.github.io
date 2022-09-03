@@ -1,0 +1,5 @@
+<map id="Adafruit_SSD1306::drawFastHLine" name="Adafruit_SSD1306::drawFastHLine">
+<area shape="rect" id="node1" title="Draw a horizontal line. This is also invoked by the Adafruit_GFX library in generating many higher&#45;le..." alt="" coords="5,39,212,80"/>
+<area shape="rect" id="node2" href="$class_adafruit___s_s_d1306.html#ab487f39aa59091c06493a6985320e96b" title="Draw a horizontal line with a width and color. Used by public methods drawFastHLine,..." alt="" coords="260,5,467,47"/>
+<area shape="rect" id="node3" href="$class_adafruit___s_s_d1306.html#a961614d584f413c25581287728bbbb2c" title="Draw a vertical line with a width and color. Used by public method drawFastHLine,drawFastVLine." alt="" coords="260,71,467,112"/>
+</map>
