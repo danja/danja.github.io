@@ -23,6 +23,7 @@ The plan is to make a _personal_ version of the [Dreamachine](https://en.wikiped
 
 - [Dreamachine #1 : Background](https://hyperdata.it/blog/2022/08/12/dreamachine-1/)
 - [Dreamachine #2 : Pink Noise](https://hyperdata.it/blog/2022/08/31/dreamachine-2-pink-noise/)
+- [Dreamachine #3 : Progress](https://hyperdata.it/blog/2022/09/04/dreamachine-3-progress/)
 
 ## Videos
 
